@@ -1,0 +1,23 @@
+body {
+	background-color: #FFCC66;
+	background-image: url(butterfly.gif), url(eyes.jpg);
+	background-repeat: no-repeat ;                 
+	background-attachment: fixed, scroll;	     
+        background-size: 20%, auto;
+background-position: 70% 50%, 70% 60%;
+	
+  
+}
+h1 {
+	color: #990000;
+	background-color: #FC9804;
+}
+
+
+
+
+
+
+//repeat-x,round,space
+//scroll, fixed
+//cover, contain, auto, 20%

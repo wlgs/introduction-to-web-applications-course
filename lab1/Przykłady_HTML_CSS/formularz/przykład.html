@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Przyklad html</title>
+ <meta  charset="iso-8859-2">
+ <link rel="StyleSheet" href="formularze-screen.css" media="screen">
+</head>
+
+<body>
+
+<h2>Rejestracja do portalu Stowarzyszenia Romantycznych Owieczek</h2>
+
+<form action="#" method="get">
+<table cellspacing="0">
+<tr class="wymagane">
+ <td class="clabel">Imię:</td>
+ <td class="cinput"><input class="tekst" name="imie" type="text" size="40" maxlength="40">
+</tr>
+<tr class="wymagane">
+ <td class="clabel">Nazwisko:</td>
+ <td class="cinput"><input class="tekst" name="nazwisko" type="text" size="40" maxlength="40">
+</tr>
+<tr class="wymagane">
+ <td class="clabel">eMail:</td>
+ <td class="cinput"><input class="tekst" name="email" type="text" size="40" maxlength="40"></td>
+</tr>
+<tr class="wymagane">
+ <td class="clabel">Miejscowość:</td>
+ <td class="cinput"><input class="tekst" name="adres" type="text" size="40" maxlength="40"></td>
+</tr>
+<tr class="wymagane">
+ <td class="clabel">Data urodzenia:</td>
+ <td class="cinput"><span id="pusty">&nbsp</span>
+     <input class="tekst ukryj" name="dzien" type="text" size="2" maxlength="2">
+     <select class="tekst" name="miesiac">
+      <option value="1">stycznia</option>
+      <option value="2">lutego</option>
+      <option value="3">marca</option>
+      <option value="4">kwietnia</option>
+      <option value="5">maja</option>
+      <option value="6">czerwca</option>
+      <option value="7">lipca</option>
+      <option value="8">sierpnia</option>
+      <option value="9">września</option>
+      <option value="10">pażdzienika</option>
+      <option value="11">listopada</option>
+      <option value="12">grudnia</option>
+     </select>
+     <input class="tekst ukryj" name="rok" type="text" size="4" maxlength="4"></td>
+</tr>
+<tr class="opcjonalne">
+ <td class="clabel">Płeć:</td>
+ <td class="cinput"><input name="plec" type="radio" value="m">Mężczyzna <input name="płeć" type="radio" value="k">Kobieta</td>
+</tr>
+<tr class="opcjonalne">
+ <td class="clabel">Ulubiony kolor wełny</td>
+ <td class="cinput"><input class="tekst" name="kolorwelny" type="text" size="40" maxlength="40"></td>
+</tr>
+<tr class="opcjonalne">
+ <td class="clabel">Telefon</td>
+ <td class="cinput"><input class="tekst" name="telefon" type="text" size="40" maxlength="40"></td>
+</tr>
+<tr class="opcjonalne">
+ <td class="clabel">Zainteresowania:</td>
+ <td class="cinput"><input name="zainteresowania[0]" type="checkbox" value="1">Film
+     <input name="zainteresowania[1]" type="checkbox" value="1">Muzyka
+     <input name="zainteresowania[2]" type="checkbox" value="1">Polityka
+     <input name="zainteresowania[3]" type="checkbox" value="1">Sport
+ </td>
+</tr>
+<tr class="opcjonalne">
+   <td class="clabel"> <label for="dateData">Data:</label> </td>
+   <td class="cinput"> <input type="date" id="dateData">  </td>
+</tr>
+<tr>
+   <td class="clabel"> <label for="numberData">Numer:</label> </td>
+   <td class="cinput">  <input type="number" id="numberData"> <td>
+</tr>
+   
+<tr>
+    <td class="wyslij" colspan="2"><input class="wyslij" type="submit" value="Zarejestruj!"></td>
+</tr>
+
+</table>
+</form>
+
+</br>
+<hr/>
+
+<p>
+Niniejszy akapit
+zawiera wiele linii 
+w kodzie źródłowym, 
+ale przeglądarka to ignoruje.
+</p>
+<p>
+Niniejszy akapit
+zawiera   wiele            dodatkowych spacji  
+w kodzie          źródłowym, 
+ale        przeglądarka to ignoruje.
+</p>
+<p>Pierwsze zdjecie w dokumencie:</p>
+<img src="smiley.gif" alt="Pierwsze zdjecie " width="32" height="32" />
+<p>Tworzymy link w postaci zdjecia:
+<a href="http://www.onet.pl">
+<img border="2" src="smiley.gif" alt="Pierwszy Dokument" width="32" height="32" />
+</a></p>
+
+<p>Brak obramowania obrazu ale to wciąz link:
+<a href="http://www.google.com" target="_blank">
+<img border="0" src="smiley.gif" alt="Pierwszy Dokument" width="32" height="32" />
+</a></p>
+
+<h4>Sklejenie dwóch kolumn:</h4>
+<table border="1">
+<tr>
+  <th>NAzwa</th>
+  <th colspan="2">Telefon</th>
+</tr>
+<tr>
+  <td>Bill Gates</td>
+  <td>555 77 854</td>
+  <td>555 77 855</td>
+</tr>
+</table>
+
+<h4>Sklejenie dwóch wierszy:</h4>
+<table border="1">
+<tr>
+  <th>imie:</th>
+  <td>Bill Gates</td>
+</tr>
+<tr>
+  <th rowspan="2">Telefon:</th>
+  <td>555 77 854</td>
+</tr>
+<tr>
+  <td>555 77 855</td>
+</tr>
+</table>
+
+<h4>Lista zagnieżdzona:</h4>
+<ol>
+  <li>Kawa</li>
+  <li>Herbata
+    <ol>
+    <li>Czarna</li>
+    <li>Zielona</li>
+    </ol>
+  </li>
+  <li>Mleko</li>
+</ol>
+
+</body>
+</html>
+

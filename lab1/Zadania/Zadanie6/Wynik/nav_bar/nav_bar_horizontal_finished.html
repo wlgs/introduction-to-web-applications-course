@@ -1,0 +1,84 @@
+<head>
+<meta  charset=ISO-8859-1" />
+<style type="text/css">
+
+body {
+	font: 62.5% Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 20px;
+}
+
+
+/* Nawigacja */
+ul#mainNav {
+	border-left: 1px dashed #999999;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+}
+
+#mainNav li {
+	float: left;
+	width: 12em;
+}
+
+#mainNav a {
+	text-decoration: none;
+	color: #000000;
+	font-size: 1.1em;
+	text-transform: uppercase;
+	border: 1px dashed #999999;
+	border-left: none;
+	display: block;
+	padding: 7px 5px 7px 30px;
+	background: #E7E7E7 url(images/link.png) no-repeat left center;
+}
+
+#mainNav a:hover {
+	background: #B2F511 url(images/go.png) no-repeat 5px 50%;
+	font-weight: bold;
+}
+
+/* specjalne formatowanie linku typu HOME*/
+a#homeLink {
+	background: #E7E7E7 url(images/home.png) no-repeat 5px 52%;
+}
+
+/* style dla batonow typu tutaj jestes*/
+#home #mainNav a#homelink,
+#feature #mainNav a#featureLink {
+	background: #FFFFFF url(images/bg_here.png) no-repeat 5px 50%;
+	padding-right: 15px;
+	padding-left: 30px;
+	font-weight: bold;
+}
+
+#home #mainNav a#homelink:hover,
+#feature #mainNav a#featureLink:hover {
+	color: #B2F511;
+}
+
+* html #mainNav a {
+	height: 1px;
+}
+
+.preload {
+	background-image:url(images/go.png);
+	display: none;
+}
+
+</style>
+</head>
+<body id="feature">
+  <ul id="mainNav">
+    <li><a href="#" id="homeLink">Home</a></li>
+    <li><a href="#" id="featureLink">Features</a></li>
+    <li><a href="#" id="expertLink">Experts</a></li>
+    <li><a href="#" id="quizLink">Quiz</a></li>
+    <li><a href="#" id="projectLink">Projects</a></li>
+    <li><a href="#" id="horoscopeLink">Horoscopes</a></li>
+  </ul>
+<div class="preload">&nbsp;</div>
+</body>
+</html>

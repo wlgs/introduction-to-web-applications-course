@@ -1,0 +1,22 @@
+body {
+	
+	
+}
+h1 {
+	color: #990000;
+	background-color: #FC9804;
+}
+
+
+p{
+        
+     background-color: #FFCC66;
+border: 1px solid blue;        
+background-image: url(butterfly.gif);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+        background-position: center right;
+        width: 900px;
+        height:500px;
+
+}

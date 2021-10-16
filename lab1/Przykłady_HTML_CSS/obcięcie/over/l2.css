@@ -1,0 +1,22 @@
+div.boks1  {
+	width: 200px;	
+	border: 1px solid black;	
+	background: orange;
+      height: 150px;
+               overflow: hidden;	
+}
+
+div.boks2  {
+	width: 200px;	
+	border: 1px solid black;	
+	background: orange;
+        height: 150px;
+               overflow: scroll;	
+}
+div.boks3  {
+	width: 200px;	
+	border: 1px solid black;	
+	background: orange;
+     height: 150px;
+     overflow: visible;	
+}
