@@ -103,10 +103,106 @@
 }
 
 .float-img2{
-    float:right
+    float:right;
 }
 
-.text-image-floating-content{
-    display:inline;
-    float:none;
+.floating-text{
+    width:25%
+}
+
+#jpg1{
+    position:static;
+}
+
+#jpg2{
+    position:relative;
+    left:90px;
+}
+
+#jpg3{
+    position:relative;
+    right:120px;
+}
+
+#eu-list{
+    background-image: url("euflag.jpg");
+    backgorund-color: blue;
+    width: fit-content;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position:relative;
+    top:110px;
+}
+
+#lpl-list{
+    background-image: url("china.webp");
+    backgorund-color: red;
+    width: fit-content;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position:relative;
+    bottom:140px;
+    
+}
+
+#form-box{
+    width:450px;
+    color:yellow;
+    background-color: darkblue;
+}
+
+#form-title{
+    background-color:orange;
+    color:yellow;
+    font-size:18px;
+    padding:8px;
+    padding-left:12px;
+}
+
+#form-inside{
+    margin:auto;
+}
+#form-inside td{
+    height:32px;
+    text-align:left;
+}
+
+#form-inside .lcol{
+    text-align:right;
+}
+
+#footer-decision{
+    height:50px;
+    background-color: orange;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right:5%;
+}
+
+#box-confirm{
+    background-color:green;
+    height: 35px;
+    width:80px;
+    display: flex;
+    margin-right:8px;
+    justify-content: center;
+    align-items: center;
+}
+
+#box-cancel{
+    background-color: red;
+    height:35px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box-confirm-text{
+    color:white;
+}
+
+#box-cancel-text{
+    color:white;
 }
