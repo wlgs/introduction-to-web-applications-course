@@ -1,0 +1,28 @@
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    height:300px;
+    width:600px;
+    flex-wrap: wrap;
+}
+
+.flex-redbox{
+    border: 2px solid black;
+    background-color: red;
+    flex-basis:20%;
+    margin:10px;
+}
+
+.flex-bluebox{
+    border: 2px solid black;
+    background-color: blue;
+    flex-basis:70%;
+    margin:10px;
+}
+
+.flex-yellowbox{
+    border: 2px solid black;
+    background-color: yellow;
+    flex-basis:94%;
+    margin:10px;
+}
