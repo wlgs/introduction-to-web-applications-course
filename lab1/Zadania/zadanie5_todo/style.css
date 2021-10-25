@@ -1,0 +1,33 @@
+body {
+  font: 1.2em Helvetica, Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+section {
+  width: 90%;
+  max-width: 150px;
+  border: 1px solid #4D4E53;
+  border-radius: 2px;
+}
+
+
+.box {
+  display: flex;
+  align-items: flex-start;
+  flex-flow:column;
+  width: 150px;
+  border: 2px dotted rgb(96, 139, 168);
+  height: auto;
+}
+
+.box>* {
+  padding: 20px;
+  border: 2px solid rgb(96, 139, 168);
+  border-radius: 5px;
+  background-color: rgba(96, 139, 168, .2);
+}
+
+.box+div{
+  font-size: 72px;
+}

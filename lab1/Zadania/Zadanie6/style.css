@@ -66,7 +66,6 @@
 }
 
 .nav-flexbox{
-    border:blue solid 1px;
     display:flex;
     flex-flow: row;
     height:100%;
@@ -74,16 +73,69 @@
 
 .nav-item{
     display:flex;
-    flex-basis:25%;
-    border:red solid 1px;
+    border:black solid 1px;
+    flex-basis:1;
     height: 100%;
     width: 100%;
     justify-content: center;
     align-items: center;
+    background: #E7E7E7 url(do_pracy/nav_bar/images/link.png) no-repeat left;
 }
 
 .nav-item-content{
     display:flex;
-    border: black solid 1px;
-    font-size: 32px;
+    font-size: 24px;
+    color:black;
+}
+
+a#HomeLink>.nav-item{
+    background: #E7E7E7 url(do_pracy/nav_bar/images/home.png) no-repeat left;
+}
+/*ur here formation*/
+
+a#UrHere>.nav-item{
+    background: white url(do_pracy/nav_bar/images/bg_here.png) no-repeat left;
+}
+
+a.NormalLink>.nav-item:hover, #HomeLink>.nav-item:hover{
+    font:bold;
+    text-transform: uppercase;
+    background: #B2F511 url(do_pracy/nav_bar/images/go.png) no-repeat left;
+}
+
+a{
+    display: contents;
+    text-decoration: none;
+}
+
+.aside-flexbox{
+    display:flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.aside-item{
+    border: 1px black solid;
+    display:flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.aside-item-content{
+    display:flex;
+    font-size: 18px;
+    font-style: italic;
+    width:fit-content
+}
+
+a>.aside-item:hover{
+    background:cyan;
+    border: blue 3px solid;
+}
+
+a>.aside-item:hover > .aside-item-content{
+    font-style:normal;
+    font-size: 24px;
+    text-transform:lowercase;
 }
