@@ -1,0 +1,34 @@
+.wrapper{
+    display:flex;
+    border:3px red solid;
+    width:700px;
+}
+
+.flexbox-container1{
+    display:flex;
+    flex-flow: row;
+    width:350px;
+    height:50px;
+    justify-content: space-between;
+}
+
+.flexbox-container2{
+    display:flex;
+    flex-flow: row;
+    width:350px;
+    height:50px;
+    justify-content: right;
+}
+
+.flex-itemA{
+    width:fit-content;
+    display:flex;
+    border: 3px solid aquamarine;
+}
+
+
+.flex-itemB{
+    display:flex;
+    width:fit-content;
+    border: 3px solid blue;
+}
