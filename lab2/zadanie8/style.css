@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.page-container{
+    margin-left:2%;
+    margin-right:2%;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f7f7f7
+}
+header.title{
+    display: flex;
+    font-size: 48px;
+    width:auto;
+    color:#5fca74;
+    justify-content: center;
+    font-weight: bold;
+    padding-top:5%;
+    padding-bottom:5%;
+}
+
+main.main-container{
+    display:flex;
+    width:100%;
+    flex-direction: row;
+    height:auto;
+
+}
+
+
+main .main-text-container{
+    display:flex;
+    flex-direction: column;
+    flex-basis:50%;
+    margin-left:10px;
+}
+
+
+article.main-article .main-article-content{
+    line-height: 1.6;
+}
+
+article .main-article-title{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom:30px;
+}
+
+a.more-info{
+    font-weight: bold;
+    color: lightgreen;
+}
+
+.more-info-container{
+    margin-top:20px;
+}
+
+.bar{
+    width:75px;
+    height:3px;
+    background-color: lightgreen;
+    margin-top:5px;
+    margin-bottom:10px;
+
+}
+
+main .main-photos-container{
+    position:relative;
+    display:flex;
+    flex-basis:60%;
+    margin-left: 6%;
+}
+
+
+
+.main-photos-container img{
+    height:250px;
+    -webkit-box-shadow: 0px 0px 21px 3px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 21px 3px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 21px 3px rgba(66, 68, 90, 1);
+    
+}
+
+img#img1{
+    position:absolute;
+    z-index:0;
+    transition:0.3s ease-in-out transform;
+}
+
+img#img2{
+    position:absolute;
+    z-index:0;
+    top:50px;
+    left:300px;
+    transition:0.3s ease-in-out transform;
+}
+
+img#img3{
+    position:absolute;
+    z-index:0;
+    top:120px;
+    left:180px;
+    transition:0.3s ease-in-out transform;
+}
+
+img#img1:hover, img#img2:hover, img#img3:hover{
+    z-index:1;
+    
+    transform: scale(1.1);
+    transition:0.3s ease-in-out transform;
+    
+    outline:#5fca74 15px solid;
+    outline-style: round;
+    outline-offset: 15px;
+   
+}
+
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+@media screen and (max-width:1410px){
+    main.main-container{
+        flex-direction: column;
+        height:700px;
+        align-items: center;
+        
+    }
+    main .main-photos-container{
+        width:0;
+        padding-right: 480px;
+    }
+    .main-photos-container img{
+        height:150px;
+    }
+    
+    img#img2{
+        z-index:0;
+        top:0;
+        left:250px;
+    }
+    
+    img#img3{
+        top:50px;
+        left:120px;
+    }
+
+}
