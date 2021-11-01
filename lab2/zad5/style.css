@@ -1,0 +1,95 @@
+main.pictures-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.picture-item {
+    display: flex;
+    margin: 20px;
+    position: relative;
+}
+
+.picture-item-content #photo1 {
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+.picture-item-content #photo2 {
+    width: 100%;
+    height: 100%;
+}
+
+/* HOVER 1 */
+
+.picture-item .hover-effect1 {
+    width: 100%;
+    top:80%;
+    height:20%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
+    position: absolute;
+    transition: all 1s ease-out;
+}
+
+.picture-item .hover-text1 {
+    font-size: 18px;
+}
+
+.picture-item #photo1:hover+.hover-effect1, .picture-item .hover-effect1:hover{
+    background: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 1);
+    transition: 1s;
+    transition-timing-function: ease;
+}
+
+
+
+
+/* HOVER 2 */
+.picture-item .hover-effect2 {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0);
+    background-position:center;
+    color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    transition: all 1s ease-out;
+}
+
+.picture-item .hover-effect2 img#lupa{
+    opacity: 0%;
+    transition: all 1s;
+    transition-timing-function: ease;
+}
+
+.picture-item .hover-text2 {
+    font-size: 24px;
+}
+
+.picture-item .hover-effect2:hover{
+    background: rgba(51, 170, 51, 0.6);
+    color: rgba(255, 255, 255, 1);
+    transition: all 1s;
+    transition-timing-function: ease;
+}
+
+.picture-item .hover-effect2 img#lupa{
+    width:15%;
+}
+
+.picture-item .hover-effect2:hover img#lupa{
+    opacity:100;
+    transition: all 1s;
+    transition-timing-function: ease;
+}
+

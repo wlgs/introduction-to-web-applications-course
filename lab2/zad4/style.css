@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-container{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    flex-wrap: wrap;
+    border: 2px solid red;
+    justify-content: space-around;
+}
+
+    .main-container .city-card{
+    display:flex;
+    flex-direction: column;
+    width: 15vw;
+    margin:15px;
+
+    /*border: 1px solid black;*/
+
+    /* shadows */
+    -moz-box-shadow: 0 0 12px #ccc;
+    -webkit-box-shadow: 0 0 12px #ccc;
+    box-shadow: 0 0 12px #ccc;
+
+    border-radius: 20px;
+}
+
+.main-container .city-card .city-card-text-content{
+    margin:15px;
+}
+
+.main-container .city-card .city-title{
+    font-size:24px;
+    font-weight: bold;
+    margin-top:10px;
+    margin-bottom:5px;
+}
+
+
+
+.main-container .city-card .city-desc{
+    font-size:16px;
+    font-weight: bold;
+    color:red;
+    margin-top:5px;
+    margin-bottom:15px;
+}
+
+.main-container .city-card .city-desc-long{
+    font-size:12px;
+    margin-top:10px;
+    margin-bottom:10px;
+    color:gray;
+}
+
+.main-container .city-card hr{
+    border-top: 1px lightgray;
+    width:90%;
+}
+
+.main-container .city-card .city-img img{
+    width:100%;
+    height:100%;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.main-container .city-card .city-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:15px;
+    margin-bottom:20px;
+}
+
+.main-container .city-card .city-footer .city-button{
+    display:flex;
+    background-color: red;
+    justify-content:center;
+    align-items: center;
+}
+
+.main-container .city-card .city-footer .city-button .city-button-text{
+    color:white;
+    margin:10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.main-container .city-card .city-footer .city-stats p{
+    font-size: 12px;
+    margin-bottom:0;
+    margin-top: 0;
+    padding-left: 20px;
+}
+
+.main-container .city-card .city-footer .city-stats .city-comments{
+    background-image: url(data/comment.png);
+    background-position:left;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+
+.main-container .city-card .city-footer .city-stats .city-likes{
+    background-image: url(data/like.jpg);
+    background-position:left;
+    background-size:contain;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1500px) {
+    .main-container .city-card{
+        width:20vw;
+    }
+
+}
+
+
+
+@media screen and (max-width: 1150px) {
+    .main-container .city-card{
+        width:25vw;
+    }
+
+}
+
+
+@media screen and (max-width: 900px) {
+    .main-container .city-card{
+        width:40vw;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+    .main-container{
+        flex-direction: column;
+    }
+    .main-container .city-card{
+        width:auto;
+    }
+
+
+}
+

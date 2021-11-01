@@ -1,0 +1,133 @@
+.grid-container {
+    display: grid;
+    height: 600px;
+    width: auto;
+    border: 20px solid rgb(177, 172, 172);
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 15% 10% 65% 10%;
+    grid-template-areas:
+        "head head head head"
+        "nav nav nav nav"
+        "aside main main main"
+        "foot foot foot foot"
+}
+
+.site-header {
+    grid-area: head;
+    background-color: gray;
+    border: 2px solid black;
+}
+
+.header-content {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.site-navbar {
+    grid-area: nav;
+}
+
+.site-aside {
+    grid-area: aside;
+    border: 1px solid black;
+}
+
+.site-main {
+    grid-area: main;
+    border: 1px solid black;
+}
+
+
+.site-foot {
+    grid-area: foot;
+    display: flex;
+    border: 1px solid black;
+    background-color: gray;
+    align-items: center;
+    justify-content: center;
+}
+
+.foot-content {
+    display: flex;
+
+
+}
+
+
+.site-logo {
+    width: 120px;
+    height: 40px;
+    background-color: white;
+    float: left;
+    margin-left: 10px;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+    border: 2px solid black;
+}
+
+.nav-flexbox {
+    border: blue solid 1px;
+    display: flex;
+    flex-flow: row;
+    height: 100%;
+}
+
+.nav-item {
+    display: flex;
+    flex-basis: 25%;
+    border: red solid 1px;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item-content {
+    display: flex;
+    border: black solid 1px;
+    font-size: 32px;
+}
+/* 3 kolumney */
+@media (min-width: 801px) and (max-width:1300px) {
+    .grid-container {
+        grid-template-areas:
+            "head head head"
+            "aside main nav"
+            "foot foot foot";
+        grid-template-rows: auto;
+        grid-template-columns: 33%;
+        height:600px;
+        width:auto;
+
+    }
+    .nav-flexbox{
+        flex-flow: column;
+    }
+}
+
+
+
+
+@media (max-width: 800px) {
+    .grid-container {
+        grid-template-areas:
+            "head"
+            "nav"
+            "aside"
+            "main"
+            "foot";
+        grid-template-rows: auto;
+        grid-template-columns: 100%;
+        height:1000px;
+        width:auto;
+
+    }
+    .nav-flexbox{
+        flex-flow: column;
+    }
+}
+
+
+
+/* ponizej 800 1 kolumna  2 pkt przejscia/*

@@ -1,0 +1,25 @@
+.images-container{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    height:900px;
+    overflow: hidden;
+}
+
+.item-image{
+    position:relative;
+    overflow:hidden;
+    flex-grow: 1;
+    transition: all 1s;
+}
+
+.item-image img{
+    position:absolute;
+    left:50%;
+    transform: translate(-50%,0);
+}
+
+.item-image:hover{
+    flex-grow:3;
+    transition: all 1s;
+}

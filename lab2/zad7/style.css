@@ -1,0 +1,125 @@
+.mobile-navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    z-index: 3;
+    background-color: #5c4e72;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    transform: translate(0, -100%);
+    transition: transform 0.5s cubic-bezier(0.6, 0.1, 0.1, 1.0);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid purple;
+    height: 10vh;
+    width: auto;
+}
+
+.navbar-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: green;
+
+}
+
+.navbar-left-content {
+    margin: 0px 20px 0px 20px;
+    color: white;
+}
+
+.navbar-right {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-right-item {
+    margin: 0px 20px 0px 20px;
+    font-size: 23px;
+    color: darkslateblue;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 3px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+    z-index: 4;
+}
+
+#ham-toggle {
+    opacity: 0;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 5;
+    position: absolute;
+}
+
+#ham-toggle:checked~span {
+    background-color: white;
+}
+
+#ham-toggle:checked~span:nth-of-type(1) {
+    transform: translate(0, 9px) rotate(45deg);
+}
+
+#ham-toggle:checked~span:nth-of-type(2) {
+    opacity: 0;
+}
+
+#ham-toggle:checked~span:nth-of-type(3) {
+    transform: translate(0, -9px) rotate(-45deg);
+}
+
+#ham-toggle:checked~nav.mobile-navbar {
+    transform: translate(0, 0);
+    transition: transform 0.5s cubic-bezier(0.6, 0.1, 0.1, 1.0);
+}
+
+.mobile-navbar-item {
+    display: flex;
+    color: white;
+    font-size: 28px;
+    width: fit-content;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+@media screen and (max-width:800px) {
+    .navbar-right {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+        position: relative;
+    }
+
+}

@@ -1,0 +1,41 @@
+  body {
+  font: 1.2em Helvetica, Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+section {
+  width: 500px;
+  height: 200px;
+  border: 1px solid #4D4E53;
+  border-radius: 2px;
+}
+
+
+.box {
+  display: flex;
+  align-items: flex-start;
+  flex-flow:row;
+  width: auto;
+  border: 3px solid rgb(96, 139, 168);
+  height: 200px;
+}
+
+.box>* {
+  padding: 20px;
+  border: 2px solid rgb(96, 139, 168);
+  border-radius: 5px;
+  background-color: rgba(96, 139, 168, .2);
+}
+
+.box+div{
+  font-size: 72px;
+}
+
+#box1{
+  align-self: stretch;
+}
+
+#box3{
+  align-self: center;
+}
