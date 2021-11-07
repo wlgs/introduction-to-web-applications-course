@@ -107,6 +107,14 @@ a {
     color: inherit;
 }
 
+.mobile-navbar-item > a:hover{
+    color:black;
+    letter-spacing: 5px;
+    transition: 300ms ease all;
+}
+.mobile-navbar-item > a{
+    transition: 300ms ease all;
+}
 
 @media screen and (max-width:800px) {
     .navbar-right {

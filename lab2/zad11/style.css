@@ -1,0 +1,110 @@
+body{
+    background-color: lightgreen;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.inner-menu-list{
+    width: 250px;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #86190f;
+    list-style: none;
+    text-decoration: none;
+}
+.inner-menu-list-item{
+    border-top: 1px solid #86190f;
+    overflow: hidden;
+}
+
+.inner-menu-list-item:target .sub-menu{
+    max-height: 20em;
+}
+
+
+.sub-menu-h{
+    display: block;
+    padding: 20px 15px;
+    background-color: #d14437;
+    color: #fff;
+    position: relative;
+
+}
+/* triangle */
+.sub-menu-h:before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 15px;
+    bottom: -10px;
+    z-index: 1;
+    border-left: 6px solid transparent;
+    border-right:6px solid transparent;
+    border-top:12px solid #d14437;
+    
+}
+
+.sub-menu{
+    background: #152774;
+    overflow: hidden;
+    max-height:0em;
+    transition: 500ms ease all;
+}
+.sub-menu a{
+    display: block;
+    padding: 20px 15px;
+    color: #fff;
+    font-size: 16px;
+    border-bottom: 1px solid #13224b;
+    position: relative;
+    
+}
+.sub-menu a:before{
+    content: '';
+    opacity: 0;
+    transition: opacity 300ms ease;
+
+}
+.sub-menu a:hover{
+    background: #273057;
+    background: -moz-linear-gradient(top, #111838 0%, #222e68 48%, #243e85 52%, #273e7e 100%);
+    background: -webkit-linear-gradient(top, #111838 0%, #222e68 48%, #243e85 52%, #273e7e 100%);
+    background: linear-gradient(top, #111838 0%, #222e68 48%, #243e85 52%, #273e7e 100%);
+    transition: all 0.3s;
+    border-bottom: 1px solid #394c7f;
+}
+
+.sub-menu a:hover:after{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 6px;
+    right: 0px;
+    top:0;
+    opacity: 1;
+}
+
+
+.sub-menu a:hover:before{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 5px;
+    left: 0;
+    top:0;
+    opacity: 1;
+    /* background-color: #d8d824; */
+    border-top: 27px solid transparent;
+    border-left: 10px solid lightgreen;
+    border-bottom: 27px solid transparent;
+}
+.sub-menu a:after{
+    content: '';
+    opacity: 0;
+    transition: opacity 300ms ease;
+
+}
