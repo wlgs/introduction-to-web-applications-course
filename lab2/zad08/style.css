@@ -81,7 +81,7 @@ main .main-photos-container{
 img#img1{
     position:absolute;
     z-index:0;
-    transition:0.3s ease-in-out transform;
+    transition:0.3s ease all;
 }
 
 img#img2{
@@ -89,7 +89,7 @@ img#img2{
     z-index:0;
     top:50px;
     left:300px;
-    transition:0.3s ease-in-out transform;
+    transition:0.3s ease all;
 }
 
 img#img3{
@@ -97,18 +97,17 @@ img#img3{
     z-index:0;
     top:120px;
     left:180px;
-    transition:0.3s ease-in-out transform;
+    transition:0.3s ease all;
 }
 
 img#img1:hover, img#img2:hover, img#img3:hover{
     z-index:1;
-    
-    transform: scale(1.1);
-    transition:0.3s ease-in-out transform;
-    
     outline:#5fca74 15px solid;
     outline-style: round;
     outline-offset: 15px;
+
+    transform: scale(1.1);
+    transition:0.3s ease all;
    
 }
 

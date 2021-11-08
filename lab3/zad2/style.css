@@ -1,0 +1,24 @@
+body{
+    position:relative;
+}
+
+img{
+    position:relative;
+    width:400px;
+    height:400px;
+    border:5px solid red;
+}
+
+img#hide{
+    position:absolute;
+    visibility: hidden;
+    top:0;
+    left:0;
+    border:5px solid blue;
+}
+
+#btn2{
+    position:absolute;
+    left:0;
+    visibility: hidden;
+}
