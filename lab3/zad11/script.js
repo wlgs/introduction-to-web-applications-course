@@ -169,8 +169,15 @@ async function highscoresPrompt(){
 }
 
 async function updateHighscores(json){
+
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = dd + '/' + mm + '/' + yyyy;
+
     data = json["highscores"];
-    data.push({"name": userName,"score":score});
+    data.push({"name": userName,"score":score, "date":today});
     data = data.sort(cmpFn);
     var entries = document.querySelectorAll("#hs-list>li");
     for (var i = 0; i < entries.length; i++) {
@@ -181,7 +188,7 @@ async function updateHighscores(json){
         if (i==7)
             break;
         var entry = document.createElement("li");
-        entry.textContent = data[i]["name"] + " - " + data[i]["score"];
+        entry.textContent = data[i]["name"] + ", pkt: " + data[i]["score"] + ', data: ' + data[i]["date"];
         hsList.appendChild(entry);
     }
     await sendScore("https://jsonblob.com/api/jsonBlob/912090813069279232", json);
