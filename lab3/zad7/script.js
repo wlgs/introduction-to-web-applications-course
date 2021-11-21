@@ -1,6 +1,11 @@
-async function getA() {
+async function getData() {
     var res = await fetch("http://localhost:3000/cities");
     var json = await res.json();
+    return json;
+}
+
+async function getA(data) {
+    var json = data;
 
     var filtered = json.filter(function (entry) {
         return entry.province === "małopolskie";
@@ -21,36 +26,59 @@ async function getA() {
 
 }
 
-async function getB() {
-    var res = await fetch("http://localhost:3000/cities?name_like=.*(A|a).*a.*");
-    var json = await res.json();
+function checkDoubleA(word) {
+    var cnt = 0;
+    for (var i = 0; i < word.length; i++) {
+        letter = word.charAt(i)
+        if (letter == 'A' || letter == 'a')
+            cnt++;
+        if (cnt == 2)
+            break;
+    }
+    return cnt == 2
+}
+
+async function getB(data) {
+    var json = data
+
+    var filtered = json.filter(function (entry) {
+        return checkDoubleA(entry.name);
+    });
 
     var cities = ""
-    for (var prop in json) {
-        if (!json.hasOwnProperty(prop)) {
+
+    for (var prop in filtered) {
+        if (!filtered.hasOwnProperty(prop)) {
             continue;
         }
-        cities += json[prop].name + ", "
+        cities += filtered[prop].name + ", "
     }
     cities = cities.substr(0, cities.length - 2);
     cities = cities + "."
-
     document.getElementById("b-answer").textContent = cities;
 
 
 }
 
-async function getC() {
-    var res = await fetch("http://localhost:3000/cities?_sort=dentensity&_order=desc&_limit=5");
-    var json = await res.json();
-    var city = json[4].name + '.';
-    document.getElementById("c-answer").textContent = city;
+async function getC(data) {
+    var json = data;
+    var citiesArray = new Array;
+    for (var prop in json) {
+        citiesArray.push([json[prop].name, json[prop].people / json[prop].area]);
+    }
+    citiesArray.sort(function (a, b) {
+        if (a[1] < b[1])
+            return 1
+        else if (a[1] > b[1])
+            return -1
+        return 0
+    });
+    document.getElementById("c-answer").textContent = citiesArray[4][0];
 
 }
 
-async function getD() {
-    var res = await fetch("http://localhost:3000/cities");
-    var json = await res.json();
+async function getD(data) {
+    var json = data;
 
     var filtered = json.filter(function (entry) {
         return entry.people > 100000;
@@ -65,25 +93,21 @@ async function getD() {
     cities = cities.substr(0, cities.length - 2) + "."
 
     document.getElementById("d-answer").textContent = cities;
-    // var res = fetch("http://localhost:3000/cities",{
-    //     method: 'PATCH',
-    //     headers:{
-    //     'Content-Type':'application/json'
-    //     },
-    //     body: JSON.stringify(DATA_WHICH_WE_WANT_TO_SEND)
-    // })
 }
 
-async function getE() {
-    var res1 = await fetch("http://localhost:3000/cities?people_gte=80000");
-    var json1 = await res1.json();
-
-    var res2 = await fetch("http://localhost:3000/cities?people_lte=80000");
-    var json2 = await res2.json();
-
-    document.getElementById("e-answer1").textContent = "Miast powyżej 80000 mieszkańców jest: " + json1.length;
-    document.getElementById("e-answer2").textContent = "Miast poniżej 80000 mieszkańców jest: " + json2.length;
-    if (json1.length > json2.length) {
+async function getE(data) {
+    var json = data;
+    var cntMore = 0;
+    var cntLess = 0;
+    for (var prop in json) {
+        if (json[prop].people > 80000)
+            cntMore++;
+        else
+            cntLess++;
+    }
+    document.getElementById("e-answer1").textContent = "Miast powyżej 80000 mieszkańców jest: " + cntMore;
+    document.getElementById("e-answer2").textContent = "Miast poniżej 80000 mieszkańców jest: " + cntLess;
+    if (cntMore > cntLess) {
         document.getElementById("e-answer3").textContent = "Zatem: więcej jest miast powyżej 80k mieszkańców.";
     } else {
         document.getElementById("e-answer3").textContent = "Zatem: więcej jest miast poniżej 80k mieszkańców.";
@@ -91,26 +115,35 @@ async function getE() {
 
 }
 
-async function getF() {
-    var res = await fetch("http://localhost:3000/cities?township_like=P*");
-    var json = await res.json();
-
+async function getF(data) {
+    var json = data;
     var area_sum = 0;
-    json.forEach(element => {
-        area_sum += element.area;
-    });
 
-    document.getElementById("f-answer").textContent = area_sum / json.length;
+    var citiesP = new Array;
+    for (var prop in json) {
+        if (json[prop].township.charAt(0) == 'P')
+            citiesP.push([json[prop].area, json[prop].township]);
+    }
+    console.log(citiesP);
+    citiesPstr = ""
+    citiesP.forEach(element => {
+        area_sum += element[0];
+        citiesPstr += element[1] + ", "
+    });
+    citiesPstr = citiesPstr.substr(0, citiesPstr.length - 2) + "."
+    document.getElementById("f-answer").textContent = area_sum / citiesP.length;
+    document.getElementById("f-answer2").textContent = "Są to powiaty (zaczynające się na dużą literę P): " + citiesPstr
 
 }
 
 async function loadSite() {
-    getA();
-    getB();
-    getC();
-    getD();
-    getE();
-    getF();
+    var json = await getData();
+    getA(json);
+    getB(json);
+    getC(json);
+    getD(json);
+    getE(json);
+    getF(json);
 }
 
 loadSite();

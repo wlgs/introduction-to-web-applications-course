@@ -20,6 +20,13 @@ body{
     font-size:16px;
 }
 
+p{
+    position:absolute;
+    top:5px;
+    font-size:1.3rem;
+    text-align: center;
+    color:white;
+}
 #menu{
     visibility: hidden;
     padding:10px;

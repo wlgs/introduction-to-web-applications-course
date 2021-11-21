@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-kerning: auto;
+}
+
+html {
+    font-size: 10pt;
+    line-height: 1.4;
+    font-weight: 400;
+    font-family: 'Source Sans Pro', sans-serif;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}

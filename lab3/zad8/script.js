@@ -19,6 +19,7 @@ document.addEventListener('keydown', (e) => {
     else if (e.repeat && e.key=="ArrowUp"){
         if (curSizeInt >= 2000){
             bloon.textContent="💥"
+            bloon.classList.add("blown")
             exploded=true;
             return
         }
@@ -33,8 +34,10 @@ document.addEventListener('keydown', (e) => {
 
 bloon.addEventListener('contextmenu', function(e) {
     e.preventDefault();
+    if (bloon.classList.contains("blown"))
+        return;
     if (!e.ctrlKey)
-        return
+        return;
     popup.style.top = e.clientY + 'px';
     popup.style.left = e.clientX + 'px';
     var curSize = bloon.style.fontSize;
