@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --darkBlue: hsl(233, 26%, 24%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-kerning: auto;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: lightgray;
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    position: relative;
+    margin:30px;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 25%;
+    top: 120%;
+    width: 240px;
+    height: 5px;
+    background-color: blue;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+img {
+    border-radius: 50%;
+    height: 128px;
+    width: 128px;
+    margin: 20px;
+}
+
+h3 {
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+h4 {
+    color: lightskyblue;
+    font-size: 16px;
+    font-style: italic;
+}
+
+p {
+    text-align: center;
+    margin: 20px;
+}
+p#rolled{
+    color:gray;
+
+}
+button#random {
+    margin: 20px;
+    margin-top: 5px;
+    background-color: lightskyblue;
+    border: 2px solid lightblue;
+    padding: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+button#random:active {
+    background-color: green;
+}
+
+button#random:hover {
+    letter-spacing: 1.3px;
+    transition: 0.3s ease all;
+    border: 2px solid green;
+}
+
+span {
+    display: inline-block;
+    color: lightskyblue;
+    transform: translateX(0px);
+    transition: 0.3s ease all;
+    font-size: 20px;
+    margin: 5px;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+span:hover {
+    cursor: pointer;
+}
+
+span#left:hover {
+    transform: translateX(-5px);
+}
+
+span#right:hover {
+    transform: translateX(5px);
+}
+
+.slide-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 250px;
+    width: 30vw;
+    background-color: rgb(243, 243, 243);
+    border-radius: 5px;
+}

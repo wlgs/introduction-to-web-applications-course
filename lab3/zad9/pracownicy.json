@@ -1,0 +1,34 @@
+{
+    "pracownicy":[
+        {
+            "name": "1 Marcin Majkut",
+            "position": "Full Stack Web Developer",
+            "img": "monkey1.jpg",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque nulla ad ipsam eveniet vitae ut modi officia autem odio ipsa, sequi dicta et iusto nisi, sapiente aperiam rerum obcaecati error, deleniti incidunt voluptate explicabo aliquid itaque! Consectetur, explicabo earum ducimus quia numquam nobis, quae corrupti, quam nisi voluptas illum vitae ipsa minima aliquam praesentium quo? Laboriosam, culpa, natus corporis nihil doloribus asperiores ipsa id impedit, repudiandae et a quos cumque perferendis aspernatur sequi reiciendis hic. Vitae veniam soluta nisi voluptatibus?"
+        },
+        {
+            "name": "2 Robert Lewandowski",
+            "position": "Marketing Menager",
+            "img": "monkey2.png",
+            "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed obcaecati, maxime eligendi dolore consequatur facere odit ipsum eos iste ut in laborum quibusdam saepe iusto, nihil error asperiores unde corrupti recusandae consectetur veritatis eum, nemo enim non! Sed beatae exercitationem provident ex distinctio dicta officia et molestiae porro aliquid vel aperiam ducimus commodi ratione unde voluptatum obcaecati iure, vitae itaque earum quo. Dolore nesciunt deleniti iste ipsa recusandae possimus saepe, suscipit earum cum ea quae obcaecati sint ad consectetur voluptas!"
+        },
+        {
+            "name": "3 Mikołaj Wielgos",
+            "position": "Full Time Clown",
+            "img": "monkey3.png",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, beatae cum eveniet ratione est ducimus numquam veniam vitae maiores fugiat explicabo dolores, repellendus, reiciendis voluptatem corporis quisquam odio error voluptates ut itaque repellat exercitationem! Recusandae fugiat, quos harum aspernatur voluptatem mollitia laborum sapiente illo sint asperiores assumenda vel impedit inventore quisquam, error illum facere repellat, architecto nostrum quis vitae? Pariatur blanditiis sed incidunt dolores ab, sapiente illum asperiores quae deserunt quos amet mollitia nulla optio minima, saepe aspernatur a labore."
+        },
+        {
+            "name": "4 Andrzej Duda",
+            "position": "President",
+            "img": "monkey4.webp",
+            "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam natus accusantium quos exercitationem nihil quam quaerat iste, praesentium maiores laboriosam autem voluptatum ipsum labore tempora atque cumque inventore doloremque assumenda consequatur dolor maxime alias. Animi cumque quod vel corporis laborum repellat aliquid iste, aliquam, necessitatibus, delectus qui sapiente! Cum expedita nesciunt aperiam omnis voluptates ea consectetur optio, natus molestias perferendis! Et similique temporibus ipsam earum, voluptatibus quod unde dolores labore a error laboriosam, hic eius ipsum iure, minus porro distinctio."
+        },
+        {
+            "name": "5 Felix Lengyel",
+            "position": "Streamer",
+            "img": "monkey5.jpg",
+            "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, pariatur assumenda consequatur sapiente, veritatis id blanditiis aperiam adipisci, facere doloribus in necessitatibus. Nemo, accusamus incidunt! Nulla animi dolores libero delectus, nesciunt dicta assumenda aperiam quia corrupti voluptas, fugiat sequi? Adipisci nihil dignissimos quas blanditiis dolor cupiditate exercitationem. Cumque totam nam aliquam, accusantium officiis aperiam voluptates sapiente dicta. Magnam, fugit debitis! Aliquid incidunt, doloribus facere blanditiis possimus et veritatis, omnis odit non eum quaerat placeat neque, quo dignissimos nesciunt architecto officiis."
+        }
+    ]
+}

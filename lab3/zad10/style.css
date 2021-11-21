@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --darkBlue: hsl(233, 26%, 24%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-kerning: auto;
+    margin: 0;
+    padding:0;
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+}
+body{
+    width:100vw;
+    display:flex;
+    justify-content: center;
+    background-color:gray;
+}
+.container{
+    border:2px solid black;
+    width:50vw;
+    min-width:400px;
+    display:flex;
+    flex-direction: row;
+    background-color:white;
+}
+
+#left, #right{
+    display:flex;
+    flex-basis:50%;
+    flex-direction:column;
+    border:1px solid black;
+    padding:10px;
+}
+
+span{
+    display:inline-block;
+    margin:2px;
+    transition: 200ms ease all;
+
+}
+input{
+    margin:4px;
+}
+
+span.hoverable:hover{
+    cursor:pointer;
+    user-select: none;
+}
+
+h3{
+    text-align: center;
+    margin-bottom:10px;
+    border-bottom:2px solid gray;
+}
+.category{
+    display:flex;
+    flex-direction: column;
+    transition: 200ms ease all;
+}
+
+.ucategory{
+    margin-left:30px;
+    display:flex;
+    flex-direction:column;
+    transition: 200ms ease all;
+
+}
+
+.hidden{
+    visibility: hidden;
+    display:none;
+    transition: 200ms ease all;
+}
+
+.rotated{
+    transform: rotate(90deg);
+}

@@ -1,0 +1,10 @@
+{
+    "Samochody":[],
+    "Hulajnogi":[],
+    "Soki":[],
+    "Słodycze":["Wawel", "Michałki", "Czekolada", "Cukierki"],
+    "Rowery":["Laguna", "Spider", "Psycho"],
+    "Telefony":[],
+    "Gry":["CS:GO", "Tibia", "World of Warcraft", "Assasin's Creed"],
+    "Meble":["Szafa", "Komoda"]
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="score-container"><p id="score"></p></div>
+    <div id="name-container"><p id="name"></p></div>
+    <div id="health-container"><p id="health"></p></div>
+    <div id="usernameprompt-container" class="containerpurple">
+        <div id="usernameprompt" class="inner">
+            <h1>Enter your username</h1>
+    
+            <input type="text" id="username" name="username" required
+                pattern="([a-z]|[A-Z]|[0-9]){3,12}">
+            <button id="startgame">PLAY</button>
+            <p id="infouser">Min 3 characters</p>
+            <p id="infouser">Max 12 characters</p>
+            <p id="infouser">Only letters and numbers</p>
+        </div>
+    </div>
+
+    <div id="hs-container" class="containerpurple">
+        <div id="hs" class="inner">
+            <h1>You were defeated!</h1>
+            <h2>Leaderboards</h2>
+            <ol id="hs-list">
+            </ol>
+            <button id="startgame2">PLAY AGAIN!</button>
+        </div>
+    </div>
+
+    <div id="board">
+
+    </div>
+
+
+    <div id="customcursor">
+        <div id="dot"></div>
+    </div>
+    <script src="script.js"></script> 
+</body>
+</html>

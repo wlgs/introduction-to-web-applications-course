@@ -1,0 +1,10 @@
+{
+    "Samochody":["Fiat","Mercedes"],
+    "Hulajnogi":[],
+    "Soki":["Jupi", "Kubuś", "Hoop"],
+    "Słodycze":["Czekolada", "Cukierki"],
+    "Rowery":["Kross", "Merida"],
+    "Telefony":["Samsung S7", "Iphone"],
+    "Gry":["League of Legends", "Drakensang Online" ],
+    "Meble":["Szafa", "Komoda"]
+}
