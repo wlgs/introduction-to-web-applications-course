@@ -1,0 +1,30 @@
+  <h2>Podaj imię i nazwisko swojego ulubionego aktora!</h2>
+
+  <div class="container">
+    <div class="input-container">
+
+      <div>
+        <label for="imieNazwisko">Imie i nazwisko:</label>
+        <input type="text" name="imieNazwisko" #inputName />
+      </div>
+      <div>
+        <label for="tytulFilmu">Tytuł filmu:</label>
+        <input type="text" name="tytulFilmu" #inputTitle />
+      </div>
+
+      <button type="submit" (click)="showImage()">Znajdź aktora</button>
+      <p #actorInfo></p>
+
+    </div>
+
+    <img src="assets/smallgrab.jpg" alt="Small mall grab" #actorimg />
+  </div>
+
+
+<div class="info">
+  <p>2+2 = {{ 2 + 2 }}</p>
+  <p>imie.length = {{ imie.length }}</p>
+  <p>imie.toUpperCase() = {{ imie.toUpperCase() }}</p>
+  <p>2+3 = {{ 2+3}}</p>
+  <p>windowLocation = {{ windowLocation }}</p>
+</div>

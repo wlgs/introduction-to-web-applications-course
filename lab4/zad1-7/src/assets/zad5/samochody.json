@@ -1,0 +1,33 @@
+{
+    "Fiat":
+        {
+            "126p":["Czerwony", "Zielony"],
+            "500":["Czerwony", "Zielony"],
+            "Ducato":["Czerwony", "Zielony"],
+            "Panda":["Czerwony", "Zielony", "Niebieski"]
+        }
+    ,
+    "Audi":
+    {
+        "A1":["Czerwony", "Zielony", "Niebieski", "Czarny", "Srebrny"],
+        "A3":["Czerwony", "Zielony", "Niebieski", "Czarny", "Srebrny"],
+        "A5":["Czarny"],
+        "A7":["Srebrny"]
+    },
+    "BMW":
+    {
+        "M3":["Czerwony", "Zielony", "Niebieski", "Czarny", "Srebrny"],
+        "M3 Competition":["Czerwony", "Zielony", "Niebieski", "Czarny", "Srebrny"],
+        "E36":["Czarny"],
+        "X6":["Srebrny"],
+        "i3":["Srebrny"],
+        "i8":["Srebrny"],
+        "Z1":["Srebrny"]
+    },
+    "Mercedes-Benz":
+    {
+        "AMG GT":["Czarny", "Srebrny"],
+        "CLA":["Czerwony"],
+        "CLS":["Czarny"]
+    }
+}

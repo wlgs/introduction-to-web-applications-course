@@ -1,0 +1,19 @@
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+select{
+    width:100px;
+}
+
+h3{
+    margin:1em;
+}
+
+p{
+    margin:0.5em;
+    margin-top:1em;
+}

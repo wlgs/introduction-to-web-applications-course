@@ -1,0 +1,30 @@
+<div class="container">
+    <span>wersja ograniczona!</span>
+    <p>{{screenShow}}</p>
+    <div>
+        <button (click)="clickedButton($event)">1</button>
+        <button (click)="clickedButton($event)">2</button>
+        <button (click)="clickedButton($event)">3</button>
+    </div>
+    <div>
+        <button (click)="clickedButton($event)">4</button>
+        <button (click)="clickedButton($event)">5</button>
+        <button (click)="clickedButton($event)">6</button>
+    </div>
+    <div>
+        <button (click)="clickedButton($event)">7</button>
+        <button (click)="clickedButton($event)">8</button>
+        <button (click)="clickedButton($event)">9</button>
+    </div>
+    <div>
+        <button (click)="clickedButton($event)" [disabled]="operatorsDisabled">+</button>
+        <button (click)="clickedButton($event)" [disabled]="operatorsDisabled">-</button>
+        <button (click)="clickedButton($event)" [disabled]="operatorsDisabled">*</button>
+    </div>
+    <div>
+        <button (click)="clickedButton($event)">=</button>
+        <button (click)="clickedButton($event)">0</button>
+        <button (click)="clickedButton($event)">C</button>
+
+    </div>
+</div>

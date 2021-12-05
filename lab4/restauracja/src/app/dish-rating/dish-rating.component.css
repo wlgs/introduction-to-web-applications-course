@@ -1,0 +1,38 @@
+.rate{
+    display:flex;
+    flex-direction: row;
+    min-height:20px;
+    
+}
+p{
+    margin:0.1em;
+    padding:0.1em;
+}
+
+.like, .dislike{
+    user-select: none;
+}
+.positive{
+    color:green;
+    font-weight: bold;
+}
+
+.negative{
+    color:rgb(150, 0, 0);
+    font-weight: bold;
+}
+
+.like:hover, .dislike:hover{
+    cursor:pointer;
+}
+
+.like:hover{
+    outline:2px solid green;
+}
+
+.dislike:hover{
+    outline:2px solid red;
+}
+.summary{
+    font-weight: bold;
+}

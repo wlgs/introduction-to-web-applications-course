@@ -1,0 +1,32 @@
+.form-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:1em;
+}
+form{
+    display:flex;
+    flex-direction: column;
+    width:50%;
+}
+div{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+label,input{
+    font-size:1.2em;
+    margin:1em;
+}
+button{
+    width:50%;
+    padding:1em;
+    align-self: center;
+}
+
+input{
+    min-width:100px;
+}
+p{
+    text-align: center;
+}

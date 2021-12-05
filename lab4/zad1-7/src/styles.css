@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --darkBlue: hsl(233, 26%, 24%);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-kerning: auto;
+    margin: 0;
+    padding:0;
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    background-color:#3F3351;
+    width:100%;
+    color:white;
+}
