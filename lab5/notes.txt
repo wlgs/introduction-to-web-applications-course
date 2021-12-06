@@ -1,0 +1,4 @@
+w komponencie nie wywolujemy api do bazy danych
+to ma być robione przez S E R W I S Y
+komponenty są do prezentacji/wyświetlania
+jeżeli musimy przetworzyć dane -> S E R W I S
