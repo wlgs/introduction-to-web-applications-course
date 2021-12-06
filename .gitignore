@@ -4,6 +4,7 @@
 *.zip
 *.rar
 *.7zip
+/test
 
 # compiled output
 /dist
