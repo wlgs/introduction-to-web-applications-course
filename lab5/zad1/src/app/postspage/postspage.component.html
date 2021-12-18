@@ -1,0 +1,34 @@
+<div class="center">
+    <h1>Dodaj post</h1>
+    <div class="wrapper">
+        <form [formGroup]="newPostForm">
+            <div>
+                <label for="title">Title: </label>
+                <input type="text" formControlName="title">
+            </div>
+    
+            <div>
+                <label for="text">Text: </label>
+                <input type="text" formControlName="text">
+            </div>
+    
+            <div>
+                <label for="name">Name: </label>
+                <input type="text" formControlName="name">
+            </div>
+            <button class="sendbtn" (click)="sendData()">Send</button>
+        </form>
+        <p>Post doda się jako id=0, userid=0</p>
+    </div>
+
+    <h1>Posty</h1>
+    <div *ngIf="posts!=undefined" >
+        <div class="singlepost" *ngFor="let post of posts">
+            <h3>UserID: {{post.userId}}, PostID:{{post["id"]}}</h3>
+            <h3>{{post["title"]}}</h3>
+            <p>{{post["body"]}}</p>
+        </div>
+    </div>
+
+
+</div>

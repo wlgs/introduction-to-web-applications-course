@@ -1,0 +1,16 @@
+.photo{
+    border:1px solid black;
+    margin:1em;
+    padding:1em;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+img{
+    margin:1em;
+}
+
+
+h1,h3{
+    text-align: center;
+}

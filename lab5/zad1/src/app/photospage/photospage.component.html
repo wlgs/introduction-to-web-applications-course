@@ -1,0 +1,15 @@
+<h1>Photos</h1>
+<h3>(showing only 25 images)</h3>
+<h1 *ngIf="photos.length==0">Loading...</h1>
+<ng-container *ngIf="photos!=undefined" >
+    <ng-container *ngFor="let photo of photos">
+        <ng-container *ngIf="photo.id<=25">
+            <div class="photo">
+                <h3>AlbumID: {{photo.albumId}}, ImageID:{{photo.id}}</h3>
+                <p>Naciśnij na obrazek aby odtworzyć pełne zdjęcie</p>
+                <a routerLink="/photos/{{photo.id}}"><img src={{photo.thumbnailUrl}} alt=""></a>
+            </div>
+
+        </ng-container>
+    </ng-container>
+</ng-container>
