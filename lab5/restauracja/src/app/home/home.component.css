@@ -1,0 +1,25 @@
+h1,h2{
+    text-align: center;
+}
+
+h1{
+    font-size:3em;
+    margin:1em;
+}
+h2{
+    margin:0.6em;
+}
+
+.wrapper{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.info{
+    text-align: center;
+
+}
+img{
+    margin:1em;
+}

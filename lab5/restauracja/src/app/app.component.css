@@ -1,0 +1,19 @@
+.centered{
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+
+main{
+    background-color: var(--colorBackground2);
+    border-radius:10px;
+    color:black;
+    min-width:300px;
+    max-width:1000px;
+    margin: 3em 2em;
+    padding:1em;
+}
+nav{
+    position:sticky;
+    top:0;
+}
