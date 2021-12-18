@@ -10,6 +10,7 @@ import { DishAddComponent } from './dish-add/dish-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DishRatingComponent } from './dish-rating/dish-rating.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     HomeComponent,
     DishAddComponent,
     DishRatingComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

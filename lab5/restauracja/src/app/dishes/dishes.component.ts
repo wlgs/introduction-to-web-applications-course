@@ -10,7 +10,7 @@ export class DishesComponent implements OnInit {
   constructor() { }
 
   dishes: Dish[] = []
-
+  cart: Dish[] = []
 
   ngOnInit(): void {
     fetch('./assets/data/dishes.json').then(res => res.json())
@@ -34,15 +34,32 @@ export class DishesComponent implements OnInit {
       });
   }
 
+
+  getCartValue(): number{
+    let s = 0
+    for (let dish of this.cart){
+      s+= dish.price
+    }
+    return s
+  }
+
   addClick(dish: Dish) {
     if (dish.amount < dish.maxperday)
+    {
       dish.amount += 1
+      this.cart.push(dish)
+    }
   }
 
   removeClick(dish: Dish) {
     console.log(dish)
     if (dish.amount >= 1)
+    {
+      const index = this.cart.indexOf(dish);
+      if (index > -1)
+        this.cart.splice(index, 1);
       dish.amount -= 1
+    }
   }
 
   getOrderedAmount(dishes: Dish[]): number {
@@ -77,13 +94,14 @@ export class DishesComponent implements OnInit {
     return minDish
   }
 
-  deleteDish(dish: Dish) {
-    for (var _i = 0; _i < this.dishes.length; _i++) {
-      if (this.dishes[_i] == dish) {
-        this.dishes.splice(_i, 1)
-        return
-      }
+  deleteDish(idx: number) {
+    let index = this.cart.indexOf(this.dishes[idx])
+    while (index >= 0){
+      this.cart.splice(index, 1);
+      index = this.cart.indexOf(this.dishes[idx])
     }
+    this.dishes.splice(idx, 1)
+
   }
 
 
