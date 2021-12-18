@@ -1,25 +1,18 @@
 <app-dish-add (formSubmitEvent)="formSubmitEventHandler($event)">
-
 </app-dish-add>
 
 <div class="order-details">
-  <h2
-    [ngStyle]="{
+  <h2 [ngStyle]="{
       'background-color': getOrderedAmount(dishes) > 10 ? 'blue' : 'orange'
-    }"
-  >
+    }">
     Ilość zamówionych dań: {{ getOrderedAmount(dishes) }}
   </h2>
 </div>
 <div class="dishes" *ngIf="dishes != []">
-  <div
-    class="dish"
-    [ngClass]="{
+  <div class="dish" [ngClass]="{
       'most-expensive': dish.price == getMaxPriceDish(dishes).price,
       'least-expensive': dish.price == getMinPriceDish(dishes).price
-    }"
-    *ngFor="let dish of dishes"
-  >
+    }" *ngFor="let dish of dishes">
     <img src="{{ dish.imagelink }}" alt="{{ dish.name }}" />
     <h3>{{ dish.name | uppercase }}</h3>
     <p class="type">kuchnia {{ dish.type | uppercase }}, {{ dish.category }}</p>
@@ -28,22 +21,16 @@
     <div class="bottom">
       <span class="price">{{ dish.currency }}{{ dish.price }}</span>
       <div class="btn-container">
-        <div
-          *ngIf="dish.amount < dish.maxperday"
-          class="addBasket btn"
-          (click)="addClick(dish)"
-        >
+        <div *ngIf="dish.amount < dish.maxperday" class="addBasket btn" (click)="addClick(dish)">
           ➕
         </div>
         <div class="removeBasket btn" (click)="removeClick(dish)">➖</div>
       </div>
     </div>
 
-
-    
     <div class="bottom-info">
-      <app-dish-rating (ratingChanged)="ratingEventHandler(dish,$event)" 
-      [dishLikes]="dish.likes" [dishDislikes]="dish.dislikes"></app-dish-rating>
+      <app-dish-rating (ratingChanged)="ratingEventHandler(dish, $event)" [dishLikes]="dish.likes"
+        [dishDislikes]="dish.dislikes"></app-dish-rating>
       <p class="amount-info">ilość: {{ dish.amount }}</p>
     </div>
     <p *ngIf="dish.maxperday - dish.amount <= 3" class="bottom-info-text">
