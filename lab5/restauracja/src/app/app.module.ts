@@ -11,6 +11,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DishRatingComponent } from './dish-rating/dish-rating.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { CartComponent } from './cart/cart.component';
+import { SingledishComponent } from './singledish/singledish.component';
+import { DishrateComponent } from './dishrate/dishrate.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { CartComponent } from './cart/cart.component';
     DishAddComponent,
     DishRatingComponent,
     PagenotfoundComponent,
-    CartComponent
+    CartComponent,
+    SingledishComponent,
+    DishrateComponent
   ],
   imports: [
     BrowserModule,

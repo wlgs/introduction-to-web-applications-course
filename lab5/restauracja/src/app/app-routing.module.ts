@@ -6,9 +6,11 @@ import { DishAddComponent } from './dish-add/dish-add.component';
 import { DishesComponent } from './dishes/dishes.component';
 import { HomeComponent } from './home/home.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { SingledishComponent } from './singledish/singledish.component';
 
 const routes: Routes = [
   {path: 'dishes', component: DishesComponent},
+  {path: 'dishes/:id', component: SingledishComponent},
   {path: 'addnewdish', component: DishAddComponent},
   {path: 'cart', component: CartComponent},
   {path: '', component: HomeComponent},

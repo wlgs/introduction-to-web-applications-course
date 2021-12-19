@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
-
+import { Dish } from '../IDish'
 @Component({
   selector: 'app-dish-add',
   templateUrl: './dish-add.component.html',
@@ -80,19 +80,4 @@ export class DishAddComponent implements OnInit {
     this.showOk = true;
     this.dishAddForm.reset();
   }
-}
-
-export interface Dish {
-  name: string;
-  type: string;
-  category: string;
-  ingredients: string;
-  maxperday: number;
-  price: number;
-  shortdesc: string;
-  imagelink: string;
-  amount: number;
-  currency: string;
-  likes: number;
-  dislikes: number;
 }

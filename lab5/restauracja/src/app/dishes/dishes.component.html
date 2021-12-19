@@ -1,5 +1,5 @@
-<h2><a routerLink="/addnewdish">Dodaj nowe danie</a></h2>
-<h2><a routerLink="/cart">Podgląd koszyka</a></h2>
+<h2><a routerLink="/addnewdish" class="infobtn">Dodaj nowe danie</a></h2>
+<h2><a routerLink="/cart" class="infobtn">Podgląd koszyka</a></h2>
 <h2>W koszyku:  ${{getCartValue() | number: '1.0-2'}}</h2>
 <div class="order-details">
   <h2 [ngStyle]="{
@@ -13,11 +13,12 @@
       'most-expensive': dish.price == getMaxPriceDish(dishes).price,
       'least-expensive': dish.price == getMinPriceDish(dishes).price
     }" *ngFor="let dish of dishes; index as idx">
-    <img src="{{ dish.imagelink }}" alt="{{ dish.name }}" />
+    <a routerLink="/dishes/{{dish.id}}"><img src="{{ dish.imagelink[0] }}" alt="{{ dish.name }}" /></a>
     <h3>{{ dish.name | uppercase }}</h3>
     <p class="type">kuchnia {{ dish.type | uppercase }}, {{ dish.category }}</p>
-    <p class="desc">{{ dish.shortdesc }}</p>
-    <p class="ingr">Składniki: {{ dish.ingredients }}</p>
+    <a routerLink="/dishes/{{dish.id}}"><p class="infobtn">Więcej szczegółów</p></a>
+    <!-- <p class="desc">{{ dish.shortdesc }}</p>
+    <p class="ingr">Składniki: {{ dish.ingredients }}</p> -->
     <div class="bottom">
       <span class="price">{{ dish.currency }}{{ dish.price }}</span>
       <div class="btn-container">

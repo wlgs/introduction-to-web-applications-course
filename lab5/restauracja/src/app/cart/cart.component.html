@@ -1,1 +1,6 @@
-<p>cart works!</p>
+<ng-container *ngIf="cart.length>0">
+    <div *ngFor="let item of cart; index as idx">
+        <h3>{{idx+1}}. {{item.name}} - ${{item.price}}</h3>
+    </div>
+    <h2>Razem: ${{getCartSum() | number: '1.0-2'}}</h2>
+</ng-container>

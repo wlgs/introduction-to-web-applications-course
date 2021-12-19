@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
-
+import { BasketInfoService } from '../basket-info.service';
+import { DishServiceService } from '../dish-service.service';
+import { Dish } from '../IDish'
 @Component({
   selector: 'app-dishes',
   templateUrl: './dishes.component.html',
@@ -7,31 +9,18 @@ import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular
 })
 export class DishesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private basketService: BasketInfoService,
+    private dishService: DishServiceService) { }
 
   dishes: Dish[] = []
   cart: Dish[] = []
 
   ngOnInit(): void {
-    fetch('./assets/data/dishes.json').then(res => res.json())
-      .then(json => {
-        for (let p in json["Dishes"]) {
-          this.dishes.push({
-            name: json["Dishes"][p]["Name"],
-            type: json["Dishes"][p]["Type"],
-            category: json["Dishes"][p]["Category"],
-            ingredients: json["Dishes"][p]["Ingredients"],
-            maxperday: json["Dishes"][p]["MaxPerDay"],
-            price: json["Dishes"][p]["Price"],
-            shortdesc: json["Dishes"][p]["ShortDesc"],
-            imagelink: json["Dishes"][p]["ImageLink"],
-            amount: 0,
-            currency: json["Dishes"][p]["Currency"],
-            likes: json["Dishes"][p]["Likes"],
-            dislikes: json["Dishes"][p]["Dislikes"]
-          } as Dish)
-        }
-      });
+    this.dishes = this.dishService.getDishes()
+  }
+
+  ngOnDestroy() {
+    this.basketService.setBasket(this.cart)
   }
 
 
@@ -119,21 +108,4 @@ export class DishesComponent implements OnInit {
   }
 
 
-}
-
-
-
-export interface Dish {
-  name: string;
-  type: string;
-  category: string;
-  ingredients: string;
-  maxperday: number;
-  price: number;
-  shortdesc: string;
-  imagelink: string;
-  amount: number;
-  currency: string;
-  likes: number;
-  dislikes: number;
 }
