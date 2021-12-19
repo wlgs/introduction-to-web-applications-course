@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { DishServiceService } from '../dish-service.service';
+import { first, Subscription } from 'rxjs';
+import { FireBaseServiceService } from '../fire-base-service.service';
 import { Dish } from '../IDish';
 
 @Component({
@@ -12,17 +12,42 @@ import { Dish } from '../IDish';
 export class SingledishComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
-    private dishService: DishServiceService) { }
+    private fb: FireBaseServiceService) { }
   private subscription: Subscription | undefined
 
   id: number = -1
   dish: Dish[] = []
   selected: number = 0
   reviews: review[] = []
+
   ngOnInit(): void {
     this.subscription = this.route.params.subscribe(params => {
       this.id = params['id']
-      this.dish = this.dishService.getDishById(this.id)
+      this.fb.getDishes().pipe(first()).subscribe((dishes: any[]) => {
+        let dish: any
+        for (let d of dishes){
+            if (d.id==this.id){
+              dish = d
+              break
+            }
+        }
+        console.log(dish)
+        console.log(this.id)
+        this.dish.push({
+          id: dish.id,
+          name: dish.Name,
+          type: dish.Type,
+          category: dish.Category,
+          ingredients: dish.Ingredients,
+          maxperday: dish.MaxPerDay,
+          price: dish.Price,
+          shortdesc: dish.ShortDesc,
+          imagelink: dish.ImageLink,
+          amount: 0,
+          currency: dish.Currency,
+          likes: dish.Likes,
+          dislikes: dish.Dislikes} as Dish)
+      })
     })
     
   }

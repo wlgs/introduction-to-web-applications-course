@@ -18,6 +18,7 @@
 
 .menu-item{
     padding:1em;
+    border-radius:5px;
     background-color:rgb(104, 48, 48);
     margin:0.4em;
     color:#EEEEEE;
@@ -45,6 +46,7 @@ h1{
 
 .logo{
     background-color:rgb(104, 48, 48);
+    border-radius:5px;
     user-select: none;
     color:#EEEEEE;
     margin:0.4em;
@@ -63,6 +65,8 @@ h1{
 }
 
 .active-link{           
+    background-color:rgb(148, 91, 91);
     color:black;
+    font-weight: bold;
     transition:300ms ease all
 }

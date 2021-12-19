@@ -53,7 +53,7 @@
       Pozostało {{ dish.maxperday - dish.amount }} dań!
     </p>
     <p *ngIf="dish.maxperday - dish.amount > 3" class="bottom-info-text"></p>
-    <div class="deleteBtn" (click)="deleteDish(idx)">USUŃ DANIE</div>
+    <div class="deleteBtn" (click)="deleteDish(dish.id)">USUŃ DANIE</div>
   </div>
 
 

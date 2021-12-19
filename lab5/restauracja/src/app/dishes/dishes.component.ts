@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { BasketInfoService } from '../basket-info.service';
-import { DishServiceService } from '../dish-service.service';
+import { FireBaseServiceService } from '../fire-base-service.service';
 import { Dish } from '../IDish'
 @Component({
   selector: 'app-dishes',
@@ -10,22 +11,44 @@ import { Dish } from '../IDish'
 export class DishesComponent implements OnInit {
 
   constructor(private basketService: BasketInfoService,
-    private dishService: DishServiceService) { }
+    private fb: FireBaseServiceService) { }
 
-  dishes: Dish[] = []
+  dishes: any[] = []
   cart: Dish[] = []
 
   amountToShow: number = 5;
   currentPage: number = 0;
 
 
+  dishesSub: Subscription | undefined
+
   ngOnInit(): void {
-    this.dishes = this.dishService.getDishes()
-    this.cart = this.basketService.getBasket()
+    this.dishesSub = this.fb.getDishes().subscribe(change => {
+      this.dishes = []
+      for (let dish of change){
+        this.dishes.push({
+          id: dish.id,
+          name: dish.Name,
+          type: dish.Type,
+          category: dish.Category,
+          ingredients: dish.Ingredients,
+          maxperday: dish.MaxPerDay,
+          price: dish.Price,
+          shortdesc: dish.ShortDesc,
+          imagelink: dish.ImageLink,
+          amount: 0,
+          currency: dish.Currency,
+          likes: dish.Likes,
+          dislikes: dish.Dislikes,
+        } as Dish)
+      }
+    })
+    this.cart = []
   }
 
   ngOnDestroy() {
     this.basketService.setBasket(this.cart)
+    this.dishesSub?.unsubscribe()
   }
 
 
@@ -109,8 +132,7 @@ export class DishesComponent implements OnInit {
       this.cart.splice(index, 1);
       index = this.cart.indexOf(this.dishes[idx])
     }
-    this.dishes.splice(idx, 1)
-
+    this.fb.removeDish(idx)
   }
 
 

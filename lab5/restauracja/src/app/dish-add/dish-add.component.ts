@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { DishServiceService } from '../dish-service.service';
+import { FireBaseServiceService } from '../fire-base-service.service';
 import { Dish } from '../IDish'
 @Component({
   selector: 'app-dish-add',
@@ -9,7 +9,8 @@ import { Dish } from '../IDish'
   styleUrls: ['./dish-add.component.css'],
 })
 export class DishAddComponent implements OnInit {
-  constructor(private dishService: DishServiceService) { }
+  constructor(
+    private fb: FireBaseServiceService) { }
 
   ngOnInit(): void { }
 
@@ -61,20 +62,21 @@ export class DishAddComponent implements OnInit {
       return;
     }
     let newDish = {
+      id: this.fb.getNextid(),
       name: this.dishAddForm.get('dishname')!.value,
       type: this.dishAddForm.get('dishtype')!.value,
       category: this.dishAddForm.get('dishcategory')!.value,
       ingredients: this.dishAddForm.get('dishingredients')!.value,
       maxperday: this.dishAddForm.get('dishmaxperday')!.value,
-      price: this.dishAddForm.get('dishprice')!.value,
+      price: parseFloat(this.dishAddForm.get('dishprice')!.value),
       shortdesc: this.dishAddForm.get('dishshortdesc')!.value,
-      imagelink: this.dishAddForm.get('dishimagelink')!.value,
+      imagelink: new Array<string>(this.dishAddForm.get('dishimagelink')!.value),
       amount: 0,
       currency: '$',
       likes: 0,
       dislikes: 0,
     } as Dish;
-    this.dishService.addDish(newDish);
+    this.fb.addDish(newDish);
     this.showError = false;
     this.showOk = true;
     this.dishAddForm.reset();
