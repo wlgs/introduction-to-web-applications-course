@@ -15,10 +15,7 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.cart = this.basketService.getBasket()
   }
-  
-  ngOnDestroy() {
-    this.cart = []
-  }
+
 
   getCartSum(): number{
     let s = 0

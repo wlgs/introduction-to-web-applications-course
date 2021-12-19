@@ -15,12 +15,32 @@ export class DishesComponent implements OnInit {
   dishes: Dish[] = []
   cart: Dish[] = []
 
+  amountToShow: number = 5;
+  currentPage: number = 0;
+
+
   ngOnInit(): void {
     this.dishes = this.dishService.getDishes()
+    this.cart = this.basketService.getBasket()
   }
 
   ngOnDestroy() {
     this.basketService.setBasket(this.cart)
+  }
+
+
+  createRange(n: number): any[]{
+    return new Array(n)
+  }
+
+  changePage(n: number){
+    this.currentPage = n
+  }
+
+
+  setAmountToShow(amount: number){
+    this.amountToShow = amount;
+    console.log(this.amountToShow)
   }
 
 

@@ -18,6 +18,7 @@ export class SingledishComponent implements OnInit {
   id: number = -1
   dish: Dish[] = []
   selected: number = 0
+  reviews: review[] = []
   ngOnInit(): void {
     this.subscription = this.route.params.subscribe(params => {
       this.id = params['id']
@@ -46,4 +47,13 @@ export class SingledishComponent implements OnInit {
     }
   }
 
+  addReview(newReview: review){
+    this.reviews.push(newReview);
+  }
+
+}
+interface review {
+  nick: string;
+  date: string;
+  review: string;
 }

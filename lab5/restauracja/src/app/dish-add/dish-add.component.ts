@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { DishServiceService } from '../dish-service.service';
 import { Dish } from '../IDish'
 @Component({
   selector: 'app-dish-add',
@@ -8,11 +9,9 @@ import { Dish } from '../IDish'
   styleUrls: ['./dish-add.component.css'],
 })
 export class DishAddComponent implements OnInit {
-  constructor() { }
+  constructor(private dishService: DishServiceService) { }
 
   ngOnInit(): void { }
-
-  @Output() formSubmitEvent = new EventEmitter<Dish>();
 
   dishAddForm = new FormGroup({
     dishname: new FormControl('', [
@@ -75,7 +74,7 @@ export class DishAddComponent implements OnInit {
       likes: 0,
       dislikes: 0,
     } as Dish;
-    this.formSubmitEvent.emit(newDish);
+    this.dishService.addDish(newDish);
     this.showError = false;
     this.showOk = true;
     this.dishAddForm.reset();

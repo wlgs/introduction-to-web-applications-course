@@ -9,15 +9,23 @@
     <div class="wrapper">
         <h1>{{dish[0].name}}</h1>
         <h2 class="shdesc">kuchnia {{ dish[0].type}}, {{ dish[0].category }}</h2>
-        <img src={{dish[0].imagelink[selected]}}>
+            <img src={{dish[0].imagelink[selected]}}>
         <p>Inne zdjęcia potrawy</p>
         <div class="photoselect">
-            <span (click)="nextPhoto()"><</span>
-            <span (click)="previousPhoto()">></span>
+            <span class="np" (click)="nextPhoto()"><</span>
+            <span class="np" (click)="previousPhoto()">></span>
         </div>
         <p class="desc">{{ dish[0].shortdesc }}</p>
         <p class="ingr">Składniki: {{ dish[0].ingredients }}</p>
         <h2>Dostępny u nas tylko za <span class="price">${{dish[0].price}}</span></h2>
     </div>
-    <app-dishrate></app-dishrate>
+    <h2>Recenzje</h2>
+    <div class="review" *ngFor="let review of reviews">
+        <span class="strong">Użytkownik: </span><span>{{review.nick}}</span>
+        <p></p>
+        <span class="strong">Data: </span><span>{{review.date}}</span>
+        <p></p>
+        <span class="strong">Treść: </span><span>{{review.review}}</span>
+    </div>
+    <app-dishrate (newReviewEvent)="addReview($event)"></app-dishrate>
 </ng-container>

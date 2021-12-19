@@ -1,0 +1,37 @@
+.form-container{
+    margin-top:1em;
+    padding-top:1em;
+    border-top: 2px solid rgb(165, 165, 165);
+}
+
+h2{
+    text-align: center;
+    margin-bottom:1em;
+}
+
+form{
+    display:flex;
+    flex-direction :column;
+    width:100%;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    padding:1em;
+}
+input{
+    height:2em;
+}
+textarea{
+    padding:1em;
+    margin-bottom:1em;
+}
+
+.errors{
+    font-weight: bold;
+    color:rgb(161, 35, 35);
+    font-style: italic;
+    text-align: center;
+    min-height:4em;
+}

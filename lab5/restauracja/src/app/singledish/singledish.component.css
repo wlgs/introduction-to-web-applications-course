@@ -11,6 +11,7 @@ h1{
 }
 h2{
     margin:1em;
+    text-align: center;
 }
 h2.shdesc{
     color:rgb(61, 61, 61);
@@ -21,6 +22,7 @@ img{
     margin:1em;
     max-width:100%;
     border-radius:20px;
+    width: 80%;
 }
 .desc{
     font-size:2em;
@@ -61,6 +63,7 @@ img{
     width:100%;
 }
 
+
 a{
     color:inherit;
     text-decoration: inherit;
@@ -73,10 +76,19 @@ a{
     margin-top:-0.2em;
 }
 
-span:hover{
+span.np:hover{
     color:white;
     transition: 300ms ease all;
 }
-span{
+span.np{
     transition: 300ms ease all;
+}
+
+.review{
+    border:1px solid black;
+    margin:1em;
+}
+.strong{
+    font-weight: bold;
+    font-size:1.2em;
 }

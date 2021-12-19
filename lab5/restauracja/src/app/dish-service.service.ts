@@ -9,13 +9,12 @@ export class DishServiceService {
 
   constructor() { }
 
-
+  dishes: Dish[] = []
   getDishes(): Dish[]{
-    let dishes: Dish[] = []
     fetch('./assets/data/dishes.json').then(res => res.json())
       .then(json => {
         for (let p in json["Dishes"]) {
-          dishes.push({
+          this.dishes.push({
             id: json["Dishes"][p]["id"],
             name: json["Dishes"][p]["Name"],
             type: json["Dishes"][p]["Type"],
@@ -34,7 +33,7 @@ export class DishServiceService {
         
       }
       );
-      return dishes
+      return this.dishes
   }
 
   getDishById(idx: number): Dish[]{
@@ -59,5 +58,9 @@ export class DishServiceService {
       }
       );
       return dish
+  }
+
+  addDish(dish: Dish){
+    this.dishes.push(dish);
   }
   }
