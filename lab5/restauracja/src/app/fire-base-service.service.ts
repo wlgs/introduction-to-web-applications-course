@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
-import { map, Observable } from 'rxjs';
+import { first, map, Observable } from 'rxjs';
 import { Dish } from './IDish';
 
 @Injectable({
@@ -12,7 +12,7 @@ export class FireBaseServiceService {
   private nextId: number | undefined
   constructor(private db: AngularFireDatabase) { 
     this.dishes = this.db.list('Dishes').valueChanges();
-    this.db.list('Dishes', ref=> ref.orderByChild('id').limitToLast(1)).valueChanges().subscribe((res: any[]) => {this.nextId = res.pop().id+1})
+    this.db.list('Dishes', ref=> ref.orderByChild('id').limitToLast(1)).valueChanges().subscribe((res: any[]) => {this.nextId = res[0]?.id+1})
   }
 
   getDishes(): Observable<any[]>{
@@ -38,7 +38,7 @@ export class FireBaseServiceService {
 
   removeDish(idx: number){
     console.log(idx)
-    this.db.list('Dishes').snapshotChanges().subscribe((items:any) =>{
+    this.db.list('Dishes').snapshotChanges().pipe(first()).subscribe((items:any) =>{
       for(let i of items){
         if(i.payload.val().id==idx)
         {
@@ -47,8 +47,42 @@ export class FireBaseServiceService {
         }
       }
     } )
+  }
 
+  changePriceOfDish(idx: number, price: number){
+    this.db.list('Dishes').snapshotChanges().pipe(first()).subscribe((items:any) =>{
+      for(let i of items){
+        if(i.payload.val().id==idx)
+        {
+          console.log(i.payload.key)
+          this.db.list('Dishes').update(i.payload.key, {Price: price})
+        }
+      }
+    } )
+  }
 
+  changeNameOfDish(idx: number, name: string){
+    this.db.list('Dishes').snapshotChanges().pipe(first()).subscribe((items:any) =>{
+      for(let i of items){
+        if(i.payload.val().id==idx)
+        {
+          console.log(i.payload.key)
+          this.db.list('Dishes').update(i.payload.key, {Name: name})
+        }
+      }
+    } )
+  }
+
+  changeDescOfDish(idx: number, desc: string){
+    this.db.list('Dishes').snapshotChanges().pipe(first()).subscribe((items:any) =>{
+      for(let i of items){
+        if(i.payload.val().id==idx)
+        {
+          console.log(i.payload.key)
+          this.db.list('Dishes').update(i.payload.key, {ShortDesc: desc})
+        }
+      }
+    } )
   }
   
   getNextid(){
