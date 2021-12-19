@@ -76,6 +76,15 @@ export class SingledishComponent implements OnInit {
     this.reviews.push(newReview);
   }
 
+  ratingEventHandler(dish: Dish, ev: any) {
+    if (ev == 1) {
+      dish.likes += 1
+    }
+    else {
+      dish.dislikes += 1
+    }
+  }
+
 }
 interface review {
   nick: string;

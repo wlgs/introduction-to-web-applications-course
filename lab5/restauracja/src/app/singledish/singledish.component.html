@@ -20,6 +20,10 @@
         <h2>Dostępny u nas tylko za <span class="price">${{dish[0].price}}</span></h2>
     </div>
     <h2>Recenzje</h2>
+    <div class="center">
+        <app-dish-rating (ratingChanged)="ratingEventHandler(dish[0], $event)" [dishLikes]="dish[0].likes"
+        [dishDislikes]="dish[0].dislikes"></app-dish-rating>
+    </div>
     <div class="review" *ngFor="let review of reviews">
         <span class="strong">Użytkownik: </span><span>{{review.nick}}</span>
         <p></p>
@@ -27,5 +31,7 @@
         <p></p>
         <span class="strong">Treść: </span><span>{{review.review}}</span>
     </div>
+
+
     <app-dishrate (newReviewEvent)="addReview($event)"></app-dishrate>
 </ng-container>
