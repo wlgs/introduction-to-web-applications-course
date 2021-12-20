@@ -1,0 +1,1 @@
+get single time value -> .pipe(map(val=> ))
