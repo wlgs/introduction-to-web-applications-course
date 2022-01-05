@@ -1,0 +1,9 @@
+<div class="rate">
+    <p #rate class="like" (click)="rattingApplied('+')" >👍</p>
+    <p class="amount positive">{{dishLikes}}</p>
+    <p #rate class="dislike" (click)="rattingApplied('-')">👎</p>
+    <p class="amount negative">{{dishDislikes}}</p>
+    <p> | </p>
+    <p class="summary" *ngIf="dishDislikes+dishLikes!=0" [ngStyle]="{
+      'color': (dishLikes/(dishDislikes+dishLikes)>=0.50) ? 'green' : 'rgb(150, 0, 0)'}">{{dishLikes/(dishDislikes+dishLikes)*100 | number: '1.0-0'}}%</p>
+  </div>

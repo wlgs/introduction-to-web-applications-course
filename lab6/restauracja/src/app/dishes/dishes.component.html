@@ -1,0 +1,66 @@
+<h2><a routerLink="/addnewdish" class="infobtn">Dodaj nowe danie</a></h2>
+<h2><a routerLink="/cart" class="infobtn">Podgląd koszyka</a></h2>
+
+<div class="paginate">
+  <span>Pokaż na stronie </span>
+  <span class="infobtn" [ngClass]="{
+    'infobtn-checked': amountToShow == 5}" (click)="setAmountToShow(5)">5</span>
+  <span class="infobtn" [ngClass]="{
+    'infobtn-checked': amountToShow == 10}" (click)="setAmountToShow(10)">10</span>
+  <span class="infobtn" [ngClass]="{
+    'infobtn-checked': amountToShow == 20}"(click)="setAmountToShow(20)">20</span>
+</div>
+
+<h2>W koszyku:  ${{getCartValue() | number: '1.0-2'}}</h2>
+
+<div class="order-details">
+  <h2 [ngStyle]="{
+      'background-color': getOrderedAmount(dishes) > 10 ? 'blue' : 'orange'
+    }">
+    Ilość zamówionych dań: {{ getOrderedAmount(dishes) }}
+  </h2>
+</div>
+<div class="dishes" *ngIf="dishes != []">
+  
+  <div class="dish" [ngClass]="{
+      'most-expensive': dish.price == getMaxPriceDish(dishes).price,
+      'least-expensive': dish.price == getMinPriceDish(dishes).price
+    }" *ngFor="let dish of dishes | slice:currentPage*amountToShow ; index as idx" [ngStyle]="{
+      'display': amountToShow > idx ? 'block' : 'none'}">
+    
+    <a routerLink="/dishes/{{dish.id}}"><img src="{{ dish.imagelink[0] }}" alt="{{ dish.name }}" /></a>
+    <h3>{{ dish.name | uppercase }}</h3>
+    <p class="type">kuchnia {{ dish.type | uppercase }}, {{ dish.category }}</p>
+    <a routerLink="/dishes/{{dish.id}}"><p class="infobtn">Więcej szczegółów</p></a>
+    <!-- <p class="desc">{{ dish.shortdesc }}</p>
+    <p class="ingr">Składniki: {{ dish.ingredients }}</p> -->
+    <div class="bottom">
+      <span class="price">{{ dish.currency }}{{ dish.price }}</span>
+      <div class="btn-container">
+        <div *ngIf="dish.amount < dish.maxperday" class="addBasket btn" (click)="addClick(dish)">
+          ➕
+        </div>
+        <div class="removeBasket btn" (click)="removeClick(dish)">➖</div>
+      </div>
+    </div>
+
+    <div class="bottom-info">
+      <app-dish-rating (ratingChanged)="ratingEventHandler(dish, $event)" [dishLikes]="dish.likes"
+        [dishDislikes]="dish.dislikes"></app-dish-rating>
+      <p class="amount-info">ilość: {{ dish.amount }}</p>
+    </div>
+    <p *ngIf="dish.maxperday - dish.amount <= 3" class="bottom-info-text">
+      Pozostało {{ dish.maxperday - dish.amount }} dań!
+    </p>
+    <p *ngIf="dish.maxperday - dish.amount > 3" class="bottom-info-text"></p>
+    <div class="deleteBtn" (click)="deleteDish(dish.id)">USUŃ DANIE</div>
+  </div>
+
+
+</div>
+
+<div class="center">
+  <h4>Strona</h4>
+  <span class="infobtn" [ngClass]="{
+    'infobtn-checked': currentPage==i}" (click)="changePage(i)" *ngFor="let n of createRange(((dishes.length - (dishes.length % amountToShow)) / amountToShow)+1); index as i">{{i}}</span>
+</div>
