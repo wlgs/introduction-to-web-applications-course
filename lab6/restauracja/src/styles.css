@@ -19,11 +19,20 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-kerning: auto;
-    
+    height: 100%;
 }
 
 body{
     background-color: var(--colorBackground);
     color: var(--colorPrimary);
     width:100%;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+ }
+ 
+input, button, textarea, select {
+    font: inherit;
 }
