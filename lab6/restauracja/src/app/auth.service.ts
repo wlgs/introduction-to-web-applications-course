@@ -20,10 +20,10 @@ export class AuthService {
     })
   }
 
-  signUpEmailPass(email:string, password:string){
+  signInEmailPass(email:string, password:string){
     return this.afAuth.signInWithEmailAndPassword(email,password).then(ev=> {
       window.alert("Pomyślnie zalogowano, witaj " + ev.user?.email)
-      this.userData = ev
+      this.router.navigate([''])
     }).catch((err) =>{
       window.alert(err.message)
     })
@@ -43,9 +43,7 @@ export class AuthService {
 
   signOut(){
     return this.afAuth.signOut().then(ev => {
-      console.log(ev)
-      this.userData = null
-      this.router.navigate(['']);
+      this.router.navigate([''])
     })
   }
 

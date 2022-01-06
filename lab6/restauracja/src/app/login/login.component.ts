@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   showError: boolean = false;
   showOk: boolean = false;
+  showLoader: boolean = false;
 
   ngOnInit(): void {
   }
@@ -29,17 +30,18 @@ export class LoginComponent implements OnInit {
   });
 
   submitForm(){
-    console.log(this.loginForm.valid);
     if (!this.loginForm.valid) {
       this.showError = true;
+      this.showLoader = false;
       return;
     }
+    this.showLoader = true;
+    this.showError = false;
     let login = this.loginForm.get('login')!.value
     let pass = this.loginForm.get('password')!.value
-    this.showError = false;
-    this.auth.signUpEmailPass(login,pass)
-    
+    this.auth.signInEmailPass(login,pass)
     this.loginForm.reset()
+    this.showLoader = false;
   }
 
 }

@@ -12,8 +12,10 @@
         </div>
       </form>
       <button type="submit" (click)="submitForm()">Zaloguj</button>
+      <div class="load" *ngIf="showLoader">
+        <hr/><hr/><hr/><hr/>
+      </div>
       <p *ngIf="showError">Wprowadź poprawne dane!</p>
       <p *ngIf="showOk">Poprawnie zalogowano!</p>
-      
 </div>
 

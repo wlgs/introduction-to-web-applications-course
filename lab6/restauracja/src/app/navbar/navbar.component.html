@@ -22,8 +22,10 @@
   </div>
   <div class="menu-ham-items" [class.rolled-in]="hamburgerOpened == true" [class.rolled-out]="hamburgerOpened==false">
     <div class="wrapper">
-      <a routerLink="/register"><div class="menu-item login-register-btn" routerLinkActive="active-link" (click)="optionChosen()">Zarejestruj</div></a>
-      <a routerLink="/login"><div class="menu-item login-register-btn" routerLinkActive="active-link" (click)="optionChosen()">Zaloguj</div></a>
+      <a routerLink="/dashboard" (click)="optionChosen()" *ngIf="auth.userData!=null"><div class="menu-item">Zalogowano jako {{auth.userData.email}}</div></a>
+      <a routerLink="/register" (click)="optionChosen()" *ngIf="auth.userData==null"><div class="menu-item login-register-btn" routerLinkActive="active-link">Zarejestruj</div></a>
+      <a routerLink="/login" (click)="optionChosen()" *ngIf="auth.userData==null"><div class="menu-item login-register-btn" routerLinkActive="active-link">Zaloguj</div></a>
+      <div class="menu-item logout-btn" (click)="auth.signOut(); optionChosen()" *ngIf="auth.userData!=null">Wyloguj</div>
       <a routerLink="/dishes" ><div class="menu-item" routerLinkActive="active-link" (click)="optionChosen()">Posiłki</div></a>
       <a routerLink="/shipping"><div class="menu-item" routerLinkActive="active-link" (click)="optionChosen()">Dostawa</div></a>
       <a routerLink="/aboutus"><div class="menu-item" routerLinkActive="active-link" (click)="optionChosen()">O nas</div></a>
