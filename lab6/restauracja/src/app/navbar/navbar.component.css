@@ -37,7 +37,8 @@
     font-weight: 800;
     background-color:rgb(148, 91, 91);
     color:black;
-    transition:300ms ease all
+    cursor: pointer;
+    transition:300ms ease all;
 }
 
 a{
@@ -85,6 +86,16 @@ h1{
 
 .login-register-btn:hover{
     background-color: rgb(0, 190, 0);
+    color:rgb(0, 0, 0)
+}
+
+.logout-btn{
+    background-color: rgb(24, 0, 109);
+    color:white
+}
+
+.logout-btn:hover{
+    background-color: rgb(43, 0, 201);
     color:rgb(0, 0, 0)
 }
 

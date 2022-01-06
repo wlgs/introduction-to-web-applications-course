@@ -1,0 +1,17 @@
+.form-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-right{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button, h2{
+    padding:0.4em;
+    margin:0.4em;
+}

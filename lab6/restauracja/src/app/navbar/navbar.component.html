@@ -5,8 +5,10 @@
     </div>
   </a>
   <div class="menu-items">
-    <a routerLink="/register"><div class="menu-item login-register-btn" routerLinkActive="active-link">Zarejestruj</div></a>
-    <a routerLink="/login"><div class="menu-item login-register-btn" routerLinkActive="active-link">Zaloguj</div></a>
+    <a routerLink="/dashboard" *ngIf="auth.userData!=null"><div class="menu-item">Zalogowano jako {{auth.userData.email}}</div></a>
+    <a routerLink="/register" *ngIf="auth.userData==null"><div class="menu-item login-register-btn" routerLinkActive="active-link">Zarejestruj</div></a>
+    <a routerLink="/login" *ngIf="auth.userData==null"><div class="menu-item login-register-btn" routerLinkActive="active-link">Zaloguj</div></a>
+    <div class="menu-item logout-btn" (click)="auth.signOut()" *ngIf="auth.userData!=null">Wyloguj</div>
     <a routerLink="/dishes" ><div class="menu-item" routerLinkActive="active-link">Posiłki</div></a>
     <a routerLink="/shipping"><div class="menu-item" routerLinkActive="active-link">Dostawa</div></a>
     <a routerLink="/aboutus"><div class="menu-item" routerLinkActive="active-link">O nas</div></a>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CartComponent } from './cart/cart.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { DishAddComponent } from './dish-add/dish-add.component';
 import { DishesComponent } from './dishes/dishes.component';
 import { HomeComponent } from './home/home.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'addnewdish', component: DishAddComponent},
   {path: 'cart', component: CartComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'dashboard', component: DashboardComponent},
   {path: 'register', component: RegisterComponent},
   {path: '', component: HomeComponent},
   {path: '**', component: PagenotfoundComponent},

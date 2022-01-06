@@ -1,1 +1,19 @@
-<p>register works!</p>
+<div class="form-container">
+    <h2>Zarejestruj się</h2>
+    <form [formGroup]="regForm">
+        <div class="left-right">
+          <label for="name">Email</label>
+          <input id="name" type="text" formControlName="login" />
+        </div>
+      
+        <div class="left-right">
+          <label for="type">Password</label>
+          <input id="password" type="password" formControlName="password" />
+        </div>
+      </form>
+      <button type="submit" (click)="submitForm()">Zarejestruj</button>
+      <p *ngIf="showError">Wprowadź poprawne dane!</p>
+      <p *ngIf="showOk">Poprawnie zarejestrowano!</p>
+      
+</div>
+
