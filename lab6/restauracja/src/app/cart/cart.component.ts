@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BasketInfoService } from '../basket-info.service';
 import { Dish } from '../IDish';
@@ -10,7 +11,8 @@ import { Dish } from '../IDish';
 })
 export class CartComponent implements OnInit {
 
-  constructor(public basketService: BasketInfoService) { }
+  constructor(public basketService: BasketInfoService,
+    private router: Router) { }
   ngOnInit() {
   }
 
@@ -22,9 +24,11 @@ export class CartComponent implements OnInit {
     }
     return s
   }
-  
+
   order(){
-    window.alert("Not yet implemented")
+    window.alert("Pomyślnie złożono zamówienie.")
+    this.basketService.basket = []
+    this.router.navigate(['dishes'])
   }
 
 }
