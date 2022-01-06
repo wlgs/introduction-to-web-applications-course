@@ -1,6 +1,12 @@
+
 <div class="form-container">
     <h2>Dodaj recenzję</h2>
-    <form [formGroup]="addReview">
+    <h1 *ngIf="auth.userRoles.banned==true" class="errors">Masz zablokowaną opcję dodawania recenzji</h1>
+
+    <ng-container *ngIf="auth.userRoles.banned==false">
+
+
+    <form  [formGroup]="addReview">
           <label for="name">Nick</label>
           <input id="name" type="text" formControlName="nickname" />
             <label for="date">Data zakupu</label>
@@ -14,4 +20,5 @@
           <div *ngIf="!addReview.get('date')!.valid">Wprowadź poprawną datę</div>
           <div *ngIf="!addReview.get('review')!.valid">Recenzja powinna zawierać od 50 do 300 znaków</div>
       </div>
+    </ng-container>
 </div>

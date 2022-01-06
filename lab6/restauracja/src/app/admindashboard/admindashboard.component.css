@@ -56,7 +56,14 @@ button:hover {
   display: none;
 }
 
-@media only screen and (max-width: 630px) {
+.user-single-info{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 948px) {
   .additional-info {
     display: none;
   }

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-dishrate',
@@ -7,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./dishrate.component.css'],
 })
 export class DishrateComponent implements OnInit {
-  constructor() {}
+  constructor(public auth: AuthService) {}
 
 
   @Output() newReviewEvent = new EventEmitter<review>();
