@@ -7,19 +7,21 @@ import { Dish } from '../IDish';
 @Component({
   selector: 'app-menagerdashboard',
   templateUrl: './menagerdashboard.component.html',
-  styleUrls: ['./menagerdashboard.component.css']
+  styleUrls: ['./menagerdashboard.component.css'],
 })
 export class MenagerdashboardComponent implements OnInit {
+  constructor(
+    public auth: AuthService,
+    public basket: BasketInfoService,
+    private fb: FireBaseServiceService
+  ) { }
 
-  constructor(public auth: AuthService, public basket: BasketInfoService, private fb: FireBaseServiceService) { }
-
-
-  dishes: Dish[] = []
+  dishes: Dish[] = [];
 
   ngOnInit(): void {
-    this.fb.getDishes().subscribe(change => {
-      this.dishes = []
-      for (let dish of change){
+    this.fb.getDishes().subscribe((change) => {
+      this.dishes = [];
+      for (let dish of change) {
         this.dishes.push({
           id: dish.id,
           name: dish.Name,
@@ -33,19 +35,16 @@ export class MenagerdashboardComponent implements OnInit {
           currency: dish.Currency,
           likes: dish.Likes,
           dislikes: dish.Dislikes,
-        } as Dish)
+        } as Dish);
       }
-    })
+    });
   }
-
 
   deleteDish(idx: number) {
-    this.fb.removeDish(idx)
+    this.fb.removeDish(idx);
   }
 
-  updateDish(idx: number){
-    window.alert("Not yet implemented")
+  updateDish(idx: number) {
+    window.alert('Not yet implemented');
   }
-
-
 }

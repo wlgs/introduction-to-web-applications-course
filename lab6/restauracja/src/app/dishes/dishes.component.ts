@@ -1,32 +1,38 @@
-import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  QueryList,
+  ViewChildren,
+} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth.service';
 import { BasketInfoService } from '../basket-info.service';
 import { FireBaseServiceService } from '../fire-base-service.service';
-import { Dish } from '../IDish'
+import { Dish } from '../IDish';
 @Component({
   selector: 'app-dishes',
   templateUrl: './dishes.component.html',
-  styleUrls: ['./dishes.component.css']
+  styleUrls: ['./dishes.component.css'],
 })
 export class DishesComponent implements OnInit {
-
-  constructor(public basketService: BasketInfoService,
+  constructor(
+    public basketService: BasketInfoService,
     private fb: FireBaseServiceService,
-    public auth: AuthService) { }
+    public auth: AuthService
+  ) {}
 
-  dishes: any[] = []
+  dishes: any[] = [];
 
   amountToShow: number = 5;
   currentPage: number = 0;
 
-
-  dishesSub: Subscription | undefined
+  dishesSub: Subscription | undefined;
 
   ngOnInit(): void {
-    this.dishesSub = this.fb.getDishes().subscribe(change => {
-      this.dishes = []
-      for (let dish of change){
+    this.dishesSub = this.fb.getDishes().subscribe((change) => {
+      this.dishes = [];
+      for (let dish of change) {
         this.dishes.push({
           id: dish.id,
           name: dish.Name,
@@ -40,78 +46,72 @@ export class DishesComponent implements OnInit {
           currency: dish.Currency,
           likes: dish.Likes,
           dislikes: dish.Dislikes,
-        } as Dish)
+        } as Dish);
       }
-    })
+    });
   }
 
   ngOnDestroy() {
-    this.dishesSub?.unsubscribe()
+    this.dishesSub?.unsubscribe();
   }
 
-
-  countDishInCart(dish: Dish){
-    let cnt = 0
-    for (let item of this.basketService.basket){
-      if (dish.id == item.id)
-        cnt += 1
+  countDishInCart(dish: Dish) {
+    let cnt = 0;
+    for (let item of this.basketService.basket) {
+      if (dish.id == item.id) cnt += 1;
     }
-    return cnt
+    return cnt;
   }
 
-  createRange(n: number): any[]{
-    return new Array(n)
+  createRange(n: number): any[] {
+    return new Array(n);
   }
 
-  changePage(n: number){
-    this.currentPage = n
+  changePage(n: number) {
+    this.currentPage = n;
   }
 
-
-  setAmountToShow(amount: number){
+  setAmountToShow(amount: number) {
     this.amountToShow = amount;
-    console.log(this.amountToShow)
+    console.log(this.amountToShow);
   }
 
-
-  getCartValue(): number{
-    let s = 0
-    for (let dish of this.basketService.basket){
-      s+= dish.price
+  getCartValue(): number {
+    let s = 0;
+    for (let dish of this.basketService.basket) {
+      s += dish.price;
     }
-    return s
+    return s;
   }
 
   addClick(dish: Dish) {
-    if (this.auth.userRoles?.client!=true){
-      window.alert("Dostępne tylko dla zalogowanych")
-      return
+    if (this.auth.userRoles?.client != true) {
+      window.alert('Dostępne tylko dla zalogowanych');
+      return;
     }
-    if (this.countDishInCart(dish) < dish.maxperday)
-    {
-      this.basketService.basket.push(dish)
+    if (this.countDishInCart(dish) < dish.maxperday) {
+      this.basketService.basket.push(dish);
     }
   }
 
   removeClick(dish: Dish) {
-    if (this.auth.userRoles?.client!=true){
-      window.alert("Dostępne tylko dla zalogowanych")
-      return
+    if (this.auth.userRoles?.client != true) {
+      window.alert('Dostępne tylko dla zalogowanych');
+      return;
     }
-    if (this.countDishInCart(dish) >= 1)
-    {
-      this.deleteDishOffBasket(dish)
+    if (this.countDishInCart(dish) >= 1) {
+      this.deleteDishOffBasket(dish);
     }
   }
 
-  deleteDishOffBasket(dish: Dish){
-    let idx = 0
-    for (let item of this.basketService.basket){
-      if(item.id == dish.id){
-        this.basketService.basket.splice(idx, 1)
-        return
+  deleteDishOffBasket(dish: Dish) {
+    let idx = 0;
+    for (let item of this.basketService.basket) {
+      if (item.id == dish.id) {
+        this.basketService.basket.splice(idx, 1);
+        return;
       }
-      idx += 1
+      idx += 1;
     }
   }
 
@@ -120,47 +120,43 @@ export class DishesComponent implements OnInit {
   }
 
   getMaxPriceDish(dishes: Dish[]): Dish {
-    let max = -1
-    let maxDish = <Dish>{}
+    let max = -1;
+    let maxDish = <Dish>{};
     for (let dish of dishes) {
       if (dish.price > max) {
-        max = dish.price
-        maxDish = dish
+        max = dish.price;
+        maxDish = dish;
       }
     }
-    return maxDish
+    return maxDish;
   }
 
   getMinPriceDish(dishes: Dish[]): Dish {
-    let min = 999999
-    let minDish = <Dish>{}
+    let min = 999999;
+    let minDish = <Dish>{};
     for (let dish of dishes) {
       if (dish.price < min) {
-        min = dish.price
-        minDish = dish
+        min = dish.price;
+        minDish = dish;
       }
     }
-    return minDish
+    return minDish;
   }
 
   formSubmitEventHandler(dish: Dish) {
-    this.dishes.push(dish)
+    this.dishes.push(dish);
   }
 
   ratingEventHandler(dish: Dish, ev: any) {
     if (ev == 1) {
-      dish.likes += 1
-    }
-    else {
-      dish.dislikes += 1
+      dish.likes += 1;
+    } else {
+      dish.dislikes += 1;
     }
   }
 
-  alertLogIn(){
-    if(!this.auth.userRoles.client)
-      window.alert('Dostępne tylko dla zalogowanych')
+  alertLogIn() {
+    if (!this.auth.userRoles.client)
+      window.alert('Dostępne tylko dla zalogowanych');
   }
-
-
-
 }
