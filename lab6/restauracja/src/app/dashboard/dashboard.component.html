@@ -13,3 +13,15 @@
     <li><strong>Menager:  </strong>{{auth.userRoles?.menager}}</li>
     <li><strong>Admin:   </strong>{{auth.userRoles?.admin}}</li>
 </ul>
+
+<ng-container *ngIf="auth.userRoles?.admin==true">
+    <h2>Panel admina</h2>
+    <div class="inline">
+        <h3>Wybierz tryb persystencji logowania - aktualna: {{selectedPersistence}}</h3>
+        <select [(ngModel)]="selectedPersistence" (ngModelChange)="chosenPersistence()">
+              <option >LOCAL</option>
+              <option >SESSION</option>
+              <option >NONE</option>
+        </select>
+    </div>
+</ng-container>

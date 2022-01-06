@@ -5,7 +5,7 @@
     </div>
   </a>
   <div class="menu-items">
-    <a routerLink="/dashboard" *ngIf="auth.userData!=null"><div class="menu-item">Zalogowano jako {{auth.userData.email}}</div></a>
+    <a routerLink="/dashboard" *ngIf="auth.userData!=null"><div class="menu-item" routerLinkActive="active-link">Panel użytkownika {{auth.userData.email}}</div></a>
     <a routerLink="/register" *ngIf="auth.userData==null"><div class="menu-item login-register-btn" routerLinkActive="active-link">Zarejestruj</div></a>
     <a routerLink="/login" *ngIf="auth.userData==null"><div class="menu-item login-register-btn" routerLinkActive="active-link">Zaloguj</div></a>
     <div class="menu-item logout-btn" (click)="auth.signOut()" *ngIf="auth.userData!=null">Wyloguj</div>
@@ -22,7 +22,7 @@
   </div>
   <div class="menu-ham-items" [class.rolled-in]="hamburgerOpened == true" [class.rolled-out]="hamburgerOpened==false">
     <div class="wrapper">
-      <a routerLink="/dashboard" (click)="optionChosen()" *ngIf="auth.userData!=null"><div class="menu-item">Zalogowano jako {{auth.userData.email}}</div></a>
+      <a routerLink="/dashboard" (click)="optionChosen()" *ngIf="auth.userData!=null" routerLinkActive="active-link"><div class="menu-item">Panel użytkownika {{auth.userData.email}}</div></a>
       <a routerLink="/register" (click)="optionChosen()" *ngIf="auth.userData==null"><div class="menu-item login-register-btn" routerLinkActive="active-link">Zarejestruj</div></a>
       <a routerLink="/login" (click)="optionChosen()" *ngIf="auth.userData==null"><div class="menu-item login-register-btn" routerLinkActive="active-link">Zaloguj</div></a>
       <div class="menu-item logout-btn" (click)="auth.signOut(); optionChosen()" *ngIf="auth.userData!=null">Wyloguj</div>

@@ -11,7 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DishesComponent } from './dishes/dishes.component';
 import { HomeComponent } from './home/home.component';
 import { DishAddComponent } from './dish-add/dish-add.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DishRatingComponent } from './dish-rating/dish-rating.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { CartComponent } from './cart/cart.component';
@@ -44,7 +44,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

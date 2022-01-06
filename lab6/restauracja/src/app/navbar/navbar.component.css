@@ -179,7 +179,7 @@ h1{
 }
 
 
-@media only screen and (max-width: 736px) {
+@media only screen and (max-width: 948px) {
     .hamburger-button{
         display: block;
         visibility: visible;
