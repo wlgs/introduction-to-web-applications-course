@@ -5,7 +5,9 @@ import { CartComponent } from './cart/cart.component';
 import { DishAddComponent } from './dish-add/dish-add.component';
 import { DishesComponent } from './dishes/dishes.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { RegisterComponent } from './register/register.component';
 import { SingledishComponent } from './singledish/singledish.component';
 
 const routes: Routes = [
@@ -13,6 +15,8 @@ const routes: Routes = [
   {path: 'dishes/:id', component: SingledishComponent},
   {path: 'addnewdish', component: DishAddComponent},
   {path: 'cart', component: CartComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
   {path: '', component: HomeComponent},
   {path: '**', component: PagenotfoundComponent},
 

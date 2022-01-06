@@ -30,6 +30,9 @@
     transition:300ms ease all
 
 }
+
+
+
 .menu-item:hover{
     font-weight: 800;
     background-color:rgb(148, 91, 91);
@@ -72,4 +75,113 @@ h1{
     color:black;
     font-weight: bold;
     transition:300ms ease all
+}
+
+
+.login-register-btn{
+    background-color: rgb(0, 121, 0);
+    color:white
+}
+
+.login-register-btn:hover{
+    background-color: rgb(0, 190, 0);
+    color:rgb(0, 0, 0)
+}
+
+.active{
+    display:block;
+    visibility: visible;
+    transition:500ms ease all;
+}
+
+.hidden{
+    display:none;
+    visibility: hidden;
+    transition:500ms ease all;
+}
+ 
+.hamburger-button button {
+    position:relative;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    cursor: pointer;
+    vertical-align: middle;
+    z-index: 50;
+    background-color:rgb(104, 48, 48);
+    border-radius: 5px;
+}
+ 
+.hamburger-button button:focus {
+    outline: 0;
+}
+ 
+.hamburger-button button span {
+    display: block;
+    width: 80%;
+    height: 2px;
+    margin: 5px auto;
+    background: #fff;
+    transition: all .8s cubic-bezier(0.250, 0.100, 0.250, 1.000);
+}
+ 
+
+.menu-ham-items{
+    display:flex;
+    flex-direction: column;
+    position:absolute;
+    left:0;
+    top:0;
+    transition:500ms ease all;
+}
+.wrapper{
+    background-color:rgba(0, 0, 0, 0.418);
+    width:100vw;
+    height:100vh;
+    padding-top:10vh;
+    z-index:10;
+    text-align: center;
+}
+
+.rolled-out{
+    transform: translateY(-100%);
+    transition:500ms ease all;
+    overflow-y: hidden;
+}
+
+.rolled-in{
+    transform:translateY(0);
+    transition:500ms ease all;
+    overflow-y:visible;
+}
+
+.anim-1{
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.anim-2 {
+    opacity: 0;
+}
+.anim-3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+@media only screen and (max-width: 736px) {
+    .hamburger-button{
+        display: block;
+        visibility: visible;
+        margin-right: 0.8em;
+        margin-left: 0.8em;
+    }
+
+    .navbar-container{
+        justify-content:space-between;
+    }
+
+    .menu-items{
+        display:none;
+        visibility: hidden;
+    }
 }

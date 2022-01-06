@@ -5,8 +5,27 @@
     </div>
   </a>
   <div class="menu-items">
+    <a routerLink="/register"><div class="menu-item login-register-btn" routerLinkActive="active-link">Zarejestruj</div></a>
+    <a routerLink="/login"><div class="menu-item login-register-btn" routerLinkActive="active-link">Zaloguj</div></a>
     <a routerLink="/dishes" ><div class="menu-item" routerLinkActive="active-link">Posiłki</div></a>
     <a routerLink="/shipping"><div class="menu-item" routerLinkActive="active-link">Dostawa</div></a>
     <a routerLink="/aboutus"><div class="menu-item" routerLinkActive="active-link">O nas</div></a>
+  </div>
+  <div class="hamburger-button hidden">
+    <button type="button" (click)="hamburgerHandler()">
+      <span [class.anim-1]="hamburgerOpened == true"></span>
+      <span [class.anim-2]="hamburgerOpened == true"></span>
+      <span [class.anim-3]="hamburgerOpened == true"></span>
+    </button>
+  </div>
+  <div class="menu-ham-items" [class.rolled-in]="hamburgerOpened == true" [class.rolled-out]="hamburgerOpened==false">
+    <div class="wrapper">
+      <a routerLink="/register"><div class="menu-item login-register-btn" routerLinkActive="active-link" (click)="optionChosen()">Zarejestruj</div></a>
+      <a routerLink="/login"><div class="menu-item login-register-btn" routerLinkActive="active-link" (click)="optionChosen()">Zaloguj</div></a>
+      <a routerLink="/dishes" ><div class="menu-item" routerLinkActive="active-link" (click)="optionChosen()">Posiłki</div></a>
+      <a routerLink="/shipping"><div class="menu-item" routerLinkActive="active-link" (click)="optionChosen()">Dostawa</div></a>
+      <a routerLink="/aboutus"><div class="menu-item" routerLinkActive="active-link" (click)="optionChosen()">O nas</div></a>
+    </div>
+
   </div>
 </div>

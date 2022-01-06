@@ -17,6 +17,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { CartComponent } from './cart/cart.component';
 import { SingledishComponent } from './singledish/singledish.component';
 import { DishrateComponent } from './dishrate/dishrate.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { DishrateComponent } from './dishrate/dishrate.component';
     PagenotfoundComponent,
     CartComponent,
     SingledishComponent,
-    DishrateComponent
+    DishrateComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
