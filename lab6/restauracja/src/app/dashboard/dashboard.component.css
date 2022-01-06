@@ -1,13 +1,13 @@
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
 
-h1,h2{
-    margin:0.4em;
-
+h1,
+h2 {
+  margin: 0.4em;
 }
 
-.inline{
-    display:flex;
-    flex-direction: row;
+.inline {
+  display: flex;
+  flex-direction: row;
 }

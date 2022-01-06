@@ -7,10 +7,10 @@
   <span class="infobtn" [ngClass]="{
     'infobtn-checked': amountToShow == 10}" (click)="setAmountToShow(10)">10</span>
   <span class="infobtn" [ngClass]="{
-    'infobtn-checked': amountToShow == 20}"(click)="setAmountToShow(20)">20</span>
+    'infobtn-checked': amountToShow == 20}" (click)="setAmountToShow(20)">20</span>
 </div>
 
-<h2>W koszyku:  ${{getCartValue() | number: '1.0-2'}}</h2>
+<h2>W koszyku: ${{getCartValue() | number: '1.0-2'}}</h2>
 
 <div class="order-details">
   <h2 [ngStyle]="{
@@ -20,17 +20,20 @@
   </h2>
 </div>
 <div class="dishes" *ngIf="dishes != []">
-  
+
   <div class="dish" [ngClass]="{
       'most-expensive': dish.price == getMaxPriceDish(dishes).price,
       'least-expensive': dish.price == getMinPriceDish(dishes).price
     }" *ngFor="let dish of dishes | slice:currentPage*amountToShow ; index as idx" [ngStyle]="{
       'display': amountToShow > idx ? 'block' : 'none'}">
-    
-    <a routerLink="/dishes/{{dish.id}}" (click)="alertLogIn()"><img src="{{ dish.imagelink[0] }}" alt="{{ dish.name }}" /></a>
+
+    <a routerLink="/dishes/{{dish.id}}" (click)="alertLogIn()"><img src="{{ dish.imagelink[0] }}"
+        alt="{{ dish.name }}" /></a>
     <h3>{{ dish.name | uppercase }}</h3>
     <p class="type">kuchnia {{ dish.type | uppercase }}, {{ dish.category }}</p>
-    <a routerLink="/dishes/{{dish.id}}"><p class="infobtn" (click)="alertLogIn()">Więcej szczegółów</p></a>
+    <a routerLink="/dishes/{{dish.id}}">
+      <p class="infobtn" (click)="alertLogIn()">Więcej szczegółów</p>
+    </a>
     <!-- <p class="desc">{{ dish.shortdesc }}</p>
     <p class="ingr">Składniki: {{ dish.ingredients }}</p> -->
     <div class="bottom">
@@ -60,5 +63,6 @@
 <div class="center">
   <h4>Strona</h4>
   <span class="infobtn" [ngClass]="{
-    'infobtn-checked': currentPage==i}" (click)="changePage(i)" *ngFor="let n of createRange(((dishes.length - (dishes.length % amountToShow)) / amountToShow)+1); index as i">{{i}}</span>
+    'infobtn-checked': currentPage==i}" (click)="changePage(i)"
+    *ngFor="let n of createRange(((dishes.length - (dishes.length % amountToShow)) / amountToShow)+1); index as i">{{i}}</span>
 </div>

@@ -1,21 +1,21 @@
-.centered{
-    width:100%;
-    display:flex;
-    justify-content: center;
+.centered {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-main{
-    background-color: var(--colorBackground2);
-    border-radius:10px;
-    color:black;
-    min-width:300px;
-    width:1000px;
-    max-width:1200px;
-    margin: 3em 2em;
-    padding:1em;
+main {
+  background-color: var(--colorBackground2);
+  border-radius: 10px;
+  color: black;
+  min-width: 300px;
+  width: 1000px;
+  max-width: 1200px;
+  margin: 3em 2em;
+  padding: 1em;
 }
-nav{
-    position:sticky;
-    top:0;
-    z-index :1;
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }

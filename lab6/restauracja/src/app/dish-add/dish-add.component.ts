@@ -3,18 +3,16 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { FireBaseServiceService } from '../fire-base-service.service';
-import { Dish } from '../IDish'
+import { Dish } from '../IDish';
 @Component({
   selector: 'app-dish-add',
   templateUrl: './dish-add.component.html',
   styleUrls: ['./dish-add.component.css'],
 })
 export class DishAddComponent implements OnInit {
-  constructor(
-    private fb: FireBaseServiceService,
-    private auth: AuthService) { }
+  constructor(private fb: FireBaseServiceService, private auth: AuthService) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   dishAddForm = new FormGroup({
     dishname: new FormControl('', [
@@ -57,8 +55,7 @@ export class DishAddComponent implements OnInit {
   showOk = false;
 
   submitForm() {
-    if (!this.auth.userRoles.menager)
-      return
+    if (!this.auth.userRoles.menager) return;
     console.log(this.dishAddForm);
     console.log(this.dishAddForm.valid);
     if (!this.dishAddForm.valid) {
@@ -74,7 +71,9 @@ export class DishAddComponent implements OnInit {
       maxperday: this.dishAddForm.get('dishmaxperday')!.value,
       price: parseFloat(this.dishAddForm.get('dishprice')!.value),
       shortdesc: this.dishAddForm.get('dishshortdesc')!.value,
-      imagelink: new Array<string>(this.dishAddForm.get('dishimagelink')!.value),
+      imagelink: new Array<string>(
+        this.dishAddForm.get('dishimagelink')!.value
+      ),
       amount: 0,
       currency: '$',
       likes: 0,

@@ -1,43 +1,43 @@
-.form-container{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    margin:1em;
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em;
 }
-form{
-    display:flex;
-    flex-direction: column;
-    width:50%;
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
-div{
-    display:flex;
-    flex-direction: row;
-    justify-content: flex-end;
+div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
-label,input{
-    font-size:1.2em;
-    margin:1em;
-    width:20vw;
+label,
+input {
+  font-size: 1.2em;
+  margin: 1em;
+  width: 20vw;
 }
-button{
-    width:50%;
-    padding:1em;
-    align-self: center;
-}
-
-input{
-    min-width:100px;
-    width:500px;
+button {
+  width: 50%;
+  padding: 1em;
+  align-self: center;
 }
 
-
-p{
-    text-align: center;
+input {
+  min-width: 100px;
+  width: 500px;
 }
 
-.left-right{
-    width:100%;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
+p {
+  text-align: center;
+}
+
+.left-right {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

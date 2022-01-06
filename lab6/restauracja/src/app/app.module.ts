@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AngularFireModule } from "@angular/fire/compat";
-import { environment } from '../environments/environment'; 
-import { AngularFireDatabaseModule} from '@angular/fire/compat/database';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -40,7 +40,7 @@ import { MenagerdashboardComponent } from './menagerdashboard/menagerdashboard.c
     RegisterComponent,
     DashboardComponent,
     AdmindashboardComponent,
-    MenagerdashboardComponent
+    MenagerdashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +53,6 @@ import { MenagerdashboardComponent } from './menagerdashboard/menagerdashboard.c
     ReactiveFormsModule,
   ],
   providers: [AuthService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

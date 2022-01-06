@@ -9,11 +9,11 @@
     <div class="wrapper">
         <h1>{{dish[0].name}}</h1>
         <h2 class="shdesc">kuchnia {{ dish[0].type}}, {{ dish[0].category }}</h2>
-            <img src={{dish[0].imagelink[selected]}}>
+        <img src={{dish[0].imagelink[selected]}}>
         <p>Inne zdjęcia potrawy</p>
         <div class="photoselect">
-            <span class="np" (click)="nextPhoto()"><</span>
-            <span class="np" (click)="previousPhoto()">></span>
+            <span class="np" (click)="nextPhoto()"> </span>
+            <span class="np" (click)="previousPhoto()"></span>
         </div>
         <p class="desc">{{ dish[0].shortdesc }}</p>
         <p class="ingr">Składniki: {{ dish[0].ingredients }}</p>
@@ -22,7 +22,7 @@
     <h2>Recenzje</h2>
     <div class="center">
         <app-dish-rating (ratingChanged)="ratingEventHandler(dish[0], $event)" [dishLikes]="dish[0].likes"
-        [dishDislikes]="dish[0].dislikes"></app-dish-rating>
+            [dishDislikes]="dish[0].dislikes"></app-dish-rating>
     </div>
     <div class="review" *ngFor="let review of reviews">
         <span class="strong">Użytkownik: </span><span>{{review.nick}}</span>

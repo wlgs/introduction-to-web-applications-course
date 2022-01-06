@@ -1,185 +1,181 @@
-img{
-    height:128px;
-    width:228px;
+img {
+  height: 128px;
+  width: 228px;
 }
 
-h4{
-    margin:1em;
+h4 {
+  margin: 1em;
 }
-h3{
-    margin:0.4em 0em 0.1em 0em;
+h3 {
+  margin: 0.4em 0em 0.1em 0em;
 }
-h2{
-    padding:1em;
-    text-align: center;
+h2 {
+  padding: 1em;
+  text-align: center;
 }
-p{
-    margin-top:0.1em;
-    margin-bottom:0.1em;
+p {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
 }
-p.type{
-    margin-bottom:1em;
+p.type {
+  margin-bottom: 1em;
 }
-.dishes{
-    display:flex;
-    flex-direction: row;
-    width:100%;
-    flex-wrap:wrap;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.dish{
-    margin:1em;
-    padding:0.6em;
-    display:flex;
-    flex-direction: column;
-    flex-basis:25%;
-    background-color: #e7e7e7ee;
-    border-radius:10px;
-    max-width:300px;
-    -webkit-box-shadow: 0px 0px 11px -5px rgba(66, 68, 90, 1);
--moz-box-shadow: 0px 0px 11px -5px rgba(66, 68, 90, 1);
-box-shadow: 0px 0px 11px -5px rgba(66, 68, 90, 1);
-
+.dishes {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-
-
-.type{
-    font-size:0.8em;
-    font-style: italic;
-}
-.desc{
-    min-height:80px;
-    margin-bottom:1em;
-}
-.ingr{
-    color:grey;
-    font-style: italic;
-    margin-bottom:1em;
-    min-height:60px;
-}
-.bottom{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    user-select: none;
-}
-.btn-container{
-    display:flex;
-    flex-direction: row;
+.dish {
+  margin: 1em;
+  padding: 0.6em;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 25%;
+  background-color: #e7e7e7ee;
+  border-radius: 10px;
+  max-width: 300px;
+  -webkit-box-shadow: 0px 0px 11px -5px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 0px 11px -5px rgba(66, 68, 90, 1);
+  box-shadow: 0px 0px 11px -5px rgba(66, 68, 90, 1);
 }
 
-.btn{
-    font-size:1.2em;
-    padding:0.4em;
-    border-radius:50%;
-    user-select: none;
-    margin:0.4em;
-    cursor:pointer;
-    transition: 300ms ease all;
+.type {
+  font-size: 0.8em;
+  font-style: italic;
 }
-.addBasket{
-    background-color:green;
+.desc {
+  min-height: 80px;
+  margin-bottom: 1em;
 }
-
-.addBasket:hover{
-    background-color:rgb(0, 173, 0);
-    transition: 300ms ease all;
+.ingr {
+  color: grey;
+  font-style: italic;
+  margin-bottom: 1em;
+  min-height: 60px;
 }
-
-.removeBasket{
-    background-color: rgb(167, 0, 0);
+.bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  user-select: none;
 }
-
-.removeBasket:hover{
-    background-color: rgb(255, 0, 0);
-    transition: 300ms ease all;
+.btn-container {
+  display: flex;
+  flex-direction: row;
 }
 
-.price{
-    font-size:2em;
-    font-weight: bold;
+.btn {
+  font-size: 1.2em;
+  padding: 0.4em;
+  border-radius: 50%;
+  user-select: none;
+  margin: 0.4em;
+  cursor: pointer;
+  transition: 300ms ease all;
+}
+.addBasket {
+  background-color: green;
 }
 
-.bottom-info{
-    min-height:20px;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    user-select: none;
+.addBasket:hover {
+  background-color: rgb(0, 173, 0);
+  transition: 300ms ease all;
 }
 
-.amount-info{
-    font-weight: bold;
-    margin:0.1em;
-    padding:0.1em;
-}
-.bottom-info-text{
-    color:red;
-    min-height:25px;
-    text-align: center;
+.removeBasket {
+  background-color: rgb(167, 0, 0);
 }
 
-.most-expensive{
-    border:3px solid green;
+.removeBasket:hover {
+  background-color: rgb(255, 0, 0);
+  transition: 300ms ease all;
 }
 
-.least-expensive{
-    border:3px solid red;
+.price {
+  font-size: 2em;
+  font-weight: bold;
 }
 
-.deleteBtn{
-    background-color: red;
-    font-size:0.8em;
-    text-align: center;
-    cursor:pointer;
-    user-select: none;
-    letter-spacing: 0em;
-    transition: 300ms ease all;
+.bottom-info {
+  min-height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  user-select: none;
 }
 
-.deleteBtn:hover{
-    letter-spacing: 0.6em;
-    font-weight: bolder;
-    transition: 300ms ease all;
+.amount-info {
+  font-weight: bold;
+  margin: 0.1em;
+  padding: 0.1em;
+}
+.bottom-info-text {
+  color: red;
+  min-height: 25px;
+  text-align: center;
 }
 
-.infobtn{
-    background-color: rgb(240, 191, 57);
-    padding:0.4em;
-    text-align: center;
-    border-radius:10px;
-    margin-top:1em;
-    margin-bottom:1em;
-    transition: 300ms ease all;
-    user-select: none;
-    cursor:pointer;
-    margin-right:0.4em;
+.most-expensive {
+  border: 3px solid green;
 }
 
-.infobtn:hover{
-    color:white;
-    background-color: rgb(216, 158, 0);
-
-    transition: 300ms ease all
-}
-a{
-    text-decoration: inherit;
-    color:inherit;
+.least-expensive {
+  border: 3px solid red;
 }
 
-.paginate{
-    position:absolute;
-
+.deleteBtn {
+  background-color: red;
+  font-size: 0.8em;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  letter-spacing: 0em;
+  transition: 300ms ease all;
 }
 
-.infobtn-checked{
-    color:white;
-    background-color: rgb(216, 158, 0);
+.deleteBtn:hover {
+  letter-spacing: 0.6em;
+  font-weight: bolder;
+  transition: 300ms ease all;
 }
 
-.center{
-    text-align: center;
+.infobtn {
+  background-color: rgb(240, 191, 57);
+  padding: 0.4em;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  transition: 300ms ease all;
+  user-select: none;
+  cursor: pointer;
+  margin-right: 0.4em;
+}
+
+.infobtn:hover {
+  color: white;
+  background-color: rgb(216, 158, 0);
+
+  transition: 300ms ease all;
+}
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.paginate {
+  position: absolute;
+}
+
+.infobtn-checked {
+  color: white;
+  background-color: rgb(216, 158, 0);
+}
+
+.center {
+  text-align: center;
 }

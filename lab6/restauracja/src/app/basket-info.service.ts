@@ -2,11 +2,10 @@ import { Injectable } from '@angular/core';
 import { Dish } from './IDish';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BasketInfoService {
+  constructor() {}
 
-  constructor() { }
-
-  basket: Dish[] = []
+  basket: Dish[] = [];
 }

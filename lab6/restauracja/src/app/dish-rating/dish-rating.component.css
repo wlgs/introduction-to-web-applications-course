@@ -1,38 +1,39 @@
-.rate{
-    display:flex;
-    flex-direction: row;
-    min-height:20px;
-    
+.rate {
+  display: flex;
+  flex-direction: row;
+  min-height: 20px;
 }
-p{
-    margin:0.1em;
-    padding:0.1em;
-}
-
-.like, .dislike{
-    user-select: none;
-}
-.positive{
-    color:green;
-    font-weight: bold;
+p {
+  margin: 0.1em;
+  padding: 0.1em;
 }
 
-.negative{
-    color:rgb(150, 0, 0);
-    font-weight: bold;
+.like,
+.dislike {
+  user-select: none;
+}
+.positive {
+  color: green;
+  font-weight: bold;
 }
 
-.like:hover, .dislike:hover{
-    cursor:pointer;
+.negative {
+  color: rgb(150, 0, 0);
+  font-weight: bold;
 }
 
-.like:hover{
-    outline:2px solid green;
+.like:hover,
+.dislike:hover {
+  cursor: pointer;
 }
 
-.dislike:hover{
-    outline:2px solid red;
+.like:hover {
+  outline: 2px solid green;
 }
-.summary{
-    font-weight: bold;
+
+.dislike:hover {
+  outline: 2px solid red;
+}
+.summary {
+  font-weight: bold;
 }

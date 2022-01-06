@@ -10,9 +10,7 @@ import { AuthService } from '../auth.service';
 export class DishrateComponent implements OnInit {
   constructor(public auth: AuthService) {}
 
-
   @Output() newReviewEvent = new EventEmitter<review>();
-
 
   reviews: review[] = [];
   errorArray: any[] = [];
@@ -31,12 +29,12 @@ export class DishrateComponent implements OnInit {
   });
 
   submitForm() {
-    let newReview = ({
+    let newReview = {
       nick: this.addReview.get('nickname')!.value,
       date: this.addReview.get('date')!.value,
       review: this.addReview.get('review')!.value,
-    } as review);
-    this.newReviewEvent.emit(newReview)
+    } as review;
+    this.newReviewEvent.emit(newReview);
     this.addReview.reset();
   }
 

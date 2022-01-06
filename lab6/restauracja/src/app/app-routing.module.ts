@@ -19,22 +19,37 @@ import { RegisterComponent } from './register/register.component';
 import { SingledishComponent } from './singledish/singledish.component';
 
 const routes: Routes = [
-  {path: 'dishes', component: DishesComponent},
-  {path: 'dishes/:id', component: SingledishComponent, canActivate:[DishDetailsGuard]},
-  {path: 'addnewdish', component: DishAddComponent},
-  {path: 'cart', component: CartComponent},
-  {path: 'login', component: LoginComponent, canActivate: [LoginTwiceGuard]},
-  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
-  {path: 'menager', component: MenagerdashboardComponent, canActivate: [MenagerGuard]},
-  {path: 'admin', component: AdmindashboardComponent, canActivate: [AdminGuard]},
-  {path: 'register', component: RegisterComponent},
-  {path: '', component: HomeComponent},
-  {path: '**', component: PagenotfoundComponent},
-
+  { path: 'dishes', component: DishesComponent },
+  {
+    path: 'dishes/:id',
+    component: SingledishComponent,
+    canActivate: [DishDetailsGuard],
+  },
+  { path: 'addnewdish', component: DishAddComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'login', component: LoginComponent, canActivate: [LoginTwiceGuard] },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'menager',
+    component: MenagerdashboardComponent,
+    canActivate: [MenagerGuard],
+  },
+  {
+    path: 'admin',
+    component: AdmindashboardComponent,
+    canActivate: [AdminGuard],
+  },
+  { path: 'register', component: RegisterComponent },
+  { path: '', component: HomeComponent },
+  { path: '**', component: PagenotfoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
