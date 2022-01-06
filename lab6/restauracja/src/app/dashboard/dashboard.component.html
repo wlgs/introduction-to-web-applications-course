@@ -1,1 +1,10 @@
-<p>dashboard works!</p>
+<h1>Panel użytkownika</h1>
+<h2>Informacje o użytkowniku</h2>
+<ul>
+    <li><strong>Email: </strong>{{auth.userData.email}}</li>
+    <li><strong>Email potwierdzony: </strong>{{auth.userData.emailVerified}}</li>
+    <li><strong>UserID: </strong>{{auth.userData.uid}} </li>
+    <li><strong>Ustawiona nazwa: </strong>{{auth.userData.displayName}}</li>
+    <li><strong>Ostatnie logowanie: </strong>{{auth.userData.metadata.lastSignInTime}} </li>
+    <li><strong>Konto stworzone: </strong> {{auth.userData.metadata.creationTime}}</li>
+</ul>

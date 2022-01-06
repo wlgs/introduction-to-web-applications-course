@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 import { first, map, Observable } from 'rxjs';
 import { Dish } from './IDish';
-
+import { User } from './User';
 @Injectable({
   providedIn: 'root'
 })
@@ -87,5 +87,13 @@ export class FireBaseServiceService {
   
   getNextid(){
     return this.nextId
+  }
+
+
+  addNewUser(user: User){
+    this.db.object('/users/' + user.uid).set({
+      email: user.email,
+      roles: user.roles
+    })
   }
 }
