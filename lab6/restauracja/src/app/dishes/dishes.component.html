@@ -1,4 +1,3 @@
-<h2><a routerLink="/addnewdish" class="infobtn">Dodaj nowe danie</a></h2>
 <h2><a routerLink="/cart" class="infobtn">Podgląd koszyka</a></h2>
 
 <div class="paginate">
@@ -37,7 +36,7 @@
     <div class="bottom">
       <span class="price">{{ dish.currency }}{{ dish.price }}</span>
       <div class="btn-container">
-        <div *ngIf="dish.amount < dish.maxperday" class="addBasket btn" (click)="addClick(dish)">
+        <div *ngIf="countDishInCart(dish) < dish.maxperday" class="addBasket btn" (click)="addClick(dish)">
           ➕
         </div>
         <div class="removeBasket btn" (click)="removeClick(dish)">➖</div>
@@ -47,12 +46,12 @@
     <div class="bottom-info">
       <app-dish-rating (ratingChanged)="ratingEventHandler(dish, $event)" [dishLikes]="dish.likes"
         [dishDislikes]="dish.dislikes"></app-dish-rating>
-      <p class="amount-info">ilość: {{ dish.amount }}</p>
+      <p class="amount-info">ilość: {{ countDishInCart(dish) }}</p>
     </div>
-    <p *ngIf="dish.maxperday - dish.amount <= 3" class="bottom-info-text">
-      Pozostało {{ dish.maxperday - dish.amount }} dań!
+    <p *ngIf="dish.maxperday - countDishInCart(dish) <= 3" class="bottom-info-text">
+      Pozostało {{ dish.maxperday - countDishInCart(dish) }} dań!
     </p>
-    <p *ngIf="dish.maxperday - dish.amount > 3" class="bottom-info-text"></p>
+    <p *ngIf="dish.maxperday - countDishInCart(dish) > 3" class="bottom-info-text"></p>
     <div class="deleteBtn" (click)="deleteDish(dish.id)">USUŃ DANIE</div>
   </div>
 

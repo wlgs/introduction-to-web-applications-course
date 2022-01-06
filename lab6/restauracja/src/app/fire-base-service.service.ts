@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
-import { first, map, Observable } from 'rxjs';
+import { first, firstValueFrom, map, Observable } from 'rxjs';
 import { Dish } from './IDish';
 import { Roles, User } from './User';
 @Injectable({
@@ -97,7 +97,11 @@ export class FireBaseServiceService {
     })
   }
 
-  getUserRoles(uid: string){
+  async getUserRoles(uid: string){
+    return firstValueFrom(this.db.object('/users/' + uid + '/roles').valueChanges())
+  }
+
+  getUserRoles$(uid: string){
     return this.db.object('/users/' + uid + '/roles').valueChanges()
   }
 }

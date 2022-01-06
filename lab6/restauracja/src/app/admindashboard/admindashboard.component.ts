@@ -12,7 +12,7 @@ export class AdmindashboardComponent implements OnInit {
   
   selectedPersistence = this.auth.persistenceSetting
   ngOnInit(): void {
-    console.log(this.auth.userData)
+    console.log(this.auth?.userData)
   }
 
   chosenPersistence(){

@@ -8,13 +8,5 @@ export class BasketInfoService {
 
   constructor() { }
 
-  dishes: Dish[] = []
-
-  setBasket(dishes: Dish[]){
-    this.dishes=dishes
-  }
-
-  getBasket(): Dish[]{
-    return this.dishes
-  }
+  basket: Dish[] = []
 }

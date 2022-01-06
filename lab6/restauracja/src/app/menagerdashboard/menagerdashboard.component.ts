@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { BasketInfoService } from '../basket-info.service';
 
 @Component({
   selector: 'app-menagerdashboard',
@@ -8,9 +9,15 @@ import { AuthService } from '../auth.service';
 })
 export class MenagerdashboardComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, public basket: BasketInfoService) { }
 
   ngOnInit(): void {
   }
+
+
+  deleteDish(idx: number) {
+    
+  }
+
 
 }

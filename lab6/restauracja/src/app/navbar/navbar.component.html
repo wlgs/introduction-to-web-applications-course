@@ -2,8 +2,8 @@
   <div class="navbar-left">
     <a routerLink="/"><div class="logo"><h1>Masne Fryty</h1></div></a>
     <div class="menu-items">
-      <a *ngIf="auth.userRoles?.menager==true" routerLink="/dashboard-menager"><div class="menu-item panel-btn" routerLinkActive="active-link2">Panel Menagera</div></a>
-      <a *ngIf="auth.userRoles?.admin==true" routerLink="/dashboard-admin"><div class="menu-item panel-btn" routerLinkActive="active-link2">Panel Admina</div></a>
+      <a *ngIf="auth.userRoles.admin==true" routerLink="admin"><div class="menu-item panel-btn" routerLinkActive="active-link2">Panel Admina</div></a>
+      <a *ngIf="auth.userRoles.menager==true" routerLink="menager"><div class="menu-item panel-btn" routerLinkActive="active-link2">Panel Menagera</div></a>
     </div>
   </div>
 

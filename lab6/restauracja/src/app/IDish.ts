@@ -8,7 +8,6 @@ export interface Dish {
     price: number;
     shortdesc: string;
     imagelink: string[];
-    amount: number;
     currency: string;
     likes: number;
     dislikes: number;

@@ -6,9 +6,11 @@ import { CartComponent } from './cart/cart.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DishAddComponent } from './dish-add/dish-add.component';
 import { DishesComponent } from './dishes/dishes.component';
+import { AdminGuard } from './guard/admin.guard';
 import { AuthGuard } from './guard/auth.guard';
 import { DishDetailsGuard } from './guard/dish-details.guard';
 import { LoginTwiceGuard } from './guard/login-twice.guard';
+import { MenagerGuard } from './guard/menager.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MenagerdashboardComponent } from './menagerdashboard/menagerdashboard.component';
@@ -23,8 +25,8 @@ const routes: Routes = [
   {path: 'cart', component: CartComponent},
   {path: 'login', component: LoginComponent, canActivate: [LoginTwiceGuard]},
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
-  {path: 'dashboard-menager', component: MenagerdashboardComponent, canActivate: [AuthGuard]},
-  {path: 'dashboard-admin', component: AdmindashboardComponent, canActivate: [AuthGuard]},
+  {path: 'menager', component: MenagerdashboardComponent, canActivate: [MenagerGuard]},
+  {path: 'admin', component: AdmindashboardComponent, canActivate: [AdminGuard]},
   {path: 'register', component: RegisterComponent},
   {path: '', component: HomeComponent},
   {path: '**', component: PagenotfoundComponent},

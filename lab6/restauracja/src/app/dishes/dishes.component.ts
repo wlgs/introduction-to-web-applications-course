@@ -11,12 +11,11 @@ import { Dish } from '../IDish'
 })
 export class DishesComponent implements OnInit {
 
-  constructor(private basketService: BasketInfoService,
+  constructor(public basketService: BasketInfoService,
     private fb: FireBaseServiceService,
     public auth: AuthService) { }
 
   dishes: any[] = []
-  cart: Dish[] = []
 
   amountToShow: number = 5;
   currentPage: number = 0;
@@ -38,21 +37,27 @@ export class DishesComponent implements OnInit {
           price: dish.Price,
           shortdesc: dish.ShortDesc,
           imagelink: dish.ImageLink,
-          amount: 0,
           currency: dish.Currency,
           likes: dish.Likes,
           dislikes: dish.Dislikes,
         } as Dish)
       }
     })
-    this.cart = []
   }
 
   ngOnDestroy() {
-    this.basketService.setBasket(this.cart)
     this.dishesSub?.unsubscribe()
   }
 
+
+  countDishInCart(dish: Dish){
+    let cnt = 0
+    for (let item of this.basketService.basket){
+      if (dish.id == item.id)
+        cnt += 1
+    }
+    return cnt
+  }
 
   createRange(n: number): any[]{
     return new Array(n)
@@ -71,7 +76,7 @@ export class DishesComponent implements OnInit {
 
   getCartValue(): number{
     let s = 0
-    for (let dish of this.cart){
+    for (let dish of this.basketService.basket){
       s+= dish.price
     }
     return s
@@ -82,10 +87,9 @@ export class DishesComponent implements OnInit {
       window.alert("Dostępne tylko dla zalogowanych")
       return
     }
-    if (dish.amount < dish.maxperday)
+    if (this.countDishInCart(dish) < dish.maxperday)
     {
-      dish.amount += 1
-      this.cart.push(dish)
+      this.basketService.basket.push(dish)
     }
   }
 
@@ -94,21 +98,21 @@ export class DishesComponent implements OnInit {
       window.alert("Dostępne tylko dla zalogowanych")
       return
     }
-    if (dish.amount >= 1)
+    if (this.countDishInCart(dish) >= 1)
     {
-      const index = this.cart.indexOf(dish);
-      if (index > -1)
-        this.cart.splice(index, 1);
-      dish.amount -= 1
+      let idx = 0
+      for (let item of this.basketService.basket){
+        if(item.id == dish.id){
+          this.basketService.basket.splice(idx, 1)
+          return
+        }
+        idx += 1
+      }
     }
   }
 
   getOrderedAmount(dishes: Dish[]): number {
-    let amount = 0;
-    for (let dish of dishes) {
-      amount += dish.amount
-    }
-    return amount;
+    return this.basketService.basket.length;
   }
 
   getMaxPriceDish(dishes: Dish[]): Dish {
@@ -136,10 +140,10 @@ export class DishesComponent implements OnInit {
   }
 
   deleteDish(idx: number) {
-    let index = this.cart.indexOf(this.dishes[idx])
+    let index = this.basketService.basket.indexOf(this.dishes[idx])
     while (index >= 0){
-      this.cart.splice(index, 1);
-      index = this.cart.indexOf(this.dishes[idx])
+      this.basketService.basket.splice(index, 1);
+      index = this.basketService.basket.indexOf(this.dishes[idx])
     }
     this.fb.removeDish(idx)
   }

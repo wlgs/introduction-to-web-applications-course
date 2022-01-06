@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { AuthService } from '../auth.service';
 import { FireBaseServiceService } from '../fire-base-service.service';
 import { Dish } from '../IDish'
 @Component({
@@ -10,7 +11,8 @@ import { Dish } from '../IDish'
 })
 export class DishAddComponent implements OnInit {
   constructor(
-    private fb: FireBaseServiceService) { }
+    private fb: FireBaseServiceService,
+    private auth: AuthService) { }
 
   ngOnInit(): void { }
 
@@ -55,6 +57,8 @@ export class DishAddComponent implements OnInit {
   showOk = false;
 
   submitForm() {
+    if (!this.auth.userRoles.menager)
+      return
     console.log(this.dishAddForm);
     console.log(this.dishAddForm.valid);
     if (!this.dishAddForm.valid) {

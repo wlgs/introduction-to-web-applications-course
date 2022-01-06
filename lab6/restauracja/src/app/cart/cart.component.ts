@@ -10,16 +10,14 @@ import { Dish } from '../IDish';
 })
 export class CartComponent implements OnInit {
 
-  constructor(private basketService: BasketInfoService) { }
-  cart: Dish[] = []
+  constructor(public basketService: BasketInfoService) { }
   ngOnInit() {
-    this.cart = this.basketService.getBasket()
   }
 
 
   getCartSum(): number{
     let s = 0
-    for (let item of this.cart){
+    for (let item of this.basketService.basket){
       s+= item.price
     }
     return s

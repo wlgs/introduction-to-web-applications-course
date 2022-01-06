@@ -1,7 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { first } from 'rxjs';
+import { first, firstValueFrom, Observable } from 'rxjs';
 import { FireBaseServiceService } from './fire-base-service.service';
 import { Roles, User } from './User';
 @Injectable({
@@ -15,17 +15,24 @@ export class AuthService {
   persistenceSetting: string = "local"
 
   constructor(private afAuth: AngularFireAuth, private router: Router, private fb: FireBaseServiceService) {
-    afAuth.authState.subscribe((ev: any) => {
+    afAuth.authState.subscribe(async (ev: any) => {
       console.log(this.userRoles)
+      console.log(this.isLoggedIn())
+      console.log(this.userData)
+      console.log(" ")
       if(ev){
         this.userData = ev
-      this.fb.getUserRoles(ev?.uid).pipe(first()).subscribe((res: any) => {
-        this.userRoles = res as Roles})
+        const roles = await this.fb.getUserRoles(ev?.uid)
+        this.userRoles = roles as Roles
       }
       else{
         this.userData = null
         this.userRoles = {guest:true, admin:false, menager:false, client:false}
       }
+      console.log(this.userRoles)
+      console.log(this.isLoggedIn())
+      console.log(this.userData)
+      console.log(" ")
     })
   }
 
@@ -56,6 +63,11 @@ export class AuthService {
     return this.afAuth.currentUser
   }
 
+
+  getAuthenticated(): Observable<any>{
+    return this.afAuth.authState
+  }
+
   signOut() {
     return this.afAuth.signOut().then(ev => {
       this.router.navigate([''])
@@ -63,7 +75,7 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    return this.userData != null
+    return this.userData!=null
   }
 
   changePersistence(newSetting: string) {
