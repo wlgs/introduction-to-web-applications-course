@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { AuthService } from '../auth.service';
 import { BasketInfoService } from '../basket-info.service';
 import { FireBaseServiceService } from '../fire-base-service.service';
 import { Dish } from '../IDish'
@@ -11,7 +12,8 @@ import { Dish } from '../IDish'
 export class DishesComponent implements OnInit {
 
   constructor(private basketService: BasketInfoService,
-    private fb: FireBaseServiceService) { }
+    private fb: FireBaseServiceService,
+    public auth: AuthService) { }
 
   dishes: any[] = []
   cart: Dish[] = []
@@ -76,6 +78,10 @@ export class DishesComponent implements OnInit {
   }
 
   addClick(dish: Dish) {
+    if (this.auth.userRoles?.client!=true){
+      window.alert("Dostępne tylko dla zalogowanych")
+      return
+    }
     if (dish.amount < dish.maxperday)
     {
       dish.amount += 1
@@ -84,7 +90,10 @@ export class DishesComponent implements OnInit {
   }
 
   removeClick(dish: Dish) {
-    console.log(dish)
+    if (this.auth.userRoles?.client!=true){
+      window.alert("Dostępne tylko dla zalogowanych")
+      return
+    }
     if (dish.amount >= 1)
     {
       const index = this.cart.indexOf(dish);
@@ -148,6 +157,12 @@ export class DishesComponent implements OnInit {
       dish.dislikes += 1
     }
   }
+
+  alertLogIn(){
+    if(!this.auth.userRoles.client)
+      window.alert('Dostępne tylko dla zalogowanych')
+  }
+
 
 
 }

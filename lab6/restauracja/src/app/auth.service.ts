@@ -11,20 +11,21 @@ export class AuthService {
 
 
   userData: any = null
-  userRoles: Roles | undefined
+  userRoles: Roles = {guest:true, admin:false, menager:false, client:false}
   persistenceSetting: string = "local"
 
   constructor(private afAuth: AngularFireAuth, private router: Router, private fb: FireBaseServiceService) {
     afAuth.authState.subscribe((ev: any) => {
-      console.log(" ")
-      console.log("prev: " + this.userData)
-      this.userData = ev
+      console.log(this.userRoles)
+      if(ev){
+        this.userData = ev
       this.fb.getUserRoles(ev?.uid).pipe(first()).subscribe((res: any) => {
-        this.userRoles = res as Roles
-        console.log(this.userRoles)
-      })
-      console.log("now:" + ev)
-      console.log(" ")
+        this.userRoles = res as Roles})
+      }
+      else{
+        this.userData = null
+        this.userRoles = {guest:true, admin:false, menager:false, client:false}
+      }
     })
   }
 
@@ -44,7 +45,7 @@ export class AuthService {
     return this.afAuth.createUserWithEmailAndPassword(email, password).then(res => {
       let userData = new User(res.user)
       this.fb.addNewUser(userData)
-      window.alert("Pomyślnie zarejestrowano, możesz się zalogować")
+      window.alert("Pomyślnie zarejestrowano.")
 
     }).catch((err) => {
       window.alert(err.message)

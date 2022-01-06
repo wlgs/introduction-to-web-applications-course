@@ -28,10 +28,10 @@
     }" *ngFor="let dish of dishes | slice:currentPage*amountToShow ; index as idx" [ngStyle]="{
       'display': amountToShow > idx ? 'block' : 'none'}">
     
-    <a routerLink="/dishes/{{dish.id}}"><img src="{{ dish.imagelink[0] }}" alt="{{ dish.name }}" /></a>
+    <a routerLink="/dishes/{{dish.id}}" (click)="alertLogIn()"><img src="{{ dish.imagelink[0] }}" alt="{{ dish.name }}" /></a>
     <h3>{{ dish.name | uppercase }}</h3>
     <p class="type">kuchnia {{ dish.type | uppercase }}, {{ dish.category }}</p>
-    <a routerLink="/dishes/{{dish.id}}"><p class="infobtn">Więcej szczegółów</p></a>
+    <a routerLink="/dishes/{{dish.id}}"><p class="infobtn" (click)="alertLogIn()">Więcej szczegółów</p></a>
     <!-- <p class="desc">{{ dish.shortdesc }}</p>
     <p class="ingr">Składniki: {{ dish.ingredients }}</p> -->
     <div class="bottom">
