@@ -22,5 +22,9 @@ export class CartComponent implements OnInit {
     }
     return s
   }
+  
+  order(){
+    window.alert("Not yet implemented")
+  }
 
 }

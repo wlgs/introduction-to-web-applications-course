@@ -3,4 +3,5 @@
         <h3>{{idx+1}}. {{item.name}} - ${{item.price}}</h3>
     </div>
     <h2>Razem: ${{getCartSum() | number: '1.0-2'}}</h2>
+    <button (click)="order()">Zamów teraz</button>
 </ng-container>
