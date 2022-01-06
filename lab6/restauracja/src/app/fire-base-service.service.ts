@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 import { first, map, Observable } from 'rxjs';
 import { Dish } from './IDish';
-import { User } from './User';
+import { Roles, User } from './User';
 @Injectable({
   providedIn: 'root'
 })
@@ -95,5 +95,9 @@ export class FireBaseServiceService {
       email: user.email,
       roles: user.roles
     })
+  }
+
+  getUserRoles(uid: string){
+    return this.db.object('/users/' + uid + '/roles').valueChanges()
   }
 }

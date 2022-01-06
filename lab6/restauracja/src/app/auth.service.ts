@@ -1,8 +1,9 @@
 import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { first } from 'rxjs';
 import { FireBaseServiceService } from './fire-base-service.service';
-import { User } from './User';
+import { Roles, User } from './User';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +11,18 @@ import { User } from './User';
 export class AuthService {
 
 
-  userData: any = null;
+  userData: any = null
+  userRoles: Roles | undefined
 
   constructor(private afAuth: AngularFireAuth, private router: Router, private fb: FireBaseServiceService){
     afAuth.authState.subscribe((ev:any) => {
-      console.log("user changed")
+      console.log(" ")
       console.log("prev: " + this.userData)
       this.userData = ev
+      this.fb.getUserRoles(ev?.uid).pipe(first()).subscribe((res:any) => {
+        this.userRoles = res as Roles
+        console.log(this.userRoles)
+      })
       console.log("now:" + ev)
       console.log(" ")
     })
