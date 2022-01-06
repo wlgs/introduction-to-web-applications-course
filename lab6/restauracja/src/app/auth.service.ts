@@ -14,8 +14,8 @@ export class AuthService {
     afAuth.authState.subscribe((ev:any) => {
       console.log("user changed")
       console.log("prev: " + this.userData)
-      this.userData = ev.user
-      console.log("now:" + ev.user)
+      this.userData = ev
+      console.log("now:" + ev)
       console.log(" ")
     })
   }
@@ -23,7 +23,7 @@ export class AuthService {
   signUpEmailPass(email:string, password:string){
     return this.afAuth.signInWithEmailAndPassword(email,password).then(ev=> {
       window.alert("Pomyślnie zalogowano, witaj " + ev.user?.email)
-      this.userData = ev.user
+      this.userData = ev
     }).catch((err) =>{
       window.alert(err.message)
     })
@@ -42,40 +42,14 @@ export class AuthService {
   }
 
   signOut(){
-    this.userData = null
     return this.afAuth.signOut().then(ev => {
+      console.log(ev)
       this.userData = null
       this.router.navigate(['']);
     })
   }
 
-  // constructor(public afAuth: AngularFireAuth, // Inject Firebase auth service
-  //   public router: Router,
-  //   public ngZone: NgZone) {
-  //   this.afAuth.authState.subscribe(user => {
-  //     if (user) {
-  //       this.userData = user
-  //       console.log(user)
-  //       // localStorage.setItem('user', JSON.stringify(this.userData));
-  //       // JSON.parse(localStorage.getItem('user'));
-  //     } else {
-  //       this.userData = null
-  //       console.log(user)
-  //       // localStorage.setItem('user', null);
-  //       // JSON.parse(localStorage.getItem('user'));
-  //     }
-  //   })
-  // }
-
-  // SignIn(email: any, password: any) {
-  //   return this.afAuth.auth.signInWithEmailAndPassword(email, password)
-  //     .then((result: { user: any; }) => {
-  //       this.ngZone.run(() => {
-  //         this.router.navigate(['dashboard']);
-  //       });
-  //       this.userData = result.user;
-  //     }).catch((error: { message: any; }) => {
-  //       window.alert(error.message)
-  //     })
-  // }
+  isLoggedIn(){
+    return this.userData!=null
+  }
 }
