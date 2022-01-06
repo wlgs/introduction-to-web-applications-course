@@ -52,7 +52,6 @@
       Pozostało {{ dish.maxperday - countDishInCart(dish) }} dań!
     </p>
     <p *ngIf="dish.maxperday - countDishInCart(dish) > 3" class="bottom-info-text"></p>
-    <div class="deleteBtn" (click)="deleteDish(dish.id)">USUŃ DANIE</div>
   </div>
 
 

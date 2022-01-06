@@ -1,13 +1,22 @@
-h1{
-    text-align: center;
-}
-
 h1,h2{
     margin:0.4em;
-
+    text-align: center;
 }
 
 .inline{
     display:flex;
     flex-direction: row;
+}
+button{
+    padding:0.2em;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding:0.2em;
+
+}
+.center{
+    display:flex;
+    justify-content: center;
 }

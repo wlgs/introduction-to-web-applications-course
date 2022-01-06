@@ -23,3 +23,10 @@ h2{
 img{
     margin:1em;
 }
+
+@media only screen and (max-width: 516px) {
+    h1{
+        font-size:2.4em
+    }
+
+}

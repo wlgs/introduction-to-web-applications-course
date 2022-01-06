@@ -26,8 +26,8 @@
   </div>
   <div class="menu-ham-items" [class.rolled-in]="hamburgerOpened == true" [class.rolled-out]="hamburgerOpened==false">
     <div class="wrapper">
-      <a *ngIf="auth.userRoles?.menager==true" routerLink="/dashboard-menager" routerLinkActive="active-link2"><div class="menu-item panel-btn" routerLinkActive="active-link">Panel Menagera</div></a>
-      <a *ngIf="auth.userRoles?.admin==true" routerLink="/dashboard-admin" routerLinkActive="active-link2"><div class="menu-item panel-btn" routerLinkActive="active-link">Panel Admina</div></a>
+      <a *ngIf="auth.userRoles?.admin==true" (click)="optionChosen()" routerLink="admin" routerLinkActive="active-link2"><div class="menu-item panel-btn" routerLinkActive="active-link">Panel Admina</div></a>
+      <a *ngIf="auth.userRoles?.menager==true" (click)="optionChosen()" routerLink="menager" routerLinkActive="active-link2"><div class="menu-item panel-btn" routerLinkActive="active-link">Panel Menagera</div></a>
       <a routerLink="/dashboard" (click)="optionChosen()" *ngIf="auth.userData!=null" routerLinkActive="active-link"><div class="menu-item">Panel użytkownika {{auth.userData.email}}</div></a>
       <a routerLink="/register" (click)="optionChosen()" *ngIf="auth.userData==null"><div class="menu-item login-register-btn" routerLinkActive="active-link">Zarejestruj</div></a>
       <a routerLink="/login" (click)="optionChosen()" *ngIf="auth.userData==null"><div class="menu-item login-register-btn" routerLinkActive="active-link">Zaloguj</div></a>

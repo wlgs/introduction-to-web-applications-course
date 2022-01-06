@@ -11,7 +11,7 @@ export class AuthService {
 
 
   userData: any = null
-  userRoles: Roles = {guest:true, admin:false, menager:false, client:false}
+  userRoles: Roles = {guest:true, admin:false, menager:false, client:false, banned: false}
   persistenceSetting: string = "local"
 
   constructor(private afAuth: AngularFireAuth, private router: Router, private fb: FireBaseServiceService) {
@@ -27,7 +27,7 @@ export class AuthService {
       }
       else{
         this.userData = null
-        this.userRoles = {guest:true, admin:false, menager:false, client:false}
+        this.userRoles = {guest:true, admin:false, menager:false, client:false, banned:false}
       }
       console.log(this.userRoles)
       console.log(this.isLoggedIn())

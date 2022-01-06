@@ -100,14 +100,18 @@ export class DishesComponent implements OnInit {
     }
     if (this.countDishInCart(dish) >= 1)
     {
-      let idx = 0
-      for (let item of this.basketService.basket){
-        if(item.id == dish.id){
-          this.basketService.basket.splice(idx, 1)
-          return
-        }
-        idx += 1
+      this.deleteDishOffBasket(dish)
+    }
+  }
+
+  deleteDishOffBasket(dish: Dish){
+    let idx = 0
+    for (let item of this.basketService.basket){
+      if(item.id == dish.id){
+        this.basketService.basket.splice(idx, 1)
+        return
       }
+      idx += 1
     }
   }
 
@@ -128,7 +132,7 @@ export class DishesComponent implements OnInit {
   }
 
   getMinPriceDish(dishes: Dish[]): Dish {
-    let min = 9999
+    let min = 999999
     let minDish = <Dish>{}
     for (let dish of dishes) {
       if (dish.price < min) {
@@ -138,16 +142,6 @@ export class DishesComponent implements OnInit {
     }
     return minDish
   }
-
-  deleteDish(idx: number) {
-    let index = this.basketService.basket.indexOf(this.dishes[idx])
-    while (index >= 0){
-      this.basketService.basket.splice(index, 1);
-      index = this.basketService.basket.indexOf(this.dishes[idx])
-    }
-    this.fb.removeDish(idx)
-  }
-
 
   formSubmitEventHandler(dish: Dish) {
     this.dishes.push(dish)

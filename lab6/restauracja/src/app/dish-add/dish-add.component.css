@@ -17,6 +17,7 @@ div{
 label,input{
     font-size:1.2em;
     margin:1em;
+    width:20vw;
 }
 button{
     width:50%;
@@ -32,4 +33,11 @@ input{
 
 p{
     text-align: center;
+}
+
+.left-right{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

@@ -104,4 +104,13 @@ export class FireBaseServiceService {
   getUserRoles$(uid: string){
     return this.db.object('/users/' + uid + '/roles').valueChanges()
   }
+
+  getUsers(){
+    return this.db.list('users').snapshotChanges();
+  }
+
+  changeUserRole(uid: string, role: string, value: string){
+    let change = '{"' + role +'"' + ':' + value + '}'
+    this.db.object('/users/' + uid + '/roles').update(JSON.parse(change))
+  }
 }

@@ -3,6 +3,8 @@ export interface Roles{
   client: boolean
   menager: boolean
   admin: boolean
+  banned: boolean
+  [key: string]: any
 }
 
 export class User{
@@ -14,6 +16,10 @@ export class User{
   constructor(userData: any){
     this.email = userData.email
     this.uid = userData.uid
-    this.roles = {client: true, guest:true, menager:false, admin: false}
+    if (userData.roles != null){
+      this.roles = userData.roles
+    }
+    else
+      this.roles = {client: true, guest:true, menager:false, admin: false, banned: false}
   }
 }
