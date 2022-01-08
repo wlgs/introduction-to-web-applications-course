@@ -220,6 +220,8 @@ input,textarea{
   background-color: var(--colorBackground2);
   outline: none;
   border:3px solid rgba(218, 0, 55,0);
+  color:var(--colorPrimary);
+  font-weight: 700;
   transition: 300ms ease all;
 
 }

@@ -25,6 +25,7 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
 import { MenagerdashboardComponent } from './menagerdashboard/menagerdashboard.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModifyDishComponent } from './modify-dish/modify-dish.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AdmindashboardComponent,
     MenagerdashboardComponent,
     FooterComponent,
+    ModifyDishComponent,
   ],
   imports: [
     BrowserModule,

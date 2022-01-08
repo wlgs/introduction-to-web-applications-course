@@ -146,4 +146,14 @@ export class FireBaseServiceService {
       window.alert(err)
     }
   }
+
+  updateDish(data: any, idS:string){
+    this.db.list('Dishes').snapshotChanges().pipe(first()).subscribe((items: any) => {
+      for (let i of items) {
+        if (i.payload.val().id == idS) {
+          this.db.list('Dishes').update(i.payload.key, data)
+        }
+      }
+    });
+  }
 }

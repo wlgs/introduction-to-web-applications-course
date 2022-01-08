@@ -43,8 +43,4 @@ export class MenagerdashboardComponent implements OnInit {
   deleteDish(idx: number) {
     this.fb.removeDish(idx);
   }
-
-  updateDish(idx: number) {
-    window.alert('Not yet implemented');
-  }
 }

@@ -14,6 +14,7 @@ import { MenagerGuard } from './guard/menager.guard';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MenagerdashboardComponent } from './menagerdashboard/menagerdashboard.component';
+import { ModifyDishComponent } from './modify-dish/modify-dish.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { RegisterComponent } from './register/register.component';
 import { SingledishComponent } from './singledish/singledish.component';
@@ -37,6 +38,11 @@ const routes: Routes = [
     path: 'menager',
     component: MenagerdashboardComponent,
     canActivate: [MenagerGuard],
+  },
+  {
+    path: 'menager/modify/:id',
+    component: ModifyDishComponent,
+    canActivate: [AuthGuard, MenagerGuard],
   },
   {
     path: 'admin',

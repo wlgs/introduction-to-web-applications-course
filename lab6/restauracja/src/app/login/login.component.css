@@ -19,10 +19,7 @@ button, h2{
 label{
     margin-right:1em;
 }
-input{
-    color:var(--colorPrimary);
-    font-weight: 700;
-}
+
 label,input,h2, button{
     font-size:3em;
 }
