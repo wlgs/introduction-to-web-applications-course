@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
   --colorBackground: rgb(23, 23, 23);
   --colorBackground2: rgb(68, 68, 68);
   --colorAccent: rgb(218, 0, 55);
+  --colorAccent2: rgb(221, 4, 58);
   --colorPrimary: rgb(237, 237, 237);
 }
 
@@ -15,13 +18,15 @@
 }
 
 html {
-  font-family: 'Raleway', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-kerning: auto;
   height: 100%;
   width: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -97,6 +102,7 @@ select {
 
 .accented{
   color:var(--colorAccent);
+  text-shadow: 0px 0px 0.2em var(--colorAccent);
   transition: 300ms ease all;
 }
 
@@ -105,7 +111,89 @@ select {
   transition: 300ms ease all;
 }
 
+.accented-btn{
+  color:var(--colorAccent);
+  transition: 300ms ease all;
+}
+.accented-btn:hover{
+  color:var(--colorAccent);
+  transition: 300ms ease all;
+}
+
+.clickable{
+  cursor:pointer;
+}
+
 
 a{
   text-decoration: inherit;
+}
+
+
+.button-accent {
+  appearance: none;
+  margin:0.1em;
+  background-color: transparent;
+  border: 2px solid var(--colorPrimary);
+  border-radius: 15px;
+  color: var(--colorPrimary);
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  min-height: 60px;
+  font-weight: bold;
+  min-width: 0;
+  width:fit-content;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+
+.button-accent:disabled {
+  pointer-events: none;
+}
+
+.button-accent:hover {
+  color: #fff;
+  background-color: var(--colorAccent);
+  border: 2px solid var(--colorAccent);
+  box-shadow: rgba(218, 0, 55, 0.5) 0 0px 30px;
+  transform: translateY(-2px);
+}
+
+.button-accent-green{
+  border: 2px solid var(--colorPrimary);
+  color: var(--colorPrimary);
+}
+
+.button-accent-green:hover{
+  background-color: rgb(45, 182, 45);
+  box-shadow: rgba(45, 182, 45, 0.5) 0 0px 30px;
+  border: 2px solid rgb(45, 182, 45);
+}
+
+.button-accent-active{
+  color: #fff;
+  background-color: var(--colorAccent);
+  border: 2px solid var(--colorAccent);
+  box-shadow: rgba(218, 0, 55, 0.5) 0 0px 30px;
+  transform: translateY(-2px);
+}
+
+.button-accent:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.button-disabled:hover{
+  cursor:not-allowed;
+  background-color: rgb(255, 0, 0);
+  box-shadow: rgba(255, 0, 0, 0.5) 0 0px 30px;
+  border: 2px solid rgb(255, 0, 0);
 }

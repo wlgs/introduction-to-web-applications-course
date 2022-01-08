@@ -1,5 +1,5 @@
 h1 {
-  font-size: 7em;
+  font-size: 6.6em;
   margin: 30vh 1em 40vh 1em;
   transition:300ms ease all;
 }
@@ -13,7 +13,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
 }
 .info {
   text-align: center;

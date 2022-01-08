@@ -69,6 +69,7 @@ export class DishesComponent implements OnInit {
 
   changePage(n: number) {
     this.currentPage = n;
+    window.scroll(0,0);
   }
 
   setAmountToShow(amount: number) {

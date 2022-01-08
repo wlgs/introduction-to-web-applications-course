@@ -1,13 +1,13 @@
-<h2><a routerLink="/cart" class="infobtn">Podgląd koszyka</a></h2>
+<h2><a routerLink="/cart" class="button-accent">Podgląd koszyka</a></h2>
 
 <div class="paginate">
   <span>Pokaż na stronie </span>
-  <span class="infobtn" [ngClass]="{
-    'infobtn-checked': amountToShow == 5}" (click)="setAmountToShow(5)">5</span>
-  <span class="infobtn" [ngClass]="{
-    'infobtn-checked': amountToShow == 10}" (click)="setAmountToShow(10)">10</span>
-  <span class="infobtn" [ngClass]="{
-    'infobtn-checked': amountToShow == 20}" (click)="setAmountToShow(20)">20</span>
+  <span class="button-accent" [ngClass]="{
+    'button-accent-active': amountToShow == 5}" (click)="setAmountToShow(5)">5</span>
+  <span class="button-accent" [ngClass]="{
+    'button-accent-active': amountToShow == 10}" (click)="setAmountToShow(10)">10</span>
+  <span class="button-accent" [ngClass]="{
+    'button-accent-active': amountToShow == 20}" (click)="setAmountToShow(20)">20</span>
 </div>
 
 <h2>W koszyku: ${{getCartValue() | number: '1.0-2'}}</h2>
@@ -26,35 +26,57 @@
       'least-expensive': dish.price == getMinPriceDish(dishes).price
     }" *ngFor="let dish of dishes | slice:currentPage*amountToShow ; index as idx" [ngStyle]="{
       'display': amountToShow > idx ? 'block' : 'none'}">
+    <div class="clickable" routerLink="/dishes/{{dish.id}}">
 
-    <a routerLink="/dishes/{{dish.id}}" (click)="alertLogIn()"><img src="{{ dish.imagelink[0] }}"
-        alt="{{ dish.name }}" /></a>
-    <h3>{{ dish.name | uppercase }}</h3>
-    <p class="type">kuchnia {{ dish.type | uppercase }}, {{ dish.category }}</p>
-    <a routerLink="/dishes/{{dish.id}}">
-      <p class="infobtn" (click)="alertLogIn()">Więcej szczegółów</p>
-    </a>
-    <!-- <p class="desc">{{ dish.shortdesc }}</p>
+
+      <div class="dish-inner">
+
+        <a routerLink="/dishes/{{dish.id}}" (click)="alertLogIn(); $event.stopPropagation()">
+          <img src="{{ dish.imagelink[0] }}" alt="{{ dish.name }}" /></a>
+        <h3>{{ dish.name | uppercase }}</h3>
+        <p class="type">kuchnia {{ dish.type | uppercase }}, {{ dish.category }}</p>
+
+        <!-- <p class="desc">{{ dish.shortdesc }}</p>
     <p class="ingr">Składniki: {{ dish.ingredients }}</p> -->
-    <div class="bottom">
-      <span class="price">{{ dish.currency }}{{ dish.price }}</span>
-      <div class="btn-container">
-        <div *ngIf="countDishInCart(dish) < dish.maxperday" class="addBasket btn" (click)="addClick(dish)">
+        <div class="bottom">
+          <span class="price">{{ dish.currency }}{{ dish.price }}</span>
+          <!-- <div class="btn-container">
+            <div *ngIf="countDishInCart(dish) < dish.maxperday" class="addBasket btn" (click)="addClick(dish)">
           ➕
         </div>
-        <div class="removeBasket btn" (click)="removeClick(dish)">➖</div>
-      </div>
-    </div>
 
-    <div class="bottom-info">
+
+            <div class="removeBasket btn" (click)="removeClick(dish)">➖</div>
+          </div> -->
+        </div>
+        <div *ngIf="countDishInCart(dish) < dish.maxperday && dish.maxperday - countDishInCart(dish) > 3"
+          class="button-accent button-accent-green" (click)="addClick(dish); $event.stopPropagation()">
+          Add to cart
+        </div>
+        <div *ngIf="countDishInCart(dish) >= dish.maxperday" class="button-accent button-disabled" (click)="$event.stopPropagation()">
+          No longer available
+        </div>
+        <div *ngIf="dish.maxperday - countDishInCart(dish) <= 3 && dish.maxperday - countDishInCart(dish) > 0"
+          class="button-accent button-accent-green" (click)="addClick(dish); $event.stopPropagation()">
+          Only {{ dish.maxperday - countDishInCart(dish) }} left!
+        </div>
+
+        <!-- <div class="bottom-info">
       <app-dish-rating (ratingChanged)="ratingEventHandler(dish, $event)" [dishLikes]="dish.likes"
         [dishDislikes]="dish.dislikes"></app-dish-rating>
       <p class="amount-info">ilość: {{ countDishInCart(dish) }}</p>
+    </div> -->
+        <!-- <a routerLink="/dishes/{{dish.id}}">
+      <p class="button-accent" (click)="alertLogIn()">Więcej szczegółów</p>
+    </a> -->
+        <!-- <p *ngIf="dish.maxperday - countDishInCart(dish) <= 3" class="bottom-info-text">
+        Pozostało {{ dish.maxperday - countDishInCart(dish) }} dań!
+      </p> -->
+        <!-- <p *ngIf="dish.maxperday - countDishInCart(dish) > 3" class="bottom-info-text"></p> -->
+
+      </div>
+
     </div>
-    <p *ngIf="dish.maxperday - countDishInCart(dish) <= 3" class="bottom-info-text">
-      Pozostało {{ dish.maxperday - countDishInCart(dish) }} dań!
-    </p>
-    <p *ngIf="dish.maxperday - countDishInCart(dish) > 3" class="bottom-info-text"></p>
   </div>
 
 
@@ -62,7 +84,7 @@
 
 <div class="center">
   <h4>Strona</h4>
-  <span class="infobtn" [ngClass]="{
-    'infobtn-checked': currentPage==i}" (click)="changePage(i)"
+  <span class="button-accent" [ngClass]="{
+    'button-accent-active': currentPage==i}" (click)="changePage(i)"
     *ngFor="let n of createRange(((dishes.length - (dishes.length % amountToShow)) / amountToShow)+1); index as i">{{i}}</span>
 </div>

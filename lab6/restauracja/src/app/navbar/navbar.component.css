@@ -75,6 +75,10 @@ a {
   transition: 300ms ease all;
 }
 
+.logo h1{
+  transition: 300ms ease all;
+}
+
 .active-link {
   color: var(--colorAccent);
   transition: 300ms ease all;

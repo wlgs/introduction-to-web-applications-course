@@ -26,21 +26,31 @@ p.type {
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  align-items: center;
 }
 
 .dish {
   margin: 1em;
   padding: 0.6em;
-  display: flex;
-  flex-direction: column;
-  flex-basis: 25%;
-  background-color: #e7e7e7ee;
+  border: 2px solid var(--colorPrimary);
   border-radius: 10px;
-  max-width: 300px;
-  -webkit-box-shadow: 0px 0px 11px -5px rgba(66, 68, 90, 1);
-  -moz-box-shadow: 0px 0px 11px -5px rgba(66, 68, 90, 1);
-  box-shadow: 0px 0px 11px -5px rgba(66, 68, 90, 1);
+  width:300px;
+  -webkit-box-shadow: 0px 0px 11px -5px var(--colorPrimary);
+  -moz-box-shadow: 0px 0px 11px -5px var(--colorPrimary);
+  box-shadow: 0px 0px 11px -5px var(--colorPrimary);
+  transition:300ms ease all;
+}
+.dish:hover{
+  -webkit-box-shadow: 0px 0px 30px -5px var(--colorPrimary);
+  -moz-box-shadow: 0px 0px 30px -5px var(--colorPrimary);
+  box-shadow: 0px 0px 30px -5px var(--colorPrimary);
+  transition:300ms ease all;
+}
+.dish-inner{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width:100%;
 }
 
 .type {
@@ -115,8 +125,7 @@ p.type {
 }
 .bottom-info-text {
   color: red;
-  min-height: 25px;
-  text-align: center;
+  min-height: 1em;
 }
 
 .most-expensive {
@@ -144,7 +153,7 @@ p.type {
 }
 
 .infobtn {
-  background-color: rgb(240, 191, 57);
+  background-color: var(--colorAccent);
   padding: 0.4em;
   text-align: center;
   border-radius: 10px;
