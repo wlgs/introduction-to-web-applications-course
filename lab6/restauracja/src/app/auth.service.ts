@@ -54,7 +54,6 @@ export class AuthService {
       return this.afAuth
         .signInWithEmailAndPassword(email, password)
         .then((ev) => {
-          window.alert('Pomyślnie zalogowano, witaj ' + ev.user?.email);
           this.router.navigate(['']);
         })
         .catch((err) => {
@@ -69,7 +68,7 @@ export class AuthService {
       .then((res) => {
         let userData = new User(res.user);
         this.fb.addNewUser(userData);
-        window.alert('Pomyślnie zarejestrowano.');
+        this.router.navigate(['']);
       })
       .catch((err) => {
         window.alert(err.message);

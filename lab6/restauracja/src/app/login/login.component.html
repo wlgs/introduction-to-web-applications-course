@@ -1,5 +1,5 @@
 <div class="form-container">
-    <h2>Zaloguj się</h2>
+    <h2>Login with your account</h2>
     <form [formGroup]="loginForm">
         <div class="left-right">
           <label for="name">Email</label>
@@ -11,10 +11,7 @@
           <input id="password" type="password" formControlName="password" />
         </div>
       </form>
-      <button type="submit" (click)="submitForm()">Zaloguj</button>
-      <div class="load" *ngIf="showLoader">
-        <hr/><hr/><hr/><hr/>
-      </div>
+      <button type="submit" class="button-accent" (click)="submitForm()">Confirm</button>
       <p *ngIf="showError">Wprowadź poprawne dane!</p>
       <p *ngIf="showOk">Poprawnie zalogowano!</p>
 </div>

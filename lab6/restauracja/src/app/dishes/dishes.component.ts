@@ -1,15 +1,13 @@
 import {
   Component,
-  ElementRef,
   OnInit,
-  QueryList,
-  ViewChildren,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth.service';
 import { BasketInfoService } from '../basket-info.service';
 import { FireBaseServiceService } from '../fire-base-service.service';
 import { Dish } from '../IDish';
+
 @Component({
   selector: 'app-dishes',
   templateUrl: './dishes.component.html',

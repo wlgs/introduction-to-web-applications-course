@@ -213,3 +213,17 @@ router-outlet + * {
   display: block;  /* Change display inline to block */
   animation: fade 1s;
 }
+
+input,textarea{
+  background-color: var(--colorBackground2);
+  outline: none;
+  border:3px solid rgba(218, 0, 55,0);
+  transition: 300ms ease all;
+
+}
+
+input:focus{
+  outline: none;
+  border:3px solid rgba(218, 0, 55,1);
+  transition: 300ms ease all;
+}

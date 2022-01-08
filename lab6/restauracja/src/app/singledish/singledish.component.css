@@ -9,24 +9,22 @@
 h1 {
   font-size: 4em;
 }
-h2 {
-  margin: 1em;
-  text-align: center;
-}
+
 h2.shdesc {
   color: rgb(61, 61, 61);
   font-style: italic;
-  margin-bottom: 1.2em;
 }
 img {
   margin: 1em;
-  max-width: 100%;
   border-radius: 20px;
-  width: 80%;
+  width: 430px;
+}
+h2,p{
+  margin-top:1em;
+  margin-bottom:1em;
 }
 .desc {
   font-size: 2em;
-  margin: 1em;
 }
 
 .ingr {
@@ -37,30 +35,20 @@ img {
   font-weight: bolder;
 }
 
-.infobtn {
+.top-right{
   position: absolute;
   z-index: 0;
   right: 0;
-  background-color: rgb(240, 191, 57);
-  padding: 0.4em;
-  text-align: center;
-  border-radius: 10px;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  transition: 300ms ease all;
-  width: fit-content;
-  cursor: pointer;
 }
 
-.infobtn:hover {
-  color: white;
-  background-color: rgb(216, 158, 0);
-
-  transition: 300ms ease all;
-}
 .inner {
   position: relative;
   width: 100%;
+}
+
+.in-cols{
+  display: flex;
+  flex-direction: row;
 }
 
 a {
@@ -68,11 +56,9 @@ a {
   text-decoration: inherit;
 }
 
-.photoselect {
-  font-size: 4em;
-  user-select: none;
-  cursor: pointer;
-  margin-top: -0.2em;
+.photoselect span{
+  margin-right:0.3em;
+  margin-left:0.3em;
 }
 
 span.np:hover {
@@ -97,5 +83,4 @@ span.np {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 1.6em;
 }

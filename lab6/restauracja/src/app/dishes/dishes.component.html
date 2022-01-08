@@ -9,18 +9,20 @@
 </div> -->
 <div class="dishes" *ngIf="dishes != []">
 
-  <div class="dish" [ngClass]="{
-      'most-expensive': dish.price == getMaxPriceDish(dishes).price,
-      'least-expensive': dish.price == getMinPriceDish(dishes).price
-    }" *ngFor="let dish of dishes | slice:currentPage*amountToShow ; index as idx" [ngStyle]="{
+<!-- 
+  [ngClass]="{
+    'most-expensive': dish.price == getMaxPriceDish(dishes).price,
+    'least-expensive': dish.price == getMinPriceDish(dishes).price
+  }" -->
+
+  <div class="dish"   *ngFor="let dish of dishes | slice:currentPage*amountToShow ; index as idx" [ngStyle]="{
       'display': amountToShow > idx ? 'block' : 'none'}">
-    <div class="clickable" routerLink="/dishes/{{dish.id}}">
+    <div class="clickable" routerLink="/dishes/{{dish.id}}" (click)="alertLogIn(); $event.stopPropagation()">
 
 
       <div class="dish-inner">
 
-        <a routerLink="/dishes/{{dish.id}}" (click)="alertLogIn(); $event.stopPropagation()">
-          <img src="{{ dish.imagelink[0] }}" alt="{{ dish.name }}" /></a>
+          <img src="{{ dish.imagelink[0] }}" alt="{{ dish.name }}" />
         <h3>{{ dish.name | uppercase }}</h3>
         <p class="type">kuchnia {{ dish.type | uppercase }}, {{ dish.category }}</p>
 
@@ -69,22 +71,21 @@
 
 
 </div>
-
+<div class="paginate">
+  <h4>Items on page</h4>
+  <span class="button-accent" [ngClass]="{
+    'button-accent-active': amountToShow == 10}" (click)="setAmountToShow(10)">10</span>
+  <span class="button-accent" [ngClass]="{
+    'button-accent-active': amountToShow == 25}" (click)="setAmountToShow(25)">25</span>
+  <span class="button-accent" [ngClass]="{
+    'button-accent-active': amountToShow == 50}" (click)="setAmountToShow(50)">50</span>
+</div>
 <div class="center">
 
 
-
-  <h4>Strona</h4>
+  <h4>Page</h4>
   
-  <div class="paginate">
-    <span>Pokaż na stronie </span>
-    <span class="button-accent" [ngClass]="{
-      'button-accent-active': amountToShow == 10}" (click)="setAmountToShow(10)">10</span>
-    <span class="button-accent" [ngClass]="{
-      'button-accent-active': amountToShow == 25}" (click)="setAmountToShow(25)">25</span>
-    <span class="button-accent" [ngClass]="{
-      'button-accent-active': amountToShow == 50}" (click)="setAmountToShow(50)">50</span>
-  </div>
+
   <span class="button-accent" [ngClass]="{
     'button-accent-active': currentPage==i}" (click)="changePage(i)"
     *ngFor="let n of createRange(((dishes.length - (dishes.length % amountToShow)) / amountToShow)+1); index as i">{{i}}</span>

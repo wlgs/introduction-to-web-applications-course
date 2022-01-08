@@ -1,5 +1,5 @@
 <div class="form-container">
-  <h2>Zarejestruj się</h2>
+  <h2>Register an account</h2>
   <form [formGroup]="regForm">
     <div class="left-right">
       <label for="name">Email</label>
@@ -11,7 +11,7 @@
       <input id="password" type="password" formControlName="password" />
     </div>
   </form>
-  <button type="submit" (click)="submitForm()">Zarejestruj</button>
+  <button type="submit" class="button-accent" (click)="submitForm()">Confirm</button>
   <p *ngIf="showError">Wprowadź poprawne dane!</p>
   <p *ngIf="showOk">Poprawnie zarejestrowano!</p>
 
