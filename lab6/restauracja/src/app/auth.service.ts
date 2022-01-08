@@ -24,10 +24,10 @@ export class AuthService {
     private fb: FireBaseServiceService
   ) {
     afAuth.authState.subscribe(async (ev: any) => {
-      console.log(this.userRoles);
-      console.log(this.isLoggedIn());
-      console.log(this.userData);
-      console.log(' ');
+      // console.log(this.userRoles);
+      // console.log(this.isLoggedIn());
+      // console.log(this.userData);
+      // console.log(' ');
       if (ev) {
         this.userData = ev;
         const roles = await this.fb.getUserRoles(ev?.uid);
@@ -42,10 +42,10 @@ export class AuthService {
           banned: false,
         };
       }
-      console.log(this.userRoles);
-      console.log(this.isLoggedIn());
-      console.log(this.userData);
-      console.log(' ');
+      // console.log(this.userRoles);
+      // console.log(this.isLoggedIn());
+      // console.log(this.userData);
+      // console.log(' ');
     });
   }
 

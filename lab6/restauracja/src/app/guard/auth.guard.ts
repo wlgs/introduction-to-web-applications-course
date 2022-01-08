@@ -32,7 +32,7 @@ export class AuthGuard implements CanActivate {
     return this.auth.getAuthenticated().pipe(
       map((state) => {
         if (state == null) {
-          console.log('AUTH OUT');
+          // console.log('AUTH OUT');
           this.router.navigate(['']);
           return false;
         }

@@ -23,12 +23,12 @@ export class MenagerGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    console.log(this.auth.userRoles.menager);
+    // console.log(this.auth.userRoles.menager);
     if (this.auth.userRoles.menager) {
-      console.log('MENAGER IN');
+      // console.log('MENAGER IN');
       return true;
     }
-    console.log('MENAGER OUT');
+    // console.log('MENAGER OUT');
     this.router.navigate(['']);
     return false;
 

@@ -23,7 +23,7 @@ export class AdminGuard implements CanActivate {
     | UrlTree {
     return this.auth.getAuthenticated().pipe(
       map((user) => {
-        console.log(this.auth.userRoles.admin);
+        // console.log(this.auth.userRoles.admin);
         if (this.auth.userRoles.admin !== true) {
           this.router.navigate(['']);
           return false;

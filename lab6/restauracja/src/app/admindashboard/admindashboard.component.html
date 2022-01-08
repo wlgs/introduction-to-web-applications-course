@@ -1,5 +1,5 @@
 <ng-container *ngIf="auth.userRoles?.admin == true">
-    <h1>Panel admina</h1>
+    <h1>Admin panel</h1>
     <h3>Aktualny tryb persystencji logowania: {{ selectedPersistence }}</h3>
     <div class="inline">
         <h3>Wybierz tryb persystencji logowania:</h3>
@@ -10,7 +10,7 @@
         </select>
     </div>
 
-    <h2>Zarządzaj użytkownikami</h2>
+    <h2>Manage users</h2>
     <ng-container *ngIf="users != []">
         <table class="table-desktop">
             <tr>
