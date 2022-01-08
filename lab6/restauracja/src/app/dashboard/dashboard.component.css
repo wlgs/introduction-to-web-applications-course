@@ -18,3 +18,10 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+
+table,
+th,
+td {
+  border: 1px solid var(--colorPrimary);
+  padding: 0.2em;
+}

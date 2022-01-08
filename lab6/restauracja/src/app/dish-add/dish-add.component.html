@@ -41,7 +41,7 @@
       <input id="imagelink" type="text" formControlName="dishimagelink" />
     </div>
 
-    <button type="submit" (click)="submitForm()">Dodaj</button>
+    <button type="submit" (click)="submitForm()" class="button-accent">Dodaj</button>
     <p *ngIf="showError">Wprowadź poprawne dane!</p>
     <p *ngIf="showOk">Poprawnie dodano potrawę!</p>
   </form>

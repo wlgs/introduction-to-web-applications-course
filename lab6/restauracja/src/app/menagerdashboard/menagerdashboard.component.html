@@ -7,16 +7,16 @@
     <div class="center">
       <table>
         <tr>
-          <th>Nazwa</th>
           <th>Id</th>
+          <th>Nazwa</th>
           <th>Opcje</th>
         </tr>
         <tr *ngFor="let dish of dishes">
-          <td>{{dish.name}}</td>
           <td>{{dish.id}}</td>
+          <td>{{dish.name}}</td>
           <td>
-            <button (click)="deleteDish(dish.id)">USUŃ</button>
-            <button (click)="updateDish(dish.id)">MODYFIKUJ</button>
+            <button (click)="deleteDish(dish.id)" class="button-accent" >USUŃ</button>
+            <button (click)="updateDish(dish.id)" class="button-accent">MODYFIKUJ</button>
           </td>
         </tr>
       </table>

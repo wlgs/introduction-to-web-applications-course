@@ -28,7 +28,6 @@ export class NavbarComponent implements OnInit {
 
   onWindowScroll(ev: any) {
     let element = document.querySelector('.navbar-container') as HTMLElement;
-    console.log(element);
     if (window.pageYOffset >= element.clientHeight) {
       this.pageScrolled = true;
     } else {

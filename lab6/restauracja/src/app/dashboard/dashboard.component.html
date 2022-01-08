@@ -7,7 +7,7 @@
         <li><strong>Konto stworzone: </strong> {{auth.userData.metadata.creationTime}}</li>
         <li><strong>Ostatnie logowanie: </strong>{{auth.userData.metadata.lastSignInTime}} </li>
     </ul>
-    <h2>Twoje uprawnienia: </h2>
+    <h2>Twoje uprawnienia </h2>
     <ul>
         <li><strong>Gość: </strong>{{auth.userRoles?.guest}}</li>
         <li><strong>Klient: </strong>{{auth.userRoles?.client}}</li>
@@ -15,4 +15,35 @@
         <li><strong>Admin: </strong>{{auth.userRoles?.admin}}</li>
         <li><strong>Banned: </strong>{{auth.userRoles?.banned}}</li>
     </ul>
+    <h2>Historia zamówień</h2>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Items</th>
+        </tr>
+        <ng-container *ngIf="orderHistory != undefined">
+            <ng-container *ngIf="orderHistoryIds.length>0 && dishesArr.length>0">
+                <ng-container *ngFor="let orderId of orderHistoryIds">
+                    <tr>
+                        <td>{{orderHistory[orderId].date}}</td>
+                        <td>{{getDishNames(orderId)}}</td>
+                    </tr>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+
+    </table>
+    <!-- <p *ngFor="let name of getDishNames(orderId)">{{name}}</p> -->
+    
+    <!-- <div class="center">
+        <div *ngFor="let item of basketService.basket; index as idx">
+            <div class="left-right">
+                <h3>{{idx+1}}.</h3>
+                <h3>{{item.name}} - ${{item.price}}</h3>
+                <div class="button-accent" (click)="removeClick(item)">Remove</div>
+            </div>
+        </div>
+        <button (click)="order()" class="button-accent ">Confirm your ${{getCartSum() | number: '1.0-2'}} order</button>
+    </div> -->
+
 </div>

@@ -133,4 +133,17 @@ export class FireBaseServiceService {
     let change = '{"' + role + '"' + ':' + value + '}';
     this.db.object('/users/' + uid + '/roles').update(JSON.parse(change));
   }
+
+  getOrderHistory$(uid:string){
+    return this.db.object('/orderhistory/' + uid).valueChanges();
+  }
+
+  pushOrder(items: string[], uid:string){
+    try{
+      this.db.list('/orderhistory/' + uid).push({items: items, date: new Date().toLocaleDateString()})
+    }
+    catch (err){
+      window.alert(err)
+    }
+  }
 }
