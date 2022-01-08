@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-top:60px;
 }
 
 h1 {
@@ -41,6 +42,14 @@ h2,p{
   z-index: 0;
   right: 0;
 }
+
+.fixed-bottom-right{
+  position:fixed;
+  z-index:20;
+  bottom: 1em;
+  right:1em;
+}
+
 
 .inner {
   position: relative;
@@ -85,3 +94,39 @@ span.np {
   align-items: center;
   justify-content: center;
 }
+
+
+@media only screen and (max-width: 1100px) {
+  h1 {
+    font-size: 2.6em;
+  }
+  img{
+    width: 498px;
+    height: 280px;
+  }
+  h2{
+    font-size:0.8em;
+  }
+}
+
+@media only screen and (max-width: 516px) {
+  h1 {
+    font-size: 1.2em;
+  }
+  h2{
+    font-size:0.6em;
+  }
+  img{
+    width: 356px;
+    height: 200px;
+  }
+  .in-cols{
+    flex-direction: column;
+  }
+  .fixed-bottom-right {
+    left:10%;
+    bottom:1em;
+    width:80%;
+  }
+}
+

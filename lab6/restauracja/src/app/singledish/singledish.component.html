@@ -1,6 +1,6 @@
 <div class="inner">
     <a routerLink="/dishes">
-        <div class="button-accent top-right">
+        <div class="button-accent fixed-bottom-right">
             Powrót do dań
         </div>
     </a>
@@ -21,8 +21,8 @@
             <div>
                 <h1>{{dish[0].name}}</h1>
                 <h2 class="shdesc">kuchnia {{ dish[0].type}}, {{ dish[0].category }}</h2>
-                <p class="desc">{{ dish[0].shortdesc }}</p>
-                <p class="ingr">Składniki: {{ dish[0].ingredients }}</p>
+                <h2>{{ dish[0].shortdesc }}</h2>
+                <h2 class="ingr">Składniki: {{ dish[0].ingredients }}</h2>
                 <h2>Dostępny u nas tylko za <span class="price">${{dish[0].price}}</span></h2>
                 <app-dish-rating (ratingChanged)="ratingEventHandler(dish[0], $event)" [dishLikes]="dish[0].likes"
                 [dishDislikes]="dish[0].dislikes"></app-dish-rating>

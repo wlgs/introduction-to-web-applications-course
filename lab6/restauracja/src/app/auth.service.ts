@@ -54,7 +54,7 @@ export class AuthService {
       return this.afAuth
         .signInWithEmailAndPassword(email, password)
         .then((ev) => {
-          this.router.navigate(['']);
+          this.router.navigate(['dashboard']);
         })
         .catch((err) => {
           window.alert(err.message);
@@ -68,7 +68,7 @@ export class AuthService {
       .then((res) => {
         let userData = new User(res.user);
         this.fb.addNewUser(userData);
-        this.router.navigate(['']);
+        this.router.navigate(['dashboard']);
       })
       .catch((err) => {
         window.alert(err.message);

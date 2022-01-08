@@ -53,6 +53,10 @@ export class DishesComponent implements OnInit {
     this.dishesSub?.unsubscribe();
   }
 
+  scrollToTop(){
+    window.scroll(0,0);
+  }
+
   countDishInCart(dish: Dish) {
     let cnt = 0;
     for (let item of this.basketService.basket) {
@@ -72,7 +76,7 @@ export class DishesComponent implements OnInit {
 
   setAmountToShow(amount: number) {
     this.amountToShow = amount;
-    console.log(this.amountToShow);
+    window.scroll(0,0);
   }
 
   getCartValue(): number {
@@ -155,7 +159,9 @@ export class DishesComponent implements OnInit {
   }
 
   alertLogIn() {
-    if (!this.auth.userRoles.client)
+    if (!this.auth.userRoles.client){
       window.alert('Dostępne tylko dla zalogowanych');
+      return
+    }
   }
 }

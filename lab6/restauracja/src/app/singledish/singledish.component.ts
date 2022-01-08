@@ -22,6 +22,7 @@ export class SingledishComponent implements OnInit {
   reviews: review[] = [];
 
   ngOnInit(): void {
+    window.scroll(0,0);
     this.subscription = this.route.params.subscribe((params) => {
       this.id = params['id'];
       this.fb

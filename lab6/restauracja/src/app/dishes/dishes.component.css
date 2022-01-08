@@ -4,13 +4,10 @@ img {
   border-radius:20px;
 }
 
-h4 {
-  margin: 1em;
-}
 h3 {
   margin: 0.4em 0em 0.1em 0em;
 }
-h2 {
+h2,h4 {
   padding: 1em;
   text-align: center;
 }
@@ -209,10 +206,30 @@ a {
   margin-right:1em;
 }
 
+.show-all{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+@media only screen and (max-width: 710px) {
+  .paginate{
+    transform:translateX(-50%);
+    left:50%;
+    padding-top:120px;
+  }
+  .fake-room{
+    height:80px;
+  }
+}
+
 @media only screen and (max-width: 516px) {
   .fixed-bottom-right {
     left:10%;
     bottom:1em;
     width:80%;
   }
+
+
+  
 }
+

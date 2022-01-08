@@ -47,4 +47,10 @@ img{
         width:2em;
         height:2em;
     }
+    p{
+        font-size:0.6em;
+    }
+    .footer{
+        padding-bottom:6em;
+    }
   }
