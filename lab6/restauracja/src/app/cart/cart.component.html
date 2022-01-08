@@ -1,7 +1,16 @@
 <ng-container *ngIf="basketService.basket.length>0">
-    <div *ngFor="let item of basketService.basket; index as idx">
-        <h3>{{idx+1}}. {{item.name}} - ${{item.price}}</h3>
+    <div class="center">
+        <div *ngFor="let item of basketService.basket; index as idx">
+            <div class="left-right">
+                <h3>{{idx+1}}.</h3>
+                <h3>{{item.name}} - ${{item.price}}</h3>
+            </div>
+        </div>
+        <button (click)="order()" class="button-accent ">Confirm your ${{getCartSum() | number: '1.0-2'}} order</button>
     </div>
-    <h2>Razem: ${{getCartSum() | number: '1.0-2'}}</h2>
-    <button (click)="order()">Zamów teraz</button>
+
+</ng-container>
+<ng-container *ngIf="basketService.basket.length==0">
+    <h1>Your cart is empty :(</h1>
+    <a routerLink="/dishes" class="accented"><h1>Order now</h1></a>
 </ng-container>
