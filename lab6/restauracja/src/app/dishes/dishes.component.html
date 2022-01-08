@@ -1,4 +1,12 @@
-<a routerLink="/cart" class="button-accent fixed-bottom-right">Cart value ${{getCartValue() | number: '1.0-2'}}<br>{{ getOrderedAmount(dishes) }} items</a>
+<a routerLink="/cart" class="button-accent fixed-bottom-right">
+  <div class="left-right">
+    <img src="assets/icons/shopping-cart.png" alt="zdj koszyka" srcset="">
+  <div>
+    <p>Cart value ${{getCartValue() | number: '1.0-2'}}</p>
+    <p>{{ getOrderedAmount(dishes) }} items</p>
+  </div>
+</div>
+</a>
 
 <!-- <div class="order-details">
   <h2 [ngStyle]="{

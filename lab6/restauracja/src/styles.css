@@ -4,6 +4,7 @@
 :root {
   --colorBackground: rgb(23, 23, 23);
   --colorBackground2: rgb(68, 68, 68);
+  --colorBackgroundLittle: rgb(32,32,32);
   --colorAccent: rgb(218, 0, 55);
   --colorAccent2: rgb(221, 4, 58);
   --colorPrimary: rgb(237, 237, 237);

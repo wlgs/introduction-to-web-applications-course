@@ -36,17 +36,17 @@
     </a>
     <a routerLink="/login" (click)="scrollToTop();" *ngIf="auth.userData == null">
       <div class="menu-item" [class.navbar-item-scrolled]="pageScrolled==true" routerLinkActive="active-link">
-        Login
+        Log in
       </div>
     </a>
     <div class="menu-item" (click)="scrollToTop();" [class.navbar-item-scrolled]="pageScrolled==true" (click)="auth.signOut()" *ngIf="auth.userData != null">
-      Logout
+      Log out
     </div>
     <a routerLink="/dishes" (click)="scrollToTop();">
       <div class="menu-item" [class.navbar-item-scrolled]="pageScrolled==true" routerLinkActive="active-link">Foods</div>
     </a>
     <a routerLink="/shipping" (click)="scrollToTop();">
-      <div class="menu-item" [class.navbar-item-scrolled]="pageScrolled==true" routerLinkActive="active-link">Shipping</div>
+      <div class="menu-item" [class.navbar-item-scrolled]="pageScrolled==true" routerLinkActive="active-link">Delivery</div>
     </a>
     <a routerLink="/aboutus" (click)="scrollToTop();">
       <div class="menu-item" [class.navbar-item-scrolled]="pageScrolled==true" routerLinkActive="active-link">About us</div>
@@ -85,11 +85,11 @@
       </a>
       <a routerLink="/login" (click)="optionChosen();scrollToTop();" *ngIf="auth.userData == null">
         <div class="menu-item" routerLinkActive="active-link">
-          Login
+          Log in
         </div>
       </a>
       <div class="menu-item" (click)="auth.signOut(); optionChosen();scrollToTop();" *ngIf="auth.userData != null">
-        Logout
+        Log out
       </div>
       <a routerLink="/dishes">
         <div class="menu-item" routerLinkActive="active-link" (click)="optionChosen();scrollToTop();">
@@ -98,7 +98,7 @@
       </a>
       <a routerLink="/shipping">
         <div class="menu-item" routerLinkActive="active-link" (click)="optionChosen();scrollToTop();">
-          Shipping
+          Delivery
         </div>
       </a>
       <a routerLink="/aboutus">

@@ -1,6 +1,7 @@
 img {
   height: 128px;
   width: 228px;
+  border-radius:20px;
 }
 
 h4 {
@@ -31,18 +32,17 @@ p.type {
 .dish {
   margin: 1em;
   padding: 0.6em;
-  border: 2px solid var(--colorPrimary);
-  border-radius: 10px;
   width:300px;
-  -webkit-box-shadow: 0px 0px 11px -5px var(--colorPrimary);
-  -moz-box-shadow: 0px 0px 11px -5px var(--colorPrimary);
-  box-shadow: 0px 0px 11px -5px var(--colorPrimary);
+  border-radius: 15px;
+  transform: translate(0,0);
   transition:300ms ease all;
 }
 .dish:hover{
-  -webkit-box-shadow: 0px 0px 30px -5px var(--colorPrimary);
-  -moz-box-shadow: 0px 0px 30px -5px var(--colorPrimary);
-  box-shadow: 0px 0px 30px -5px var(--colorPrimary);
+  -webkit-box-shadow: 0px 0px 20px 10px var(--colorBackgroundLittle);
+  -moz-box-shadow: 0px 0px 20px 10px var(--colorBackgroundLittle);
+  box-shadow: 0px 0px 20px 10px var(--colorBackgroundLittle);
+  background-color: var(--colorBackgroundLittle);
+  transform: translate(0px,-5px);
   transition:300ms ease all;
 }
 .dish-inner{
@@ -195,6 +195,18 @@ a {
   z-index:20;
   bottom: 1em;
   right:1em;
+}
+
+.left-right{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:100%;
+}
+.left-right img{
+  width:2.6em;
+  height:2.6em;
+  margin-right:1em;
 }
 
 @media only screen and (max-width: 516px) {
