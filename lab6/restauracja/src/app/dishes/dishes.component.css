@@ -24,6 +24,7 @@ p.type {
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  min-height:73vh;
 }
 
 .dish {

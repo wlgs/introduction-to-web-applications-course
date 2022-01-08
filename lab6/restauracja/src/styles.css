@@ -33,8 +33,9 @@ html {
 body {
   background-color: var(--colorBackground);
   color: var(--colorPrimary);
-  width: 100%;
-  overflow-x:hidden
+  width:100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 img,

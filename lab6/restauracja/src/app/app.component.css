@@ -5,13 +5,18 @@
 }
 
 main {
-  margin: 3em 2em;
-  min-height:84vh
+  margin: 8em 2em; /* 3/5em if sticky */
+  min-height:80vh
 }
 nav {
-  position: sticky;
+  position: fixed;
+  -webkit-backface-visibility: hidden;
+  backface-visibility:hidden;
+  width:100%;
   top: 0;
+  left:0;
   z-index: 1;
+  height: auto;
 }
 
 .fbody{

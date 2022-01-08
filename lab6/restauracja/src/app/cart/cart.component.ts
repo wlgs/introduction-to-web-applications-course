@@ -14,7 +14,9 @@ export class CartComponent implements OnInit {
     public basketService: BasketInfoService,
     private router: Router
   ) {}
-  ngOnInit() {}
+  ngOnInit() {
+    window.scroll(0,0);
+  }
 
   getCartSum(): number {
     let s = 0;
@@ -28,5 +30,20 @@ export class CartComponent implements OnInit {
     window.alert('Pomyślnie złożono zamówienie.');
     this.basketService.basket = [];
     this.router.navigate(['dishes']);
+  }
+
+  removeClick(dish: Dish) {
+      this.deleteDishOffBasket(dish);
+  }
+
+  deleteDishOffBasket(dish: Dish) {
+    let idx = 0;
+    for (let item of this.basketService.basket) {
+      if (item.id == dish.id) {
+        this.basketService.basket.splice(idx, 1);
+        return;
+      }
+      idx += 1;
+    }
   }
 }

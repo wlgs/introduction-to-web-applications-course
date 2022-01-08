@@ -4,6 +4,7 @@
             <div class="left-right">
                 <h3>{{idx+1}}.</h3>
                 <h3>{{item.name}} - ${{item.price}}</h3>
+                <div class="button-accent" (click)="removeClick(item)">Remove</div>
             </div>
         </div>
         <button (click)="order()" class="button-accent ">Confirm your ${{getCartSum() | number: '1.0-2'}} order</button>

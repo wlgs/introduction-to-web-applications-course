@@ -26,7 +26,7 @@ const routes: Routes = [
     canActivate: [DishDetailsGuard],
   },
   { path: 'addnewdish', component: DishAddComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent, canActivate: [LoginTwiceGuard] },
   {
     path: 'dashboard',
