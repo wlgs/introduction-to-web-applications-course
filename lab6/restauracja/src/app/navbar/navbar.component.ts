@@ -36,6 +36,10 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  scrollToTop(){
+    window.scroll(0,0);
+  }
+
   hamburgerHandler(){
     this.hamburgerOpened = !this.hamburgerOpened
   }

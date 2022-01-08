@@ -1,22 +1,22 @@
 <div class="navbar-container" [class.navbar-scrolled]="pageScrolled==true">
   <div class="navbar-left">
-    <a routerLink="/">
+    <a routerLink="/" (click)="scrollToTop();">
       <div class="logo">
         <h1 [class.navbar-logo-scrolled]="pageScrolled==true">MG FOODS</h1>
       </div>
     </a>
     <div class="menu-items" >
-      <a *ngIf="auth.userRoles.admin == true" routerLink="admin">
+      <a *ngIf="auth.userRoles.admin == true" (click)="scrollToTop();" routerLink="admin">
         <div class="menu-item" [class.navbar-item-scrolled]="pageScrolled==true" routerLinkActive="active-link">
           Panel Admina
         </div>
       </a>
-      <a *ngIf="auth.userRoles.menager == true" routerLink="menager">
+      <a *ngIf="auth.userRoles.menager == true" (click)="scrollToTop();" routerLink="menager">
         <div class="menu-item" [class.navbar-item-scrolled]="pageScrolled==true" routerLinkActive="active-link">
           Panel Menagera
         </div>
       </a>
-      <a routerLink="/dashboard" *ngIf="auth.userData != null">
+      <a routerLink="/dashboard" (click)="scrollToTop();" *ngIf="auth.userData != null">
         <div class="menu-item" [class.navbar-item-scrolled]="pageScrolled==true" routerLinkActive="active-link">
           Panel użytkownika {{ auth.userData.email }}
         </div>
@@ -26,26 +26,26 @@
 
   <div class="menu-items">
 
-    <a routerLink="/register" *ngIf="auth.userData == null">
+    <a routerLink="/register" (click)="scrollToTop();" *ngIf="auth.userData == null">
       <div class="menu-item"[class.navbar-item-scrolled]="pageScrolled==true"  routerLinkActive="active-link">
         Zarejestruj
       </div>
     </a>
-    <a routerLink="/login" *ngIf="auth.userData == null">
+    <a routerLink="/login" (click)="scrollToTop();" *ngIf="auth.userData == null">
       <div class="menu-item" [class.navbar-item-scrolled]="pageScrolled==true" routerLinkActive="active-link">
         Zaloguj
       </div>
     </a>
-    <div class="menu-item" [class.navbar-item-scrolled]="pageScrolled==true" (click)="auth.signOut()" *ngIf="auth.userData != null">
+    <div class="menu-item" (click)="scrollToTop();" [class.navbar-item-scrolled]="pageScrolled==true" (click)="auth.signOut()" *ngIf="auth.userData != null">
       Wyloguj
     </div>
-    <a routerLink="/dishes">
+    <a routerLink="/dishes" (click)="scrollToTop();">
       <div class="menu-item" [class.navbar-item-scrolled]="pageScrolled==true" routerLinkActive="active-link">Posiłki</div>
     </a>
-    <a routerLink="/shipping">
+    <a routerLink="/shipping" (click)="scrollToTop();">
       <div class="menu-item" [class.navbar-item-scrolled]="pageScrolled==true" routerLinkActive="active-link">Dostawa</div>
     </a>
-    <a routerLink="/aboutus">
+    <a routerLink="/aboutus" (click)="scrollToTop();">
       <div class="menu-item" [class.navbar-item-scrolled]="pageScrolled==true" routerLinkActive="active-link">O nas</div>
     </a>
   </div>
@@ -58,48 +58,48 @@
   </div>
   <div class="menu-ham-items" [class.hidden]="hamburgerOpened == false" [class.visible]="hamburgerOpened == true" [class.rolled-in]="hamburgerOpened == true" [class.rolled-out]="hamburgerOpened == false">
     <div class="wrapper">
-      <a *ngIf="auth.userRoles?.admin == true" (click)="optionChosen()" routerLink="admin"
+      <a *ngIf="auth.userRoles?.admin == true" (click)="optionChosen();scrollToTop();" routerLink="admin"
         routerLinkActive="active-link2">
         <div class="menu-item" routerLinkActive="active-link">
           Panel Admina
         </div>
       </a>
-      <a *ngIf="auth.userRoles?.menager == true" (click)="optionChosen()" routerLink="menager"
+      <a *ngIf="auth.userRoles?.menager == true" (click)="optionChosen();scrollToTop();" routerLink="menager"
         routerLinkActive="active-link2">
         <div class="menu-item" routerLinkActive="active-link">
           Panel Menagera
         </div>
       </a>
-      <a routerLink="/dashboard" (click)="optionChosen()" *ngIf="auth.userData != null" routerLinkActive="active-link">
+      <a routerLink="/dashboard" (click)="optionChosen();scrollToTop();" *ngIf="auth.userData != null" routerLinkActive="active-link">
         <div class="menu-item">
           Panel użytkownika {{ auth.userData.email }}
         </div>
       </a>
-      <a routerLink="/register" (click)="optionChosen()" *ngIf="auth.userData == null">
+      <a routerLink="/register" (click)="optionChosen();scrollToTop();" *ngIf="auth.userData == null">
         <div class="menu-item" routerLinkActive="active-link">
           Zarejestruj
         </div>
       </a>
-      <a routerLink="/login" (click)="optionChosen()" *ngIf="auth.userData == null">
+      <a routerLink="/login" (click)="optionChosen();scrollToTop();" *ngIf="auth.userData == null">
         <div class="menu-item" routerLinkActive="active-link">
           Zaloguj
         </div>
       </a>
-      <div class="menu-item" (click)="auth.signOut(); optionChosen()" *ngIf="auth.userData != null">
+      <div class="menu-item" (click)="auth.signOut(); optionChosen();scrollToTop();" *ngIf="auth.userData != null">
         Wyloguj
       </div>
       <a routerLink="/dishes">
-        <div class="menu-item" routerLinkActive="active-link" (click)="optionChosen()">
+        <div class="menu-item" routerLinkActive="active-link" (click)="optionChosen();scrollToTop();">
           Posiłki
         </div>
       </a>
       <a routerLink="/shipping">
-        <div class="menu-item" routerLinkActive="active-link" (click)="optionChosen()">
+        <div class="menu-item" routerLinkActive="active-link" (click)="optionChosen();scrollToTop();">
           Dostawa
         </div>
       </a>
       <a routerLink="/aboutus">
-        <div class="menu-item" routerLinkActive="active-link" (click)="optionChosen()">
+        <div class="menu-item" routerLinkActive="active-link" (click)="optionChosen();scrollToTop();">
           O nas
         </div>
       </a>

@@ -198,3 +198,18 @@ a{
   box-shadow: rgba(255, 0, 0, 0.5) 0 0px 30px;
   border: 2px solid rgb(255, 0, 0);
 }
+
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+router-outlet + * {
+  display: block;  /* Change display inline to block */
+  animation: fade 1s;
+}

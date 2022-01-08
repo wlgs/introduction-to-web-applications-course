@@ -24,7 +24,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { MenagerdashboardComponent } from './menagerdashboard/menagerdashboard.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +53,7 @@ import { FooterComponent } from './footer/footer.component';
     AngularFireAuthModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
