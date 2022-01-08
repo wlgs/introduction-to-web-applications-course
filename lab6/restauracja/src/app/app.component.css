@@ -6,9 +6,16 @@
 
 main {
   margin: 3em 2em;
+  min-height:84vh
 }
 nav {
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+.fbody{
+  min-height:100vh;
+  display:flex; 
+  flex-direction:column; 
 }

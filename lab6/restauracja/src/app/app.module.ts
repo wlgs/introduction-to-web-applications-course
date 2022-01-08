@@ -23,6 +23,7 @@ import { AuthService } from './auth.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { MenagerdashboardComponent } from './menagerdashboard/menagerdashboard.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { MenagerdashboardComponent } from './menagerdashboard/menagerdashboard.c
     DashboardComponent,
     AdmindashboardComponent,
     MenagerdashboardComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

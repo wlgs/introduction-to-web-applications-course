@@ -96,5 +96,16 @@ select {
 
 
 .accented{
-  color:var(--colorAccent)
+  color:var(--colorAccent);
+  transition: 300ms ease all;
+}
+
+.accented:hover{
+  text-shadow: 0px 0px 1em var(--colorAccent);
+  transition: 300ms ease all;
+}
+
+
+a{
+  text-decoration: inherit;
 }

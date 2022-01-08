@@ -4,9 +4,9 @@
   align-items: center;
   justify-content: space-between;
   background-color: var(--colorBackground);
-  color: black;
+  transition: 300ms ease all;
+  border-bottom: 4px solid rgba(237, 237, 237, .0);
 }
-
 .menu-items {
   display: flex;
   flex-direction: row;
@@ -17,7 +17,26 @@
   user-select: none;
   padding: 1em;
   font-weight: bold;
-  color: #eeeeee;
+  color: var(--colorPrimary);
+  transition: 300ms ease all;
+}
+
+.navbar-scrolled{
+  /* background-color: var(--colorPrimary); */
+  border-bottom: 4px solid rgba(237, 237, 237, 1);
+  -webkit-background-clip: padding-box; /* for Safari */
+  background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+  transition: 300ms ease all;
+}
+
+.navbar-item-scrolled{
+  /* color: var(--colorBackground); */
+  transition: 300ms ease all;
+}
+
+.navbar-logo-scrolled{
+  /* color: var(--colorBackground); */
+  /* text-shadow: 0px 0px 19px var(--colorBackground); */
   transition: 300ms ease all;
 }
 
@@ -43,15 +62,16 @@ a {
   padding-left:0.4em;
   font-size: 2em;
   user-select: none;
-  color: #eeeeee;
-  text-shadow: 0px 0px 19px rgba(255, 255, 255, 0.4);
+  color: var(--colorPrimary);
+  text-shadow: 0px 0px 19px var(--colorPrimary);
   font-weight: bold;
   transition: 300ms ease all;
 }
 
-.logo:hover {
+.logo h1:hover {
   cursor: pointer;
-  text-shadow: 0px 0px 30px rgba(255, 255, 255, 0.8);
+  color: var(--colorAccent);
+  text-shadow: 0px 0px 30px var(--colorAccent);
   transition: 300ms ease all;
 }
 
