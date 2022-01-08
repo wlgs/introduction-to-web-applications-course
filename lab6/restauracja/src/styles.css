@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root {
-  --colorBackground: rgb(154, 148, 131);
-  --colorBackground2: rgb(187, 180, 161);
-  --colorAccent: rgb(199, 190, 162);
-  --colorPrimary: rgb(229, 220, 195);
+  --colorBackground: rgb(23, 23, 23);
+  --colorBackground2: rgb(68, 68, 68);
+  --colorAccent: rgb(218, 0, 55);
+  --colorPrimary: rgb(237, 237, 237);
 }
 
 *,
@@ -16,7 +15,7 @@
 }
 
 html {
-  font-family: "Inter", sans-serif;
+  font-family: 'Raleway', sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,6 +28,7 @@ body {
   background-color: var(--colorBackground);
   color: var(--colorPrimary);
   width: 100%;
+  overflow-x:hidden
 }
 
 img,
@@ -92,4 +92,9 @@ select {
   75% {
     transform: translate(0, 160%);
   }
+}
+
+
+.accented{
+  color:var(--colorAccent)
 }
