@@ -1,24 +1,12 @@
-<h2><a routerLink="/cart" class="button-accent">Podgląd koszyka</a></h2>
+<a routerLink="/cart" class="button-accent fixed-bottom-right">Cart value ${{getCartValue() | number: '1.0-2'}}<br>{{ getOrderedAmount(dishes) }} items</a>
 
-<div class="paginate">
-  <span>Pokaż na stronie </span>
-  <span class="button-accent" [ngClass]="{
-    'button-accent-active': amountToShow == 5}" (click)="setAmountToShow(5)">5</span>
-  <span class="button-accent" [ngClass]="{
-    'button-accent-active': amountToShow == 10}" (click)="setAmountToShow(10)">10</span>
-  <span class="button-accent" [ngClass]="{
-    'button-accent-active': amountToShow == 20}" (click)="setAmountToShow(20)">20</span>
-</div>
-
-<h2>W koszyku: ${{getCartValue() | number: '1.0-2'}}</h2>
-
-<div class="order-details">
+<!-- <div class="order-details">
   <h2 [ngStyle]="{
       'background-color': getOrderedAmount(dishes) > 10 ? 'blue' : 'orange'
     }">
     Ilość zamówionych dań: {{ getOrderedAmount(dishes) }}
   </h2>
-</div>
+</div> -->
 <div class="dishes" *ngIf="dishes != []">
 
   <div class="dish" [ngClass]="{
@@ -83,7 +71,20 @@
 </div>
 
 <div class="center">
+
+
+
   <h4>Strona</h4>
+  
+  <div class="paginate">
+    <span>Pokaż na stronie </span>
+    <span class="button-accent" [ngClass]="{
+      'button-accent-active': amountToShow == 10}" (click)="setAmountToShow(10)">10</span>
+    <span class="button-accent" [ngClass]="{
+      'button-accent-active': amountToShow == 25}" (click)="setAmountToShow(25)">25</span>
+    <span class="button-accent" [ngClass]="{
+      'button-accent-active': amountToShow == 50}" (click)="setAmountToShow(50)">50</span>
+  </div>
   <span class="button-accent" [ngClass]="{
     'button-accent-active': currentPage==i}" (click)="changePage(i)"
     *ngFor="let n of createRange(((dishes.length - (dishes.length % amountToShow)) / amountToShow)+1); index as i">{{i}}</span>

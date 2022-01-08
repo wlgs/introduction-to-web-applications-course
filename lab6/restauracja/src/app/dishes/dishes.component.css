@@ -188,3 +188,19 @@ a {
 .center {
   text-align: center;
 }
+
+
+.fixed-bottom-right{
+  position:fixed;
+  z-index:20;
+  bottom: 1em;
+  right:1em;
+}
+
+@media only screen and (max-width: 516px) {
+  .fixed-bottom-right {
+    left:10%;
+    bottom:1em;
+    width:80%;
+  }
+}

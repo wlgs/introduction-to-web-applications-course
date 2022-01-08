@@ -24,7 +24,7 @@ export class DishesComponent implements OnInit {
 
   dishes: any[] = [];
 
-  amountToShow: number = 5;
+  amountToShow: number = 10;
   currentPage: number = 0;
 
   dishesSub: Subscription | undefined;

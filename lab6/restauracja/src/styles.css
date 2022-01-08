@@ -135,6 +135,7 @@ a{
   margin:0.1em;
   background-color: transparent;
   border: 2px solid var(--colorPrimary);
+  background-color: var(--colorBackground);
   border-radius: 15px;
   color: var(--colorPrimary);
   cursor: pointer;
