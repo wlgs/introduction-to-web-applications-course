@@ -1,49 +1,49 @@
 <div class="form-container">
-    <h2>Dodaj danie</h2>
-    <form [formGroup]="dishModifyForm">
-      <div class="left-right">
-        <label for="name">Nazwa dania:</label>
-        <input id="name" type="text" formControlName="Name" />
-      </div>
-  
-      <div class="left-right">
-        <label for="type">Typ kuchni:</label>
-        <input id="type" type="text" formControlName="Type" />
-      </div>
-  
-      <div class="left-right">
-        <label for="category">Kategoria:</label>
-        <input id="category" type="text" formControlName="Category" />
-      </div>
-  
-      <div class="left-right">
-        <label for="ingredients">Składniki:</label>
-        <input id="ingredients" type="text" formControlName="Ingredients" />
-      </div>
-  
-      <div class="left-right">
-        <label for="maxperday">Maks na dzień:</label>
-        <input id="maxperday" type="text" formControlName="MaxPerDay" />
-      </div>
-  
-      <div class="left-right">
-        <label for="price">Cena:</label>
-        <input id="price" type="text" formControlName="Price" />
-      </div>
-  
-      <div class="left-right">
-        <label for="shortdesc">Opis:</label>
-        <input id="shortdesc" type="text" formControlName="ShortDesc" />
-      </div>
-  
-      <div class="left-right">
-        <label for="imagelink">Ścieżka do zdj:</label>
-        <input id="imagelink" type="text" formControlName="ImageLink" />
-      </div>
-  
-      <button type="submit" (click)="submitForm()" class="button-accent">Modyfikuj</button>
-      <p *ngIf="showError">Wprowadź poprawne dane!</p>
-      <p *ngIf="showOk">Poprawnie zaktualizowano potrawę!</p>
-    </form>
-  
-  </div>
+  <h2>Dodaj danie</h2>
+  <form [formGroup]="dishModifyForm">
+    <div class="left-right">
+      <label for="name">Nazwa dania:</label>
+      <input id="name" type="text" formControlName="Name" />
+    </div>
+
+    <div class="left-right">
+      <label for="type">Typ kuchni:</label>
+      <input id="type" type="text" formControlName="Type" />
+    </div>
+
+    <div class="left-right">
+      <label for="category">Kategoria:</label>
+      <input id="category" type="text" formControlName="Category" />
+    </div>
+
+    <div class="left-right">
+      <label for="ingredients">Składniki:</label>
+      <input id="ingredients" type="text" formControlName="Ingredients" />
+    </div>
+
+    <div class="left-right">
+      <label for="maxperday">Maks na dzień:</label>
+      <input id="maxperday" type="text" formControlName="MaxPerDay" />
+    </div>
+
+    <div class="left-right">
+      <label for="price">Cena:</label>
+      <input id="price" type="text" formControlName="Price" />
+    </div>
+
+    <div class="left-right">
+      <label for="shortdesc">Opis:</label>
+      <input id="shortdesc" type="text" formControlName="ShortDesc" />
+    </div>
+
+    <div class="left-right">
+      <label for="imagelink">Ścieżka do zdj:</label>
+      <input id="imagelink" type="text" formControlName="ImageLink" />
+    </div>
+
+    <button type="submit" (click)="submitForm()" class="button-accent">Modyfikuj</button>
+    <p *ngIf="showError">Wprowadź poprawne dane!</p>
+    <p *ngIf="showOk">Poprawnie zaktualizowano potrawę!</p>
+  </form>
+
+</div>

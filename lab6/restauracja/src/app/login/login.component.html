@@ -1,18 +1,17 @@
 <div class="form-container">
-    <h2>Log in with your account</h2>
-    <form [formGroup]="loginForm">
-        <div class="left-right">
-          <label for="name">Email</label>
-          <input id="name" type="text" formControlName="login" />
-        </div>
-      
-        <div class="left-right">
-          <label for="type">Password</label>
-          <input id="password" type="password" formControlName="password" />
-        </div>
-      </form>
-      <button type="submit" class="button-accent" (click)="submitForm()">Confirm</button>
-      <p *ngIf="showError">Wprowadź poprawne dane!</p>
-      <p *ngIf="showOk">Poprawnie zalogowano!</p>
-</div>
+  <h2>Log in with your account</h2>
+  <form [formGroup]="loginForm">
+    <div class="left-right">
+      <label for="name">Email</label>
+      <input id="name" type="text" formControlName="login" />
+    </div>
 
+    <div class="left-right">
+      <label for="type">Password</label>
+      <input id="password" type="password" formControlName="password" />
+    </div>
+  </form>
+  <button type="submit" class="button-accent" (click)="submitForm()">Confirm</button>
+  <p *ngIf="showError">Wprowadź poprawne dane!</p>
+  <p *ngIf="showOk">Poprawnie zalogowano!</p>
+</div>
