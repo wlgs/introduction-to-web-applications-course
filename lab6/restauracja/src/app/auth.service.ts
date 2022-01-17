@@ -2,6 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { first, firstValueFrom, Observable } from 'rxjs';
+import { BasketInfoService } from './basket-info.service';
 import { FireBaseServiceService } from './fire-base-service.service';
 import { Roles, User } from './User';
 @Injectable({
@@ -21,7 +22,8 @@ export class AuthService {
   constructor(
     private afAuth: AngularFireAuth,
     private router: Router,
-    private fb: FireBaseServiceService
+    private fb: FireBaseServiceService,
+    private basket: BasketInfoService
   ) {
     afAuth.authState.subscribe(async (ev: any) => {
       // console.log(this.userRoles);
@@ -85,6 +87,7 @@ export class AuthService {
 
   signOut() {
     return this.afAuth.signOut().then((ev) => {
+      this.basket.basket = []
       this.router.navigate(['']);
     });
   }
