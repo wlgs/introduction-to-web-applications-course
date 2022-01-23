@@ -17,6 +17,9 @@ export class DashboardComponent implements OnInit {
   orderHistory: any | undefined
   dishesArr: any[] = []
   ngOnInit(): void {
+    this.auth.getCurrentUserData().then(res=>{
+      console.log(res)
+    })
     this.fb.getOrderHistory$(this.auth.userData.uid).pipe(first()).subscribe((data: any) =>{
       if(data){
         this.orderHistoryIds = Object.keys(data)
