@@ -5,6 +5,7 @@
 *.rar
 *.7zip
 /test
+environments/
 
 # compiled output
 /dist
