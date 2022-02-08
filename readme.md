@@ -20,4 +20,9 @@ The fortnight's assignments' pdfs can be seen here:
 
 | Assignment  | Release | Description
 | ------------- | ------------- | ------------- |
-| [lab1.pdf](pdfs/lab1.pdf)  | release  | desc here |
+| [lab1.pdf](pdfs/lab1.pdf)  | -  | Basic HTML + CSS (not mandatory, therefore no release) |
+| [lab2.pdf](pdfs/lab2.pdf)  | [lab2-release](https://github.com/wlgs/introduction-to-web-applications-course/releases/tag/lab2) | HTML + CSS |
+| [lab3.pdf](pdfs/lab3.pdf)  | [lab3-release](https://github.com/wlgs/introduction-to-web-applications-course/releases/tag/lab3) | HTML + CSS + JavaScript |
+| [lab4.pdf](pdfs/lab4.pdf)  | [lab4-release](https://github.com/wlgs/introduction-to-web-applications-course/releases/tag/lab4) | Angular introduction |
+| [lab5.pdf](pdfs/lab5.pdf)  | [lab5-release](https://github.com/wlgs/introduction-to-web-applications-course/releases/tag/lab5) | Angular advanced, firebase connection |
+| [lab6.pdf](pdfs/lab6.pdf)  | [lab6-release](https://github.com/wlgs/introduction-to-web-applications-course/releases/tag/lab6) | Angular + authentication handling + Firebase |
