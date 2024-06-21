@@ -1,4 +1,8 @@
-# Introduction to Web Applications course
+# ATTENTION: DON'T LEARN FROM IT (especially final project)
+
+Now after years, when I revisit this repo, I see error in every component, in every function, in every design decision, in every file. Please do not learn from this repo (especially in final project). Use it if u want to 'just' pass the course.
+
+## Introduction to Web Applications course
 
 This repository contains full web applications course at AGH UST (2021/22). 
 
